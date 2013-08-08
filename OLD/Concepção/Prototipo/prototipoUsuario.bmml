@@ -1,0 +1,142 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1434" measuredH="705" mockupW="924" mockupH="682">
+  <controls>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="510" y="23" w="924" h="682" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>A%20Web%20Page%0Ahttp%3A//esbempresa.com.br/sistemas/reqcycler/index</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::MenuBar" x="521" y="139" w="-1" h="-1" measuredW="369" measuredH="29" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <selectedIndex>0</selectedIndex>
+        <text>Projetos%2C%20Entidades%2C%20Requisitos%2C%20Workflow%2C%20Ajuda</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="1270" y="107" w="-1" h="-1" measuredW="138" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Usu%E1rio%20logado%3A%20Rodrigo</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Canvas" x="521" y="164" w="898" h="488" measuredW="100" measuredH="70" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>10470904</color>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Menu" x="553" y="164" w="-1" h="-1" measuredW="150" measuredH="104" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>5</selectedIndex>
+        <text>Cadastrar%0AListar/Alterar%0A%3D%0AResponsabilidade%20%3E%0A%3D%0AAlocar%20Usu%E1rio</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Label" x="575" y="242" w="-1" h="-1" measuredW="56" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Entidade%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Label" x="1263" y="181" w="-1" h="-1" measuredW="141" measuredH="28" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>20</size>
+        <text>Alocar%20Usu%E1rio</text>
+        <textOrientation>right</textOrientation>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Label" x="1270" y="143" w="-1" h="-1" measuredW="140" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>16776960</color>
+        <state>up</state>
+        <text>1%20Aprova%E7%E3o%20Pendente%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::Button" x="1233" y="588" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alocar</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::Button" x="1316" y="588" w="-1" h="-1" measuredW="77" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cancelar</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Label" x="575" y="278" w="-1" h="-1" measuredW="45" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Projeto%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::ComboBox" x="646" y="240" w="132" h="-1" measuredW="88" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Selecione</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::ComboBox" x="646" y="276" w="132" h="-1" measuredW="88" measuredH="24" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Selecione</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::DataGrid" x="575" y="356" w="307" h="197" measuredW="307" measuredH="171" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>1</selectedIndex>
+        <text>Usu%E1rio%20%5Ev%2C%20Entidade%20%5Ev%2C%20Cargo%20%5Ev%0ARoger%2C%20GVT%2C%20Analista%20de%20Sistemas%20SR%0AJefferson%2C%20GVT%2C%20Analista%20de%20Neg%F3cios%20SR%0AChico%2C%20CINQ%2C%20Desenvolvedor%20JR%0A%20%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::Label" x="1001" y="233" w="41" h="-1" measuredW="37" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nome%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::Label" x="989" y="278" w="-1" h="-1" measuredW="56" measuredH="21" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Entidade%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::ComboBox" x="1052" y="276" w="132" h="-1" measuredW="58" measuredH="24" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>GVT</text>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::Label" x="1001" y="322" w="-1" h="-1" measuredW="45" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Projeto%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::ComboBox" x="1052" y="320" w="132" h="-1" measuredW="117" measuredH="24" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Telefone%20Legal</text>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::Label" x="938" y="365" w="-1" h="-1" measuredW="107" measuredH="21" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Responsabilidade%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::ComboBox" x="1052" y="363" w="214" h="-1" measuredW="212" measuredH="24" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Aprovador%20Neg%F3cios%20Marketing</text>
+      </controlProperties>
+    </control>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::DataGrid" x="938" y="432" w="466" h="121" measuredW="411" measuredH="111" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>-1</selectedIndex>
+        <text>Projeto%20%5Ev%2C%20Entidade%20%5Ev%2C%20Responsabilidade%20%5Ev%2C%20Status%0ALigue%20Barato%2C%20GVT%2C%20Aprovador%20Neg%F3cios%20Marketing%2C%20%5Bx%5D%0ACornverse+%2C%20GVT%2C%20Cliente%20Solicitante%2C%20%5Bx%5D%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::Label" x="938" y="401" w="-1" h="-1" measuredW="110" measuredH="21" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Projetos%20Alocados%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::VRule" x="905" y="209" w="-1" h="405" measuredW="10" measuredH="100" zOrder="23" locked="false" isInGroup="-1"/>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::Label" x="1052" y="233" w="166" h="-1" measuredW="161" measuredH="21" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Jefferson%20Alabama%20Nomimu</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::Label" x="577" y="322" w="-1" h="-1" measuredW="135" measuredH="21" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Usu%E1rios%20n%E3o%20alocados%3A</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
