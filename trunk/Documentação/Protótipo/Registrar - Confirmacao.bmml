@@ -1,0 +1,133 @@
+<mockup version="1.0" skin="wireframe" fontFace="Balsamiq Sans" measuredW="1024" measuredH="400" mockupW="1024" mockupH="400">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1024" h="400" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>REQCYCLER%20%0Ahttp%3A//www.empresa.com.br/reqcycler</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="247" y="92" w="-1" h="-1" measuredW="114" measuredH="26" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>2848996</color>
+        <italic>false</italic>
+        <size>18</size>
+        <text>REQCYCLER</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Label" x="260" y="170" w="-1" h="-1" measuredW="42" measuredH="22" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>6710886</color>
+        <size>14</size>
+        <text>Nome</text>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::TextInput" x="311" y="169" w="175" h="-1" measuredW="47" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Carlos</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::FieldSet" x="247" y="132" w="531" h="209" measuredW="200" measuredH="170" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Registrar</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Label" x="501" y="170" w="-1" h="-1" measuredW="76" measuredH="22" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>6710886</color>
+        <size>14</size>
+        <text>Sobrenome</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::TextInput" x="592" y="169" w="175" h="-1" measuredW="37" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Silva</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Label" x="260" y="208" w="-1" h="-1" measuredW="44" measuredH="22" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>6710886</color>
+        <size>14</size>
+        <text>E-mail</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::TextInput" x="311" y="207" w="175" h="-1" measuredW="152" measuredH="24" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>c.silva@empresa.com.br</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Label" x="501" y="208" w="-1" h="-1" measuredW="63" measuredH="22" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>6710886</color>
+        <size>14</size>
+        <text>Empresa</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::TextInput" x="592" y="207" w="175" h="-1" measuredW="100" measuredH="24" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Empresa%20LTDA</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Label" x="260" y="247" w="-1" h="-1" measuredW="44" measuredH="22" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>6710886</color>
+        <size>14</size>
+        <text>Cargo</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::ComboBox" x="311" y="246" w="175" h="-1" measuredW="103" measuredH="111" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>SELECIONE%0AUsu%E1rio%20Final%0AFocal%0AAnalista%20de%20Requisitos%0AGerente%0AOutro</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Label" x="501" y="247" w="63" h="22" measuredW="34" measuredH="22" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>6710886</color>
+        <size>14</size>
+        <text>Foto</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::TextInput" x="592" y="246" w="127" h="-1" measuredW="69" measuredH="24" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Frontal.jpg</text>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::Button" x="734" y="246" w="-1" h="-1" measuredW="33" measuredH="24" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>...</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Button" x="707" y="302" w="-1" h="-1" measuredW="58" measuredH="24" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Enviar</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::ModalScreen" x="0" y="72" w="1024" h="328" measuredW="318" measuredH="240" zOrder="17" locked="false" isInGroup="-1"/>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::TitleWindow" x="344" y="100" w="390" h="202" measuredW="450" measuredH="400" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bottomheight>0</bottomheight>
+        <dragger>false</dragger>
+        <text>Cadastro%20Enviado</text>
+        <topheight>26</topheight>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Paragraph" x="361" y="133" w="385" h="136" measuredW="200" measuredH="80" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>left</align>
+        <text>Seu%20cadastro%20foi%20enviado%20com%20suscesso%21%0A%20%0A%20%0AUm%20e-mail%20de%20confirma%E7%E3o%20de%20seu%20cadastro%20ser%E1%20enviado%20para%0Ao%20e-mail%20fornecido%20assim%20que%20o%20administrador%0Aavaliar%20sua%20requisi%E7%E3o.</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Button" x="677" y="269" w="-1" h="-1" measuredW="42" measuredH="24" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Login%26bm%3BLogin.bmml%26bm%3BLogin.bmml%26bm%3BLogin.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22677%2C269%2C719%2C293%22%20href%3D%22Login.bmml%22%20alt%3D%22Login%22%20id%3D%2251%22/%3E</map>
+        <text>OK</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

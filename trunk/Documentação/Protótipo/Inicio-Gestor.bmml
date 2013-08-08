@@ -1,0 +1,76 @@
+<mockup version="1.0" skin="wireframe" fontFace="Balsamiq Sans" measuredW="1024" measuredH="400" mockupW="1024" mockupH="400">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1024" h="400" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>REQCYCLER%20%0Ahttp%3A//www.empresa.com.br/reqcycler</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="60" y="94" w="-1" h="-1" measuredW="114" measuredH="26" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <color>2848996</color>
+        <italic>false</italic>
+        <size>18</size>
+        <text>REQCYCLER</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::MenuBar" x="60" y="135" w="-1" h="-1" measuredW="172" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <hrefs>%2CProjetos-Gestor%26bm%3BProjetos-Gestor.bmml%26bm%3BProjetos-Gestor.bmml%26bm%3BProjetos-Gestor.bmml</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22140%2C135%2C223%2C156%22%20href%3D%22Projetos-Gestor.bmml%22%20alt%3D%22Projetos-Gestor%22%20id%3D%227_0%22/%3E%0A</map>
+        <selectedIndex>0</selectedIndex>
+        <text>IN%CDCIO%2C%20PROJETOS</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Canvas" x="60" y="179" w="901" h="161" measuredW="100" measuredH="70" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Image" x="845" y="129" w="42" h="41" measuredW="516" measuredH="598" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <src>../../Documenta%25C3%25A7%25C3%25A3o/Prot%25C3%25B3tipo/imagens/avatar.jpg</src>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="893" y="128" w="-1" h="-1" measuredW="74" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Carlos%20Silva</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Link" x="935" y="149" w="-1" h="-1" measuredW="26" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Login%26bm%3BLogin.bmml%26bm%3BLogin.bmml%26bm%3BLogin.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22935%2C149%2C961%2C170%22%20href%3D%22Login.bmml%22%20alt%3D%22Login%22%20id%3D%2211%22/%3E</map>
+        <text>sair</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Label" x="74" y="188" w="-1" h="-1" measuredW="85" measuredH="22" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>14</size>
+        <text>Notifica%E7%F5es</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::DataGrid" x="74" y="216" w="872" h="109" measuredW="616" measuredH="80" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <alternateRowColor>15134199</alternateRowColor>
+        <borderStyle>square</borderStyle>
+        <color>16777215</color>
+        <hasHeader>true</hasHeader>
+        <hLines>false</hLines>
+        <selectedIndex>-1</selectedIndex>
+        <text>Assunto%2C%20Data%2C%20Descri%E7%E3o%0AConvoca%E7%E3o%2C%2001/07/2013%2C%20O%20usu%E1rio%20Carlos%20Antonio%20aceitou%20a%20convoca%E7%E3o%20para%20participar%20do%20projeto%20X%0ARequisitos%2C%2029/07/2013%2C%20O%20pacote%20de%20requisitos%2011%20do%20projeto%20XPTO%20foi%20aprovado%0A%7B20%2C%2010%2C55%7D</text>
+        <verticalScrollbar>false</verticalScrollbar>
+        <vLines>true</vLines>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::IconLabel" x="883" y="190" w="-1" h="-1" measuredW="63" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <icon>Trash2Icon%7Cxsmall</icon>
+        <labelPosition>left</labelPosition>
+        <text>Limpar</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
