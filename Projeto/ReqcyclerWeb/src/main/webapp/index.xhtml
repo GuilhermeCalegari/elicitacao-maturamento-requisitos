@@ -23,7 +23,7 @@
 				
 					<h2>Teste</h2>
 					
-					<h:form id="painel_login" rendered="#{(UserController.user) == null}">
+					<h:form id="painel_login" rendered="#{(userController.user) == null}">
 						<h:outputText for="login" value="Login: " />
 						<p:inputText id="login" style="margin-left:4px"></p:inputText>
 						<br/>
@@ -34,7 +34,7 @@
 						
 						<p:commandButton id="botao_entrar"
 				       					value="Entrar" 
-				       					actionListener="#{UserController.userLogin}" 
+				       					actionListener="#{userController.userLogin}" 
 				       					ajax="false"/>
 			       	</h:form>
 				</center>
