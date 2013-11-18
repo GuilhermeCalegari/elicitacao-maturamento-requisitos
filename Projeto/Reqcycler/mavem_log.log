@@ -1,0 +1,911 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for br.pucpr.reqcycler:Reqcycler:war:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.scope' for com.sun.faces:jsf-api:jar must be one of [provided, compile, runtime, test, system] but is 'compiled'. @ line 84, column 11
+[WARNING] 'dependencies.dependency.scope' for com.sun.faces:jsf-impl:jar must be one of [provided, compile, runtime, test, system] but is 'compiled'. @ line 90, column 11
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Reqcycler 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> maven-jetty-plugin:6.1.26:run (default-cli) @ Reqcycler >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ Reqcycler ---
+[debug] execute contextualize
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ Reqcycler ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ Reqcycler ---
+[debug] execute contextualize
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ Reqcycler ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< maven-jetty-plugin:6.1.26:run (default-cli) @ Reqcycler <<<
+[INFO] 
+[INFO] --- maven-jetty-plugin:6.1.26:run (default-cli) @ Reqcycler ---
+[INFO] Configuring Jetty for project: Reqcycler
+[INFO] Webapp source directory = D:\Projetos\Reqcycler\src\main\webapp
+[INFO] Reload Mechanic: automatic
+[INFO] Classes = D:\Projetos\Reqcycler\target\classes
+[INFO] Context path = /Reqcycler
+[INFO] Tmp directory =  determined at runtime
+[INFO] Web defaults = org/mortbay/jetty/webapp/webdefault.xml
+[INFO] Web overrides =  none
+[INFO] web.xml file = D:\Projetos\Reqcycler\src\main\webapp\WEB-INF\web.xml
+[INFO] Webapp directory = D:\Projetos\Reqcycler\src\main\webapp
+[INFO] Starting jetty 6.1.26 ...
+18.11.2013 00:35:49  INFO (ContextLoader.java:273) - Root WebApplicationContext: initialization started
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardServletEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [servletConfigInitParams] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [servletContextInitParams] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [jndiProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+18.11.2013 00:35:49  INFO (AbstractApplicationContext.java:495) - Refreshing Root WebApplicationContext: startup date [Mon Nov 18 00:35:49 BRST 2013]; root of context hierarchy
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:163) - Replacing [servletContextInitParams] PropertySource with [servletContextInitParams]
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49  INFO (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+18.11.2013 00:35:49 DEBUG (DefaultDocumentLoader.java:72) - Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+18.11.2013 00:35:49 DEBUG (PluggableSchemaResolver.java:140) - Loading schema mappings from [META-INF/spring.schemas]
+18.11.2013 00:35:49 DEBUG (PluggableSchemaResolver.java:146) - Loaded schema mappings: {http://www.springframework.org/schema/util/spring-util.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-3.1.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/task/spring-task.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-3.0.xsd=org/springframework/aop/config/spring-aop-3.0.xsd, http://www.springframework.org/schema/aop/spring-aop-2.0.xsd=org/springframework/aop/config/spring-aop-2.0.xsd, http://www.springframework.org/schema/task/spring-task-3.1.xsd=org/springframework/scheduling/config/spring-task-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-2.5.xsd=org/springframework/beans/factory/xml/spring-tool-2.5.xsd, http://www.springframework.org/schema/beans/spring-beans.xsd=org/springframework/beans/factory/xml/spring-beans-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-2.5.xsd=org/springframework/ejb/config/spring-jee-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-3.1.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-3.1.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/beans/spring-beans-2.0.xsd=org/springframework/beans/factory/xml/spring-beans-2.0.xsd, http://www.springframework.org/schema/beans/spring-beans-3.0.xsd=org/springframework/beans/factory/xml/spring-beans-3.0.xsd, http://www.springframework.org/schema/task/spring-task-3.0.xsd=org/springframework/scheduling/config/spring-task-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-2.5.xsd=org/springframework/transaction/config/spring-tx-2.5.xsd, http://www.springframework.org/schema/context/spring-context-2.5.xsd=org/springframework/context/config/spring-context-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd=org/springframework/jdbc/config/spring-jdbc-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool-3.0.xsd=org/springframework/beans/factory/xml/spring-tool-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/tool/spring-tool-2.0.xsd=org/springframework/beans/factory/xml/spring-tool-2.0.xsd, http://www.springframework.org/schema/util/spring-util-2.5.xsd=org/springframework/beans/factory/xml/spring-util-2.5.xsd, http://www.springframework.org/schema/lang/spring-lang.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-2.5.xsd=org/springframework/scripting/config/spring-lang-2.5.xsd, http://www.springframework.org/schema/jee/spring-jee-3.0.xsd=org/springframework/ejb/config/spring-jee-3.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.1.xsd=org/springframework/transaction/config/spring-tx-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee-2.0.xsd=org/springframework/ejb/config/spring-jee-2.0.xsd, http://www.springframework.org/schema/context/spring-context-3.1.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/util/spring-util-3.1.xsd=org/springframework/beans/factory/xml/spring-util-3.1.xsd, http://www.springframework.org/schema/lang/spring-lang-3.1.xsd=org/springframework/scripting/config/spring-lang-3.1.xsd, http://www.springframework.org/schema/cache/spring-cache-3.1.xsd=org/springframework/cache/config/spring-cache-3.1.xsd, http://www.springframework.org/schema/context/spring-context.xsd=org/springframework/context/config/spring-context-3.1.xsd, http://www.springframework.org/schema/jee/spring-jee.xsd=org/springframework/ejb/config/spring-jee-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-2.5.xsd=org/springframework/aop/config/spring-aop-2.5.xsd, http://www.springframework.org/schema/jdbc/spring-jdbc.xsd=org/springframework/jdbc/config/spring-jdbc-3.1.xsd, http://www.springframework.org/schema/aop/spring-aop-3.1.xsd=org/springframework/aop/config/spring-aop-3.1.xsd, http://www.springframework.org/schema/tx/spring-tx-2.0.xsd=org/springframework/transaction/config/spring-tx-2.0.xsd, http://www.springframework.org/schema/tx/spring-tx-3.0.xsd=org/springframework/transaction/config/spring-tx-3.0.xsd, http://www.springframework.org/schema/context/spring-context-3.0.xsd=org/springframework/context/config/spring-context-3.0.xsd, http://www.springframework.org/schema/tool/spring-tool.xsd=org/springframework/beans/factory/xml/spring-tool-3.1.xsd, http://www.springframework.org/schema/util/spring-util-3.0.xsd=org/springframework/beans/factory/xml/spring-util-3.0.xsd, http://www.springframework.org/schema/lang/spring-lang-3.0.xsd=org/springframework/scripting/config/spring-lang-3.0.xsd, http://www.springframework.org/schema/util/spring-util-2.0.xsd=org/springframework/beans/factory/xml/spring-util-2.0.xsd, http://www.springframework.org/schema/lang/spring-lang-2.0.xsd=org/springframework/scripting/config/spring-lang-2.0.xsd, http://www.springframework.org/schema/beans/spring-beans-2.5.xsd=org/springframework/beans/factory/xml/spring-beans-2.5.xsd}
+18.11.2013 00:35:49 DEBUG (PluggableSchemaResolver.java:118) - Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.1.xsd
+18.11.2013 00:35:49 DEBUG (PluggableSchemaResolver.java:118) - Found XML schema [http://www.springframework.org/schema/context/spring-context-3.1.xsd] in classpath: org/springframework/context/config/spring-context-3.1.xsd
+18.11.2013 00:35:49 DEBUG (PluggableSchemaResolver.java:118) - Found XML schema [http://www.springframework.org/schema/tool/spring-tool-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-tool-3.1.xsd
+18.11.2013 00:35:49 DEBUG (DefaultBeanDefinitionDocumentReader.java:108) - Loading bean definitions
+18.11.2013 00:35:49 DEBUG (DefaultNamespaceHandlerResolver.java:156) - Loaded NamespaceHandler mappings: {http://www.springframework.org/schema/p=org.springframework.beans.factory.xml.SimplePropertyNamespaceHandler, http://www.springframework.org/schema/util=org.springframework.beans.factory.xml.UtilNamespaceHandler, http://www.springframework.org/schema/jee=org.springframework.ejb.config.JeeNamespaceHandler, http://www.springframework.org/schema/aop=org.springframework.aop.config.AopNamespaceHandler, http://www.springframework.org/schema/jdbc=org.springframework.jdbc.config.JdbcNamespaceHandler, http://www.springframework.org/schema/cache=org.springframework.cache.config.CacheNamespaceHandler, http://www.springframework.org/schema/c=org.springframework.beans.factory.xml.SimpleConstructorNamespaceHandler, http://www.springframework.org/schema/tx=org.springframework.transaction.config.TxNamespaceHandler, http://www.springframework.org/schema/task=org.springframework.scheduling.config.TaskNamespaceHandler, http://www.springframework.org/schema/lang=org.springframework.scripting.config.LangNamespaceHandler, http://www.springframework.org/schema/context=org.springframework.context.config.ContextNamespaceHandler}
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49  INFO (ClassPathScanningCandidateComponentProvider.java:202) - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+18.11.2013 00:35:49  INFO (ClassPathScanningCandidateComponentProvider.java:210) - JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+18.11.2013 00:35:49 DEBUG (PathMatchingResourcePatternResolver.java:550) - Looking for matching resources in directory tree [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler]
+18.11.2013 00:35:49 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/*/**/*.class]
+18.11.2013 00:35:49 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\controller] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/*/**/*.class]
+18.11.2013 00:35:49 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\dao] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/*/**/*.class]
+18.11.2013 00:35:49 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\dao\impl] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/*/**/*.class]
+18.11.2013 00:35:49 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\model] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/*/**/*.class]
+18.11.2013 00:35:49 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\service] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/*/**/*.class]
+18.11.2013 00:35:49 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\service\impl] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/*/**/*.class]
+18.11.2013 00:35:49 DEBUG (PathMatchingResourcePatternResolver.java:351) - Resolved location pattern [classpath*:br/pucpr/reqcycler/*/**/*.class] to resources [file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\controller\UserController.class], file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\dao\impl\UserDAO.class], file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\dao\IUserDAO.class], file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\model\User.class], file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\service\impl\UserService.class], file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\service\IUserService.class]]
+18.11.2013 00:35:49 DEBUG (ClassPathScanningCandidateComponentProvider.java:244) - Identified candidate component class: file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\controller\UserController.class]
+18.11.2013 00:35:49 DEBUG (ClassPathScanningCandidateComponentProvider.java:244) - Identified candidate component class: file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\dao\impl\UserDAO.class]
+18.11.2013 00:35:49 DEBUG (ClassPathScanningCandidateComponentProvider.java:244) - Identified candidate component class: file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\service\impl\UserService.class]
+18.11.2013 00:35:49  INFO (XmlBeanDefinitionReader.java:315) - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate-context.xml]
+18.11.2013 00:35:49 DEBUG (DefaultDocumentLoader.java:72) - Using JAXP provider [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl]
+18.11.2013 00:35:49 DEBUG (PluggableSchemaResolver.java:118) - Found XML schema [http://www.springframework.org/schema/beans/spring-beans-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-beans-3.1.xsd
+18.11.2013 00:35:49 DEBUG (PluggableSchemaResolver.java:118) - Found XML schema [http://www.springframework.org/schema/context/spring-context-3.1.xsd] in classpath: org/springframework/context/config/spring-context-3.1.xsd
+18.11.2013 00:35:49 DEBUG (PluggableSchemaResolver.java:118) - Found XML schema [http://www.springframework.org/schema/tool/spring-tool-3.1.xsd] in classpath: org/springframework/beans/factory/xml/spring-tool-3.1.xsd
+18.11.2013 00:35:49 DEBUG (PluggableSchemaResolver.java:118) - Found XML schema [http://www.springframework.org/schema/tx/spring-tx-3.1.xsd] in classpath: org/springframework/transaction/config/spring-tx-3.1.xsd
+18.11.2013 00:35:49 DEBUG (DefaultBeanDefinitionDocumentReader.java:108) - Loading bean definitions
+18.11.2013 00:35:49 DEBUG (DefaultBeanDefinitionDocumentReader.java:264) - Imported 8 bean definitions from relative location [hibernate-context.xml]
+18.11.2013 00:35:49 DEBUG (AbstractBeanDefinitionReader.java:216) - Loaded 16 bean definitions from location pattern [/WEB-INF/applicationContext.xml]
+18.11.2013 00:35:49 DEBUG (AbstractApplicationContext.java:525) - Bean factory for Root WebApplicationContext: org.springframework.beans.factory.support.DefaultListableBeanFactory@381ace85: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,userController,userDao,userService,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,sessionFactory,dataSource,transactionManager]; root of factory hierarchy
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:458) - Finished creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:458) - Finished creating instance of bean 'org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0'
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [environmentProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49  INFO (PropertiesLoaderSupport.java:177) - Loading properties file from ServletContext resource [/WEB-INF/spring.properties]
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [localProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'hibernate.config' in [environmentProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'hibernate.config' in [servletConfigInitParams]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'hibernate.config' in [servletContextInitParams]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'hibernate.config' in [jndiProperties]
+18.11.2013 00:35:49 DEBUG (JndiTemplate.java:150) - Looking up JNDI object with name [java:comp/env/hibernate.config]
+18.11.2013 00:35:49 DEBUG (JndiLocatorSupport.java:101) - Converted JNDI name [java:comp/env/hibernate.config] not found - trying original name [hibernate.config]. javax.naming.NameNotFoundException; remaining name 'hibernate.config'
+18.11.2013 00:35:49 DEBUG (JndiTemplate.java:150) - Looking up JNDI object with name [hibernate.config]
+18.11.2013 00:35:49 DEBUG (JndiPropertySource.java:87) - JNDI lookup for name [hibernate.config] threw NamingException with message: null. Returning null.
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'hibernate.config' in [systemProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'hibernate.config' in [systemEnvironment]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:90) - Could not find key 'hibernate.config' in any property source. Returning [null]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'hibernate.config' in [localProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:76) - Found key 'hibernate.config' in [localProperties] with type [String] and value '/WEB-INF/hibernate.cfg.xml'
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.driverClassName' in [environmentProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.driverClassName' in [servletConfigInitParams]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.driverClassName' in [servletContextInitParams]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.driverClassName' in [jndiProperties]
+18.11.2013 00:35:49 DEBUG (JndiTemplate.java:150) - Looking up JNDI object with name [java:comp/env/app.jdbc.driverClassName]
+18.11.2013 00:35:49 DEBUG (JndiLocatorSupport.java:101) - Converted JNDI name [java:comp/env/app.jdbc.driverClassName] not found - trying original name [app.jdbc.driverClassName]. javax.naming.NameNotFoundException; remaining name 'app.jdbc.driverClassName'
+18.11.2013 00:35:49 DEBUG (JndiTemplate.java:150) - Looking up JNDI object with name [app.jdbc.driverClassName]
+18.11.2013 00:35:49 DEBUG (JndiPropertySource.java:87) - JNDI lookup for name [app.jdbc.driverClassName] threw NamingException with message: null. Returning null.
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.driverClassName' in [systemProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.driverClassName' in [systemEnvironment]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:90) - Could not find key 'app.jdbc.driverClassName' in any property source. Returning [null]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.driverClassName' in [localProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:76) - Found key 'app.jdbc.driverClassName' in [localProperties] with type [String] and value 'org.hsqldb.jdbcDriver'
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.url' in [environmentProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.url' in [servletConfigInitParams]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.url' in [servletContextInitParams]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.url' in [jndiProperties]
+18.11.2013 00:35:49 DEBUG (JndiTemplate.java:150) - Looking up JNDI object with name [java:comp/env/app.jdbc.url]
+18.11.2013 00:35:49 DEBUG (JndiLocatorSupport.java:101) - Converted JNDI name [java:comp/env/app.jdbc.url] not found - trying original name [app.jdbc.url]. javax.naming.NameNotFoundException; remaining name 'app.jdbc.url'
+18.11.2013 00:35:49 DEBUG (JndiTemplate.java:150) - Looking up JNDI object with name [app.jdbc.url]
+18.11.2013 00:35:49 DEBUG (JndiPropertySource.java:87) - JNDI lookup for name [app.jdbc.url] threw NamingException with message: null. Returning null.
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.url' in [systemProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.url' in [systemEnvironment]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:90) - Could not find key 'app.jdbc.url' in any property source. Returning [null]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.url' in [localProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:76) - Found key 'app.jdbc.url' in [localProperties] with type [String] and value 'jdbc:hsqldb:hsql://localhost'
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.password' in [environmentProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.password' in [servletConfigInitParams]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.password' in [servletContextInitParams]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.password' in [jndiProperties]
+18.11.2013 00:35:49 DEBUG (JndiTemplate.java:150) - Looking up JNDI object with name [java:comp/env/app.jdbc.password]
+18.11.2013 00:35:49 DEBUG (JndiLocatorSupport.java:101) - Converted JNDI name [java:comp/env/app.jdbc.password] not found - trying original name [app.jdbc.password]. javax.naming.NameNotFoundException; remaining name 'app.jdbc.password'
+18.11.2013 00:35:49 DEBUG (JndiTemplate.java:150) - Looking up JNDI object with name [app.jdbc.password]
+18.11.2013 00:35:49 DEBUG (JndiPropertySource.java:87) - JNDI lookup for name [app.jdbc.password] threw NamingException with message: null. Returning null.
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.password' in [systemProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.password' in [systemEnvironment]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:90) - Could not find key 'app.jdbc.password' in any property source. Returning [null]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.password' in [localProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:76) - Found key 'app.jdbc.password' in [localProperties] with type [String] and value ''
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.username' in [environmentProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.username' in [servletConfigInitParams]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.username' in [servletContextInitParams]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.username' in [jndiProperties]
+18.11.2013 00:35:49 DEBUG (JndiTemplate.java:150) - Looking up JNDI object with name [java:comp/env/app.jdbc.username]
+18.11.2013 00:35:49 DEBUG (JndiLocatorSupport.java:101) - Converted JNDI name [java:comp/env/app.jdbc.username] not found - trying original name [app.jdbc.username]. javax.naming.NameNotFoundException; remaining name 'app.jdbc.username'
+18.11.2013 00:35:49 DEBUG (JndiTemplate.java:150) - Looking up JNDI object with name [app.jdbc.username]
+18.11.2013 00:35:49 DEBUG (JndiPropertySource.java:87) - JNDI lookup for name [app.jdbc.username] threw NamingException with message: null. Returning null.
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.username' in [systemProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.username' in [systemEnvironment]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:90) - Could not find key 'app.jdbc.username' in any property source. Returning [null]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:70) - Searching for key 'app.jdbc.username' in [localProperties]
+18.11.2013 00:35:49 DEBUG (PropertySourcesPropertyResolver.java:76) - Found key 'app.jdbc.username' in [localProperties] with type [String] and value 'sa'
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+18.11.2013 00:35:49  INFO (AutowiredAnnotationBeanPostProcessor.java:139) - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:458) - Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:458) - Finished creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:458) - Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:458) - Finished creating instance of bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:458) - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0'
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'org.springframework.aop.config.internalAutoProxyCreator'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'org.springframework.aop.config.internalAutoProxyCreator' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:458) - Finished creating instance of bean 'org.springframework.aop.config.internalAutoProxyCreator'
+18.11.2013 00:35:49 DEBUG (AbstractApplicationContext.java:794) - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@49998942]
+18.11.2013 00:35:49 DEBUG (AbstractApplicationContext.java:818) - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@41407dcc]
+18.11.2013 00:35:49 DEBUG (UiApplicationContextUtils.java:85) - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@5295ea35]
+18.11.2013 00:35:49  INFO (DefaultListableBeanFactory.java:557) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@381ace85: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,userController,userDao,userService,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,sessionFactory,dataSource,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+18.11.2013 00:35:49 DEBUG (AbstractBeanFactory.java:245) - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractBeanFactory.java:245) - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractBeanFactory.java:245) - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractBeanFactory.java:245) - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (AbstractBeanFactory.java:245) - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'userController'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'userController'
+18.11.2013 00:35:49 DEBUG (InjectionMetadata.java:60) - Found injected element on class [br.pucpr.reqcycler.controller.UserController]: AutowiredFieldElement for br.pucpr.reqcycler.service.IUserService br.pucpr.reqcycler.controller.UserController.userService
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'userController' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (InjectionMetadata.java:85) - Processing injected method of bean 'userController': AutowiredFieldElement for br.pucpr.reqcycler.service.IUserService br.pucpr.reqcycler.controller.UserController.userService
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'userService'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'userService'
+18.11.2013 00:35:49 DEBUG (InjectionMetadata.java:60) - Found injected element on class [br.pucpr.reqcycler.service.impl.UserService]: AutowiredFieldElement for br.pucpr.reqcycler.dao.IUserDAO br.pucpr.reqcycler.service.impl.UserService.userDAO
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'userService' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (InjectionMetadata.java:85) - Processing injected method of bean 'userService': AutowiredFieldElement for br.pucpr.reqcycler.dao.IUserDAO br.pucpr.reqcycler.service.impl.UserService.userDAO
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'userDao'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'userDao'
+18.11.2013 00:35:49 DEBUG (InjectionMetadata.java:60) - Found injected element on class [br.pucpr.reqcycler.dao.impl.UserDAO]: ResourceElement for private org.hibernate.SessionFactory br.pucpr.reqcycler.dao.impl.UserDAO.sessionFactory
+18.11.2013 00:35:49  WARN (AutowiredAnnotationBeanPostProcessor.java:357) - Autowired annotation should be used on methods with actual parameters: public org.hibernate.SessionFactory br.pucpr.reqcycler.dao.impl.UserDAO.getSessionFactory()
+18.11.2013 00:35:49 DEBUG (InjectionMetadata.java:60) - Found injected element on class [br.pucpr.reqcycler.dao.impl.UserDAO]: AutowiredMethodElement for public org.hibernate.SessionFactory br.pucpr.reqcycler.dao.impl.UserDAO.getSessionFactory()
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'userDao' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (InjectionMetadata.java:85) - Processing injected method of bean 'userDao': ResourceElement for private org.hibernate.SessionFactory br.pucpr.reqcycler.dao.impl.UserDAO.sessionFactory
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'sessionFactory'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'sessionFactory'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'sessionFactory' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'dataSource'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'dataSource'
+18.11.2013 00:35:49  INFO (MLog.java:80) - MLog clients using log4j logging.
+18.11.2013 00:35:49  INFO (C3P0Registry.java:204) - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+18.11.2013 00:35:49 DEBUG (DynamicPooledDataSourceManagerMBean.java:236) - MBean: com.mchange.v2.c3p0:type=PooledDataSource[1hge5tz8yt5gcw91ljyqog|cb7446f] registered.
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'dataSource' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'org.springframework.transaction.config.internalTransactionAdvisor' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (DefaultSingletonBeanRegistry.java:217) - Creating shared instance of singleton bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:430) - Creating instance of bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:504) - Eagerly caching bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' to allow for resolving potential circular references
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:458) - Finished creating instance of bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:458) - Finished creating instance of bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:458) - Finished creating instance of bean 'dataSource'
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:114) - Initializing new StandardEnvironment
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemProperties] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (MutablePropertySources.java:103) - Adding [systemEnvironment] PropertySource with lowest search precedence
+18.11.2013 00:35:49 DEBUG (AbstractEnvironment.java:120) - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18.11.2013 00:35:49 DEBUG (AbstractAutowireCapableBeanFactory.java:1498) - Invoking afterPropertiesSet() on bean with name 'sessionFactory'
+18.11.2013 00:35:49 DEBUG (Configuration.java:175) - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration boolean -> org.hibernate.type.BooleanType@1a7e4ff0
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration boolean -> org.hibernate.type.BooleanType@1a7e4ff0
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@1a7e4ff0
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@5ee6750f
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration true_false -> org.hibernate.type.TrueFalseType@c859af3
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration yes_no -> org.hibernate.type.YesNoType@18cb3bd0
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration byte -> org.hibernate.type.ByteType@7745e872
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration byte -> org.hibernate.type.ByteType@7745e872
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@7745e872
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration character -> org.hibernate.type.CharacterType@196dbbd1
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration char -> org.hibernate.type.CharacterType@196dbbd1
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@196dbbd1
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration short -> org.hibernate.type.ShortType@c9cf98e
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration short -> org.hibernate.type.ShortType@c9cf98e
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@c9cf98e
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration integer -> org.hibernate.type.IntegerType@47ab606b
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration int -> org.hibernate.type.IntegerType@47ab606b
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@47ab606b
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration long -> org.hibernate.type.LongType@4e12eb00
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration long -> org.hibernate.type.LongType@4e12eb00
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.lang.Long -> org.hibernate.type.LongType@4e12eb00
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration float -> org.hibernate.type.FloatType@3ac46386
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration float -> org.hibernate.type.FloatType@3ac46386
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@3ac46386
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration double -> org.hibernate.type.DoubleType@7f06725b
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration double -> org.hibernate.type.DoubleType@7f06725b
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@7f06725b
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@36bbb2f5
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@36bbb2f5
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@747ef49f
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@747ef49f
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration string -> org.hibernate.type.StringType@5c2808fc
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.lang.String -> org.hibernate.type.StringType@5c2808fc
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration url -> org.hibernate.type.UrlType@21b63266
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.net.URL -> org.hibernate.type.UrlType@21b63266
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration date -> org.hibernate.type.DateType@146081dc
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.sql.Date -> org.hibernate.type.DateType@146081dc
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration time -> org.hibernate.type.TimeType@635bc5cc
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@635bc5cc
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration timestamp -> org.hibernate.type.TimestampType@488b9d9f
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@488b9d9f
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@488b9d9f
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@57af135a
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration calendar -> org.hibernate.type.CalendarType@3df2d2cf
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@3df2d2cf
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@3df2d2cf
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@1a7cf0bd
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration locale -> org.hibernate.type.LocaleType@444023d7
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@444023d7
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration currency -> org.hibernate.type.CurrencyType@756481cf
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@756481cf
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration timezone -> org.hibernate.type.TimeZoneType@7359870d
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@7359870d
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration class -> org.hibernate.type.ClassType@35b0b7f
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@35b0b7f
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@4dfb80d8
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@4dfb80d8
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@658fb323
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@b4a469d
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration binary -> org.hibernate.type.BinaryType@735397d4
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration byte[] -> org.hibernate.type.BinaryType@735397d4
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration [B -> org.hibernate.type.BinaryType@735397d4
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@57909d30
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@57909d30
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@57909d30
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration image -> org.hibernate.type.ImageType@6d8cadcd
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration characters -> org.hibernate.type.CharArrayType@6a46dad
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration char[] -> org.hibernate.type.CharArrayType@6a46dad
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration [C -> org.hibernate.type.CharArrayType@6a46dad
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@3ff3561a
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@3ff3561a
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@3ff3561a
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration text -> org.hibernate.type.TextType@3f779cb
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration blob -> org.hibernate.type.BlobType@2d886769
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@2d886769
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@688bb8c0
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration clob -> org.hibernate.type.ClobType@78a0f781
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@78a0f781
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@36a0448e
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration serializable -> org.hibernate.type.SerializableType@68109c74
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration object -> org.hibernate.type.ObjectType@34f0852e
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@34f0852e
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@13603899
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@1223cebf
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@6cda66e6
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@7699bdde
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@678076a6
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@22edc160
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@2732978a
+18.11.2013 00:35:49 DEBUG (BasicTypeRegistry.java:143) - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@6a7af920
+18.11.2013 00:35:49  INFO (Version.java:37) - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+18.11.2013 00:35:49  INFO (Version.java:41) - HHH000412: Hibernate Core {4.1.0.Final}
+18.11.2013 00:35:49  INFO (Environment.java:239) - HHH000206: hibernate.properties not found
+18.11.2013 00:35:49  INFO (Environment.java:342) - HHH000021: Bytecode provider name : javassist
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [hilo] -> [org.hibernate.id.TableHiLoGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.SequenceGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+18.11.2013 00:35:50 DEBUG (DefaultIdentifierGeneratorFactory.java:93) - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+18.11.2013 00:35:50  INFO (Configuration.java:1959) - HHH000044: Configuring from URL: file:/D:/Projetos/Reqcycler/src/main/webapp/WEB-INF/hibernate.cfg.xml
+18.11.2013 00:35:50 DEBUG (DTDEntityResolver.java:68) - Trying to resolve system-id [http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd]
+18.11.2013 00:35:50  WARN (DTDEntityResolver.java:74) - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+18.11.2013 00:35:50 DEBUG (DTDEntityResolver.java:75) - Attempting to resolve on classpath under org/hibernate/
+18.11.2013 00:35:50 DEBUG (DTDEntityResolver.java:107) - Located [http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd] in classpath
+18.11.2013 00:35:50 DEBUG (Configuration.java:1885) - hibernate.dialect=org.hibernate.dialect.HSQLDialect
+18.11.2013 00:35:50 DEBUG (Configuration.java:1885) - show_sql=false
+18.11.2013 00:35:50 DEBUG (Configuration.java:1885) - hbm2ddl.auto=create
+18.11.2013 00:35:50  INFO (Configuration.java:2064) - HHH000041: Configured SessionFactory: null
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:404) - incremented pending_acquires: 1
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:404) - incremented pending_acquires: 2
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:404) - incremented pending_acquires: 3
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:404) - incremented pending_acquires: 4
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:404) - incremented pending_acquires: 5
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:404) - incremented pending_acquires: 6
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:404) - incremented pending_acquires: 7
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:404) - incremented pending_acquires: 8
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:404) - incremented pending_acquires: 9
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:404) - incremented pending_acquires: 10
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:289) - com.mchange.v2.resourcepool.BasicResourcePool@26328f6 config: [start -> 3; min -> 10; max -> 100; inc -> 5; num_acq_attempts -> 30; acq_attempt_delay -> 1000; check_idle_resources_delay -> 60000; mox_resource_age -> 0; max_idle_time -> 0; excess_max_idle_time -> 0; destroy_unreturned_resc_time -> 0; expiration_enforcement_delay -> 0; break_on_acquisition_failure -> false; debug_store_checkout_exceptions -> false]
+18.11.2013 00:35:50  INFO (AbstractPoolBackedDataSource.java:462) - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge5tz8yt5gcw91ljyqog|cb7446f, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.hsqldb.jdbcDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge5tz8yt5gcw91ljyqog|cb7446f, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:hsqldb:hsql://localhost, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 10, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+18.11.2013 00:35:50 DEBUG (Configuration.java:2065) - Properties: {java.runtime.name=Java(TM) SE Runtime Environment, sun.boot.library.path=C:\Program Files\Java\jdk1.7.0_07\jre\bin, java.vm.version=23.3-b01, java.vm.vendor=Oracle Corporation, java.vendor.url=http://java.oracle.com/, path.separator=;, guice.disable.misplaced.annotation.check=true, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding.pkg=sun.io, user.script=, user.country=BR, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=, java.vm.specification.name=Java Virtual Machine Specification, user.dir=D:\Projetos\Reqcycler, java.runtime.version=1.7.0_07-b11, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, hbm2ddl.auto=create, hibernate.current_session_context_class=org.springframework.orm.hibernate4.SpringSessionContext, java.endorsed.dirs=C:\Program Files\Java\jdk1.7.0_07\jre\lib\endorsed, os.arch=amd64, java.io.tmpdir=C:\Users\Rodrigo\AppData\Local\Temp\, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, user.variant=, os.name=Windows 8, classworlds.conf=D:\Desenvolvimento\ProjectManagment\apache-maven-3.0.4\bin\..\bin\m2.conf, sun.jnu.encoding=Cp1252, hibernate.connection.datasource=com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge5tz8yt5gcw91ljyqog|cb7446f, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.hsqldb.jdbcDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge5tz8yt5gcw91ljyqog|cb7446f, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:hsqldb:hsql://localhost, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 10, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ], java.library.path=C:\Program Files\Java\jdk1.7.0_07\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter;;C:\PROGRAM FILES (X86)\NVIDIA CORPORATION\PHYSX\COMMON;C:\PROGRAM FILES (X86)\COMMON FILES\INTEL\SHARED FILES\CPP\BIN\INTEL64;C:\PROGRAM FILES (X86)\INTEL\ICLS CLIENT\;C:\PROGRAM FILES\INTEL\ICLS CLIENT\;C:\WINDOWS\SYSTEM32;C:\WINDOWS;C:\WINDOWS\SYSTEM32\WBEM;C:\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;;C:\PROGRAM FILES\JAVA\JDK1.7.0_07\JRE\BIN;C:\PROGRAM FILES\TORTOISESVN\BIN;D:\DESENVOLVIMENTO\PROJECTMANAGMENT\APACHE-MAVEN-3.0.4\BIN;D:\DESENVOLVIMENTO\SERVIDORES\JBOSS-AS-7.1.1.FINAL\BIN;C:\WINDOWS\SYSTEM32;C:\WINDOWS;C:\WINDOWS\SYSTEM32\WBEM;C:\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;., java.specification.name=Java Platform API Specification, java.class.version=51.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=6.2, user.home=C:\Users\Rodrigo, user.timezone=America/Sao_Paulo, java.awt.printerjob=sun.awt.windows.WPrinterJob, file.encoding=Cp1252, java.specification.version=1.7, show_sql=false, java.class.path=D:\Desenvolvimento\ProjectManagment\apache-maven-3.0.4\bin\..\boot\plexus-classworlds-2.4.jar, user.name=Rodrigo, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=false, hibernate.classLoader.application=ContextLoader@Reqcycler, java.vm.specification.version=1.7, sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher jetty:run, java.home=C:\Program Files\Java\jdk1.7.0_07\jre, sun.arch.data.model=64, hibernate.dialect=org.hibernate.dialect.HSQLDialect, user.language=pt, java.specification.vendor=Oracle Corporation, awt.toolkit=sun.awt.windows.WToolkit, java.vm.info=mixed mode, java.version=1.7.0_07, java.ext.dirs=C:\Program Files\Java\jdk1.7.0_07\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext, sun.boot.class.path=C:\Program Files\Java\jdk1.7.0_07\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_07\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_07\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_07\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_07\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_07\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_07\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_07\jre\classes, java.vendor=Oracle Corporation, maven.home=D:\Desenvolvimento\ProjectManagment\apache-maven-3.0.4\bin\.., file.separator=\, hibernate.hbm2ddl.auto=create, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, sun.io.unicode.encoding=UnicodeLittle, sun.cpu.endian=little, sun.desktop=windows, sun.cpu.isalist=amd64}
+18.11.2013 00:35:50 DEBUG (PathMatchingResourcePatternResolver.java:550) - Looking for matching resources in directory tree [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler]
+18.11.2013 00:35:50 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/**/*.class]
+18.11.2013 00:35:50 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\controller] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/**/*.class]
+18.11.2013 00:35:50 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\dao] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/**/*.class]
+18.11.2013 00:35:50 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\dao\impl] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/**/*.class]
+18.11.2013 00:35:50 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\model] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/**/*.class]
+18.11.2013 00:35:50 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\service] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/**/*.class]
+18.11.2013 00:35:50 DEBUG (PathMatchingResourcePatternResolver.java:612) - Searching directory [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\service\impl] for files matching pattern [D:/Projetos/Reqcycler/target/classes/br/pucpr/reqcycler/**/*.class]
+18.11.2013 00:35:50 DEBUG (PathMatchingResourcePatternResolver.java:351) - Resolved location pattern [classpath*:br/pucpr/reqcycler/**/*.class] to resources [file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\controller\UserController.class], file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\dao\impl\UserDAO.class], file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\dao\IUserDAO.class], file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\model\User.class], file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\service\impl\UserService.class], file [D:\Projetos\Reqcycler\target\classes\br\pucpr\reqcycler\service\IUserService.class]]
+18.11.2013 00:35:50 DEBUG (IntegratorServiceImpl.java:59) - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+18.11.2013 00:35:50 DEBUG (Configuration.java:1725) - Preparing to build session factory with filters : {}
+18.11.2013 00:35:50 DEBUG (Configuration.java:3391) - Processing hbm.xml files
+18.11.2013 00:35:50 DEBUG (Configuration.java:3421) - Process annotated classes
+18.11.2013 00:35:50  INFO (DefaultSingletonBeanRegistry.java:433) - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@381ace85: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,userController,userDao,userService,org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,sessionFactory,dataSource,transactionManager,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+18.11.2013 00:35:50 ERROR (DefaultSingletonBeanRegistry.java:501) - Destroy method on bean with name 'dataSource' threw an exception
+java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/persistence/PersistenceException
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:791)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at org.mortbay.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:392)
+	at org.mortbay.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:363)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessBeforeDestruction(PersistenceAnnotationBeanPostProcessor.java:357)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:193)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:498)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:474)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:442)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1066)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:472)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:115)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerCollection.doStart(HandlerCollection.java:152)
+	at org.mortbay.jetty.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:156)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerCollection.doStart(HandlerCollection.java:152)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.plugin.Jetty6PluginServer.start(Jetty6PluginServer.java:132)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:454)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:396)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo.execute(AbstractJettyRunMojo.java:210)
+	at org.mortbay.jetty.plugin.Jetty6RunMojo.execute(Jetty6RunMojo.java:184)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:84)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:59)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.singleThreadedBuild(LifecycleStarter.java:183)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:161)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:320)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:156)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:537)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:196)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:290)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+18.11.2013 00:35:50 ERROR (DefaultSingletonBeanRegistry.java:501) - Destroy method on bean with name 'org.springframework.transaction.config.internalTransactionAdvisor' threw an exception
+java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/persistence/PersistenceException
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:791)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at org.mortbay.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:392)
+	at org.mortbay.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:363)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessBeforeDestruction(PersistenceAnnotationBeanPostProcessor.java:357)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:193)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:498)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:474)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:442)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1066)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:472)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:115)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerCollection.doStart(HandlerCollection.java:152)
+	at org.mortbay.jetty.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:156)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerCollection.doStart(HandlerCollection.java:152)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.plugin.Jetty6PluginServer.start(Jetty6PluginServer.java:132)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:454)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:396)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo.execute(AbstractJettyRunMojo.java:210)
+	at org.mortbay.jetty.plugin.Jetty6RunMojo.execute(Jetty6RunMojo.java:184)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:84)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:59)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.singleThreadedBuild(LifecycleStarter.java:183)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:161)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:320)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:156)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:537)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:196)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:290)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+18.11.2013 00:35:50 ERROR (DefaultSingletonBeanRegistry.java:501) - Destroy method on bean with name 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0' threw an exception
+java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/persistence/PersistenceException
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:791)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at org.mortbay.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:392)
+	at org.mortbay.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:363)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessBeforeDestruction(PersistenceAnnotationBeanPostProcessor.java:357)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:193)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:498)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:474)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:442)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1066)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:472)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:115)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerCollection.doStart(HandlerCollection.java:152)
+	at org.mortbay.jetty.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:156)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerCollection.doStart(HandlerCollection.java:152)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.plugin.Jetty6PluginServer.start(Jetty6PluginServer.java:132)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:454)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:396)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo.execute(AbstractJettyRunMojo.java:210)
+	at org.mortbay.jetty.plugin.Jetty6RunMojo.execute(Jetty6RunMojo.java:184)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:84)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:59)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.singleThreadedBuild(LifecycleStarter.java:183)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:161)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:320)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:156)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:537)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:196)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:290)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+18.11.2013 00:35:50 ERROR (DefaultSingletonBeanRegistry.java:501) - Destroy method on bean with name 'org.springframework.aop.config.internalAutoProxyCreator' threw an exception
+java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/persistence/PersistenceException
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:791)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at org.mortbay.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:392)
+	at org.mortbay.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:363)
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessBeforeDestruction(PersistenceAnnotationBeanPostProcessor.java:357)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:193)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:498)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:474)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:442)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1066)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:472)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:115)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerCollection.doStart(HandlerCollection.java:152)
+	at org.mortbay.jetty.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:156)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerCollection.doStart(HandlerCollection.java:152)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.plugin.Jetty6PluginServer.start(Jetty6PluginServer.java:132)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:454)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:396)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo.execute(AbstractJettyRunMojo.java:210)
+	at org.mortbay.jetty.plugin.Jetty6RunMojo.execute(Jetty6RunMojo.java:184)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:84)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:59)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.singleThreadedBuild(LifecycleStarter.java:183)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:161)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:320)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:156)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:537)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:196)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:290)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+18.11.2013 00:35:50 ERROR (ContextLoader.java:308) - Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: br.pucpr.reqcycler.service.IUserService br.pucpr.reqcycler.controller.UserController.userService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: br.pucpr.reqcycler.dao.IUserDAO br.pucpr.reqcycler.service.impl.UserService.userDAO; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/hibernate-context.xml]: Invocation of init method failed; nested exception is java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/persistence/InheritanceType
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:287)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:115)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerCollection.doStart(HandlerCollection.java:152)
+	at org.mortbay.jetty.handler.ContextHandlerCollection.doStart(ContextHandlerCollection.java:156)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerCollection.doStart(HandlerCollection.java:152)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.handler.HandlerWrapper.doStart(HandlerWrapper.java:130)
+	at org.mortbay.jetty.Server.doStart(Server.java:224)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.plugin.Jetty6PluginServer.start(Jetty6PluginServer.java:132)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.startJetty(AbstractJettyMojo.java:454)
+	at org.mortbay.jetty.plugin.AbstractJettyMojo.execute(AbstractJettyMojo.java:396)
+	at org.mortbay.jetty.plugin.AbstractJettyRunMojo.execute(AbstractJettyRunMojo.java:210)
+	at org.mortbay.jetty.plugin.Jetty6RunMojo.execute(Jetty6RunMojo.java:184)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:84)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:59)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.singleThreadedBuild(LifecycleStarter.java:183)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:161)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:320)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:156)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:537)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:196)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:290)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: br.pucpr.reqcycler.service.IUserService br.pucpr.reqcycler.controller.UserController.userService; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: br.pucpr.reqcycler.dao.IUserDAO br.pucpr.reqcycler.service.impl.UserService.userDAO; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/hibernate-context.xml]: Invocation of init method failed; nested exception is java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/persistence/InheritanceType
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:506)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284)
+	... 54 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userService': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: br.pucpr.reqcycler.dao.IUserDAO br.pucpr.reqcycler.service.impl.UserService.userDAO; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/hibernate-context.xml]: Invocation of init method failed; nested exception is java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/persistence/InheritanceType
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:287)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:848)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:790)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:707)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:478)
+	... 56 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: br.pucpr.reqcycler.dao.IUserDAO br.pucpr.reqcycler.service.impl.UserService.userDAO; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/hibernate-context.xml]: Invocation of init method failed; nested exception is java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/persistence/InheritanceType
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:506)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284)
+	... 67 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userDao': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/hibernate-context.xml]: Invocation of init method failed; nested exception is java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/persistence/InheritanceType
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:306)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:848)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:790)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:707)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:478)
+	... 69 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/hibernate-context.xml]: Invocation of init method failed; nested exception is java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/persistence/InheritanceType
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1455)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:442)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:416)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:549)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:150)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:303)
+	... 80 more
+Caused by: java.lang.ClassFormatError: Absent Code attribute in method that is not native or abstract in class file javax/persistence/InheritanceType
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:791)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:449)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:71)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:361)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at org.mortbay.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:392)
+	at org.mortbay.jetty.webapp.WebAppClassLoader.loadClass(WebAppClassLoader.java:363)
+	at org.hibernate.cfg.InheritanceState.extractInheritanceType(InheritanceState.java:86)
+	at org.hibernate.cfg.InheritanceState.<init>(InheritanceState.java:74)
+	at org.hibernate.cfg.AnnotationBinder.buildInheritanceStates(AnnotationBinder.java:3019)
+	at org.hibernate.cfg.Configuration$MetadataSourceQueue.processAnnotatedClassesQueue(Configuration.java:3425)
+	at org.hibernate.cfg.Configuration$MetadataSourceQueue.processMetadata(Configuration.java:3385)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1337)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1727)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1778)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBuilder.buildSessionFactory(LocalSessionFactoryBuilder.java:189)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.buildSessionFactory(LocalSessionFactoryBean.java:350)
+	at org.springframework.orm.hibernate4.LocalSessionFactoryBean.afterPropertiesSet(LocalSessionFactoryBean.java:335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1452)
+	... 92 more
+[INFO] Started Jetty Server
+[INFO] Starting scanner at interval of 10 seconds.
+18.11.2013 00:35:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:35:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:35:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:35:50 DEBUG (C3P0PooledConnectionPool.java:217) - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@2e76371c.acquireResource() returning. 
+18.11.2013 00:35:50 DEBUG (C3P0PooledConnectionPool.java:217) - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@2e76371c.acquireResource() returning. 
+18.11.2013 00:35:50 DEBUG (C3P0PooledConnectionPool.java:217) - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@2e76371c.acquireResource() returning. 
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:1644) - trace com.mchange.v2.resourcepool.BasicResourcePool@26328f6 [managed: 1, unused: 1, excluded: 0]
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:422) - decremented pending_acquires: 9
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:1644) - trace com.mchange.v2.resourcepool.BasicResourcePool@26328f6 [managed: 2, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1)
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:422) - decremented pending_acquires: 8
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:1644) - trace com.mchange.v2.resourcepool.BasicResourcePool@26328f6 [managed: 3, unused: 3, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1)
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:422) - decremented pending_acquires: 7
+18.11.2013 00:35:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:35:50 DEBUG (C3P0PooledConnectionPool.java:217) - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@2e76371c.acquireResource() returning. 
+18.11.2013 00:35:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:1644) - trace com.mchange.v2.resourcepool.BasicResourcePool@26328f6 [managed: 4, unused: 4, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1)
+18.11.2013 00:35:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:35:50 DEBUG (C3P0PooledConnectionPool.java:217) - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@2e76371c.acquireResource() returning. 
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:422) - decremented pending_acquires: 6
+18.11.2013 00:35:50 DEBUG (C3P0PooledConnectionPool.java:217) - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@2e76371c.acquireResource() returning. 
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:1644) - trace com.mchange.v2.resourcepool.BasicResourcePool@26328f6 [managed: 5, unused: 5, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1)
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:422) - decremented pending_acquires: 5
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:1644) - trace com.mchange.v2.resourcepool.BasicResourcePool@26328f6 [managed: 6, unused: 6, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1)
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:422) - decremented pending_acquires: 4
+18.11.2013 00:35:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:35:50 DEBUG (C3P0PooledConnectionPool.java:217) - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@2e76371c.acquireResource() returning. 
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:1644) - trace com.mchange.v2.resourcepool.BasicResourcePool@26328f6 [managed: 7, unused: 7, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1)
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:422) - decremented pending_acquires: 3
+18.11.2013 00:35:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:35:50 DEBUG (C3P0PooledConnectionPool.java:217) - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@2e76371c.acquireResource() returning. 
+18.11.2013 00:35:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:1644) - trace com.mchange.v2.resourcepool.BasicResourcePool@26328f6 [managed: 8, unused: 8, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1)
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:422) - decremented pending_acquires: 2
+18.11.2013 00:35:50 DEBUG (C3P0PooledConnectionPool.java:217) - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@2e76371c.acquireResource() returning. 
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:1644) - trace com.mchange.v2.resourcepool.BasicResourcePool@26328f6 [managed: 9, unused: 9, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1)
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:422) - decremented pending_acquires: 1
+18.11.2013 00:35:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:35:50 DEBUG (C3P0PooledConnectionPool.java:217) - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@2e76371c.acquireResource() returning. 
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:1644) - trace com.mchange.v2.resourcepool.BasicResourcePool@26328f6 [managed: 10, unused: 10, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1)
+18.11.2013 00:35:50 DEBUG (BasicResourcePool.java:422) - decremented pending_acquires: 0
+18.11.2013 00:36:50 DEBUG (BasicResourcePool.java:1962) - Refurbishing idle resources - Mon Nov 18 00:36:50 BRST 2013 [com.mchange.v2.resourcepool.BasicResourcePool@26328f6]
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:315) - Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@80b4d4d] on IDLE CHECK.
+18.11.2013 00:36:50 DEBUG (BasicResourcePool.java:1644) - trace com.mchange.v2.resourcepool.BasicResourcePool@26328f6 [managed: 10, unused: 10, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1)
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:315) - Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@e438228] on IDLE CHECK.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:315) - Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@663fc37] on IDLE CHECK.
+18.11.2013 00:36:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:36:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:36:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:319) - Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@80b4d4d] on IDLE CHECK has SUCCEEDED.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:319) - Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@663fc37] on IDLE CHECK has SUCCEEDED.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:319) - Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@e438228] on IDLE CHECK has SUCCEEDED.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:315) - Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@5b72fb19] on IDLE CHECK.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:315) - Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@7c4dc992] on IDLE CHECK.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:315) - Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@56eccfff] on IDLE CHECK.
+18.11.2013 00:36:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:36:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:319) - Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@5b72fb19] on IDLE CHECK has SUCCEEDED.
+18.11.2013 00:36:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:319) - Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@7c4dc992] on IDLE CHECK has SUCCEEDED.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:315) - Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@2e89d95c] on IDLE CHECK.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:315) - Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@7122cd6d] on IDLE CHECK.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:319) - Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@56eccfff] on IDLE CHECK has SUCCEEDED.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:315) - Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@e15a325] on IDLE CHECK.
+18.11.2013 00:36:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:36:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:319) - Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@2e89d95c] on IDLE CHECK has SUCCEEDED.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:319) - Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@7122cd6d] on IDLE CHECK has SUCCEEDED.
+18.11.2013 00:36:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:315) - Testing PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1] on IDLE CHECK.
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:319) - Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@e15a325] on IDLE CHECK has SUCCEEDED.
+18.11.2013 00:36:50 DEBUG (GooGooStatementCache.java:297) - checkinAll(): com.mchange.v2.c3p0.stmt.GlobalMaxOnlyStatementCache stats -- total size: 0; checked out: 0; num connections: 0; num keys: 0
+18.11.2013 00:36:50 DEBUG (C3P0PooledConnectionPool.java:319) - Test of PooledConnection [com.mchange.v2.c3p0.impl.NewPooledConnection@575adbd1] on IDLE CHECK has SUCCEEDED.
+[INFO] Jetty server exiting.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1:17.776s
+[INFO] Finished at: Mon Nov 18 00:37:05 BRST 2013
+[INFO] Final Memory: 14M/244M
+[INFO] ------------------------------------------------------------------------
+Deseja finalizar o arquivo em lotes (S/N)? 
+Deseja finalizar o arquivo em lotes (S/N)? 
