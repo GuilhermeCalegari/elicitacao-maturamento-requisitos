@@ -28,10 +28,11 @@
 		<param-value>none</param-value>
 	</context-param>
 	
-	<listener>
-	   <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
-	</listener> 
-	  
+	<context-param>
+		<param-name>javax.faces.CONFIG_FILES</param-name>
+		<param-value>/WEB-INF/faces-config.xml</param-value>
+	</context-param>
+		 
 	<!-- Welcome Page -->
 	<welcome-file-list>
 		<welcome-file>/index.xhtml</welcome-file>
