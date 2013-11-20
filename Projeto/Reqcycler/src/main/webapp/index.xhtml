@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">  
+ <h:head><title>Teste</title></h:head>  
+ <h:body>
+     <h:form>      
+	     <table> 
+		     <tr>
+		     	<td><h:outputLabel for="login" value="Login : " /></td>
+		     	<td><p:inputText id="login" value="#{userController.login}">
+		     			<f:validateLength minimum="5" /> 
+		     		    <p:ajax event="blur" update="loginMsg" />
+		     		</p:inputText>
+		     		<p:message id="loginMsg" for="login" display="icon"/> 
+		     	</td>
+		     </tr>
+		     <tr>
+		     	<td><h:outputLabel for="password" value="Password : " /></td>
+		     	<td><p:inputText id="password" value="#{userController.password}">
+		     			<f:validateLength minimum="5" /> 
+		     		    <p:ajax event="blur" update="passwordMsg" />
+		     		</p:inputText>
+		     		<p:message id="passwordMsg" for="password" display="icon"/> 
+		     	</td>
+		     </tr>
+		     <tr>
+		     	<td><h:outputLabel for="name" value="Name : " /></td>
+		     	<td><p:inputText id="name" value="#{userController.name}">
+		     			<f:validateLength minimum="5" /> 
+		     			<p:ajax event="blur" update="nameMsg" />
+		     		</p:inputText>
+		     		<p:message id="nameMsg" for="name" display="icon"/> 
+		     	</td>
+		     </tr>		             
+	         <tr>
+		     	<td><p:commandButton id="addUser" value="Add" action="#{userController.addUser}" ajax="false"/></td>
+		     	<td><p:commandButton id="reset" value="Reset" action="#{userController.reset}" ajax="false"/></td>
+		     </tr>   
+	     </table>
+     </h:form>      
+</h:body>
+</html> 
