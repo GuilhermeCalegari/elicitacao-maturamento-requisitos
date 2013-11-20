@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+    <ui:param name="securityController" value="#securityController"  />
+
+
+<ul>
+	<li>		
+		<h:outputLink value="/Reqcycler/index.xhtml" rendered="#{(userController.loggedUser) == true}">
+			<h:outputText value="#{msg.menu_home}" />
+		</h:outputLink>
+	</li>		
+	<li><h:outputLink value="#" rendered="#{(userController.loggedUser) == true}">
+				<h:outputText value="#{msg.menu_cadastrar}" />
+		</h:outputLink>	
+		<ul>
+			<li>			
+			<h:outputLink value="/Reqcycler/usuario.xhtml" rendered="#{(userController.loggedUser) == true}">
+				<h:outputText value="#{msg.menu_usuario}" />
+			</h:outputLink>
+			</li>		
+	   </ul>
+  	</li>	
+	<li>
+		<h:form>
+			<h:commandLink actionListener="#{userController.logout}" rendered="#{(userController.loggedUser) == true}">
+				<h:outputText value="#{msg.menu_logout}" />
+			</h:commandLink>
+		</h:form>
+	</li>
+</ul>
+		
+</ui:composition>
