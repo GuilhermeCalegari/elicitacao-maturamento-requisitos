@@ -1,0 +1,90 @@
+.content{
+	background-color: #FFFFFF;
+	padding: 0px;
+	margin: 0px;
+	width:950px;
+}
+
+.menulink { color:#000 !important;text-decoration:none; }
+.menulink:hover { text-decoration:underline; }
+
+#page { margin:auto; background-color:#F3F2F2;width:100%;height:100%; }
+
+#menuPage { width:100%; height:40px;padding-top:5px;text-align:center;border:0;}
+
+#contentPage { float:left; width:450px; background-color: #F3F2F2;}
+
+#rightPage {  float:right; width: 200px;  }
+
+#menu { width:200px;float:left; }
+
+#contentView { float:left;margin-left:5px;width:82%; }
+
+#bottomPage {
+	height:20px;
+	color:#212758;
+	background-color:#f5f8f9;
+	text-align:center;
+	/*margin-top:10px;*/
+	font-size:11px;
+	font-weight:bold;
+	padding-top:10px;
+}
+	
+.bgTop { background-color:#212758; }
+
+.lblTop { color:#FFFFFF; font-weight:bold; font-size:18px; padding-top:7px; padding-bottom:5px; text-align:center; }
+
+.lblLocked { color:#FFFFFF; font-weight:bold; font-size:18px; padding-top:7px; padding-bottom:5px; text-align:center; }
+
+
+
+.clear { clear:both; }
+
+
+textarea[type="textarea"], input[type="text"], input[type="password"], select {
+	background-color: #FFFFFF;
+    border-color: #C0C0C0;
+    color: #000000;
+    font-family: Arial,Verdana,sans-serif;
+    padding:2px;
+    font-size: 11px;
+}
+
+.botao {height:23px;width:75px;}
+
+.separator { display:static;width:15px; }
+
+/* NO-BORDER LAYOUT */
+.ui-layout-unit-top .ui-layout-bd{
+   border: 0;
+   text-align:center;
+   background:#212758;
+}
+.ui-layout-unit-bottom .ui-layout-bd{
+   border: 0;
+   text-align:center;
+   background:#f2f5f5;
+}
+.ui-layout-unit-center .ui-layout-bd{
+   border: 0;
+   background: #F8F9F9;
+
+}
+.ui-layout-unit-right .ui-layout-bd{
+   border: 1;
+   background: #F8F9F9;
+}
+
+	.ui-widget-content { border: 1px solid #a6c9e2; background: #fcfdfd url(/Reqcycler/resources/images/theme/ui-bg_inset-hard_100_fcfdfd_1x100.png) 50% bottom repeat-x; color: #222222; }
+		.ui-widget-header { border: 1px solid #4297d7; background: #5a9fd3 url(/Reqcycler/resources/images/theme/ui-bg_gloss-wave_55_5a9fd3_500x100.png) 50% 50% repeat-x; color: #ffffff; font-weight: bold; }
+		.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { border: 1px solid #c5dbec; background: #dfeffc url(/Reqcycler/resources/images/theme/ui-bg_flat_85_dfeffc_40x100.png) 50% 50% repeat-x; font-weight: bold; color: #2e6e9e; }
+		.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus { border: 1px solid #79b7e7; background: #d0e5f5 url(/Reqcycler/resources/images/theme/ui-bg_flat_75_d0e5f5_40x100.png) 50% 50% repeat-x; font-weight: bold; color: #34209d; }
+		.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { border: 1px solid #79b7e7; background: #f5f8f9 url(/Reqcycler/resources/images/theme/ui-bg_inset-hard_100_f5f8f9_1x100.png) 50% 50% repeat-x; font-weight: bold; color: #f57f14; }
+		.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  {border: 1px solid #fad42e; background: #fbef9d url(/Reqcycler/resources/images/theme/ui-bg_flat_55_fbef9d_40x100.png) 50% 50% repeat-x; color: #363636; }
+		.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec url(/Reqcycler/resources/images/theme/ui-bg_glass_95_fef1ec_1x400.png) 50% 50% repeat-x; color: #cd0a0a; }
+		.ui-icon { width: 16px; height: 16px; background-image: url(/Reqcycler/resources/images/theme/ui-icons_469bdd_256x240.png); }
+		.ui-widget-content .ui-icon {background-image: url(/Reqcycler/resources/images/theme/ui-icons_469bdd_256x240.png); }
+		.ui-widget-header .ui-icon {background-image: url(/Reqcycler/resources/images/theme/ui-icons_d8e7f3_256x240.png); }
+		.ui-state-default .ui-icon { background-image: url(/Reqcycler/resources/images/theme/ui-icons_6da8d5_256x240.png); }
+		.ui-icon-home { background-position: 0 -112px; }

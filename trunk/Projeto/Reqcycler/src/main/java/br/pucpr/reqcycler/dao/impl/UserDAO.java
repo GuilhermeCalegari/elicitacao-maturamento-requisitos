@@ -2,12 +2,13 @@ package br.pucpr.reqcycler.dao.impl;
 
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 import br.pucpr.reqcycler.dao.IUserDAO;
 import br.pucpr.reqcycler.model.User;
+import br.pucpr.reqcycler.util.EntityManagerControl;
 
 /**
  * 
@@ -17,23 +18,9 @@ import br.pucpr.reqcycler.model.User;
  *
  */
 
+@ManagedBean(name="userDAO")
+@SessionScoped
 public class UserDAO implements IUserDAO {		
-
-	protected EntityManager entityManager;
-	 
-    public UserDAO() {
-        entityManager = getEntityManager();
-    }
- 
-    private EntityManager getEntityManager() {
-        EntityManagerFactory factory = Persistence
-                .createEntityManagerFactory("ReqcyclerPU");
-        if (entityManager == null) {
-            entityManager = factory.createEntityManager();
-        }
- 
-        return entityManager;
-    }
 
 	/**
 	 * Add User
@@ -41,6 +28,8 @@ public class UserDAO implements IUserDAO {
 	 * @param  User user
 	 */	
 	public void addUser(User user) {
+		EntityManager entityManager =
+				EntityManagerControl.createEntityManager();
 		entityManager.getTransaction().begin();
 		entityManager.persist(user);
 		entityManager.getTransaction().commit();		
@@ -52,6 +41,8 @@ public class UserDAO implements IUserDAO {
 	 * @param  User user
 	 */
 	public void deleteUser(User user) {
+		  EntityManager entityManager =
+				EntityManagerControl.createEntityManager();
 		  entityManager.getTransaction().begin();
           user = entityManager.find(User.class, user.getId());
           entityManager.remove(user);
@@ -64,6 +55,8 @@ public class UserDAO implements IUserDAO {
 	 * @param  User user
 	 */	
 	public void updateUser(User user) {
+		EntityManager entityManager =
+				EntityManagerControl.createEntityManager();
 		entityManager.getTransaction().begin();
         entityManager.merge(user);
         entityManager.getTransaction().commit();
@@ -76,6 +69,8 @@ public class UserDAO implements IUserDAO {
 	 * @return User 
 	 */	
 	public User getUserById(int id) {
+		EntityManager entityManager =
+				EntityManagerControl.createEntityManager();
 		List list = entityManager.createQuery("FROM User WHERE id = " + id).getResultList();
 		return (User)list.get(0);
 	}
@@ -86,6 +81,8 @@ public class UserDAO implements IUserDAO {
 	 * @return List - User list
 	 */	
 	public List<User> getUsers() {
+		EntityManager entityManager =
+				EntityManagerControl.createEntityManager();
 		List list = entityManager.createQuery("FROM " + User.class.getName())
                 .getResultList();
 		return list;

@@ -30,7 +30,7 @@ public class User {
 	 * @return int - User Id
 	 */
 	@Id
-	@SequenceGenerator( name = "USER_ID", sequenceName = "CLIENTE_SEQ", allocationSize = 1 )  
+	@SequenceGenerator( name = "USER_ID", sequenceName = "USER_ID", allocationSize = 1 )  
     @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "USER_ID" )  
 	@Column(name="ID", unique = true, nullable = false)
 	public int getId() {

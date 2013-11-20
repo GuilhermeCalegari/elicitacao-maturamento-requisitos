@@ -2,7 +2,10 @@ package br.pucpr.reqcycler.service.impl;
 
 import java.util.List;
 
-import br.pucpr.reqcycler.dao.IUserDAO;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
+
 import br.pucpr.reqcycler.dao.impl.UserDAO;
 import br.pucpr.reqcycler.model.User;
 import br.pucpr.reqcycler.service.IUserService;
@@ -14,13 +17,15 @@ import br.pucpr.reqcycler.service.IUserService;
  * @author Rodrigo Moreschi Valoski
  *
  */
-
+@ManagedBean(name="userService")
+@SessionScoped
 public class UserService implements IUserService {
 				
-	private IUserDAO userDAO;
-			
-	public UserService() {
-		super();		
+	@ManagedProperty(value = "#{userDAO}")
+	private UserDAO userDAO;
+	
+	public void setUserDAO(UserDAO userDAO) {
+		this.userDAO = userDAO;
 	}
 
 	/**
@@ -28,8 +33,7 @@ public class UserService implements IUserService {
 	 * 
 	 * @param  User user
 	 */	
-	public void addUser(User user) {
-		userDAO = new UserDAO();
+	public void addUser(User user) {		
 		userDAO.addUser(user);
 	}
 
@@ -39,7 +43,7 @@ public class UserService implements IUserService {
 	 * @param  User user
 	 */	
 	public void deleteUser(User user) {
-		getUserDAO().deleteUser(user);
+		userDAO.deleteUser(user);
 	}
 	
 	/**
@@ -48,7 +52,7 @@ public class UserService implements IUserService {
 	 * @param  User user
 	 */		
 	public void updateUser(User user) {
-		getUserDAO().updateUser(user);
+		userDAO.updateUser(user);
 	}
 	
 	/**
@@ -57,7 +61,7 @@ public class UserService implements IUserService {
 	 * @param  int User Id
 	 */	
 	public User getUserById(int id) {
-		return getUserDAO().getUserById(id);
+		return userDAO.getUserById(id);
 	}
 
 	/**
@@ -65,25 +69,9 @@ public class UserService implements IUserService {
 	 * 
 	 */	
 	public List<User> getUsers() {	
-		return getUserDAO().getUsers();
+		return userDAO.getUsers();
 	}
 
-	/**
-	 * Get User DAO
-	 * 
-	 * @return IUserDAO - User DAO
-	 */
-	public IUserDAO getUserDAO() {
-		return userDAO;
-	}
-
-	/**
-	 * Set User DAO
-	 * 
-	 * @param IUserDAO - User DAO
-	 */
-	public void setUserDAO(IUserDAO userDAO) {
-		this.userDAO = userDAO;
-	}
+	
 
 }

@@ -32,7 +32,12 @@
 			<url>http://repository.primefaces.org</url>
 			<layout>default</layout>
 		</repository>
+		<repository>
+			<id>projectlombok.org</id>
+			<url>http://projectlombok.org/mavenrepo</url>
+		</repository>
 	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.sun.faces</groupId>
@@ -90,20 +95,10 @@
 			<version>2.3.1</version>
 		</dependency>
 		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib-nodep</artifactId>
-			<version>3.0</version>
-		</dependency>
-		<dependency>
-			<groupId>c3p0</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.1.2</version>
-		</dependency>
-		<dependency>
 			<groupId>org.primefaces.themes</groupId>
-			<artifactId>bootstrap</artifactId>
-			<version>1.0.9</version>
-		</dependency>
+			<artifactId>redmond</artifactId>
+			<version>1.0.10</version>
+		</dependency>	
 	</dependencies>
-	
+
 </project>

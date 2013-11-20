@@ -23,8 +23,12 @@
 	</context-param>
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
-		<param-value>bootstrap</param-value>
+		<param-value>redmond</param-value>
 	</context-param>
+	
+	<listener>
+		<listener-class>br.pucpr.reqcycler.util.EntityManagerControl</listener-class>
+	</listener>
 	
 	<welcome-file-list>
 		<welcome-file>index.jsf</welcome-file>
