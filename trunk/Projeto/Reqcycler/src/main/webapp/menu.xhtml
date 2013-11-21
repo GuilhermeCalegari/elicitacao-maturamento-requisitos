@@ -3,35 +3,26 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui" >
 
 	<ui:param name="securityController" value="#securityController" />
 	
-	<ul>
-		<li>			
-			<h:outputLink value="#"	rendered="#{(usuarioController.usuarioLogado) != null}">
-				<h:outputText value="#{msg.menu_home}" />
-			</h:outputLink>			
-		</li>
-		<li>			
-			<h:outputLink value="#" rendered="#{(usuarioController.usuarioLogado) != null}">
-				<h:outputText value="#{msg.menu_cadastrar}" />
-			</h:outputLink>			
+	<ul>		
+		<h:panelGroup rendered="#{(usuarioController.usuarioLogado) != null}">
+		<li><h:link value="#{msg.menu_home}" outcome="index" /></li>
+		<li><h:link value="#{msg.menu_cadastrar}" outcome="usuario" />						
 			<ul>
-				<li>
-					<h:outputLink value="/Reqcycler/usuario.xhtml" rendered="#{(usuarioController.usuarioLogado) != null}" >
-						<h:outputText value="#{msg.menu_usuario}" />
-					</h:outputLink>					
-				</li>				
+				<li><h:link value="#{msg.menu_usuario}" outcome="usuario" /></li>							
 			</ul>
 		</li>
 		<li>
 			<h:form>
-				<h:commandLink action="#{usuarioController.logout}" rendered="#{(usuarioController.usuarioLogado) != null}">
+				<h:commandLink action="#{usuarioController.logout}">
 					<h:outputText value="#{msg.menu_logout}" />
 				</h:commandLink>
 			</h:form>
 		</li>
+		</h:panelGroup>
 	</ul>
 
 </ui:composition>

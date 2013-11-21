@@ -24,29 +24,37 @@
 						<td><h:outputLabel for="nome" value="Nome : " /></td>
 						<td>
 							<p:inputText id="nome" value="#{usuarioController.usuario.nome}">
-								<f:validateLength minimum="5" />
+								<f:validateLength minimum="4" />
+								<f:validateRequired />
 								<p:ajax event="blur" update="nomeMsg" />
-							</p:inputText> <p:message id="nomeMsg" for="nome" display="icon" />
+							</p:inputText>
+							<p:message id="nomeMsg" for="nome" display="icon" />
 						</td>
 					</tr>
 					<tr>
 						<td><h:outputLabel for="sobrenome" value="Sobrenome : " /></td>
 						<td>
 							<p:inputText id="sobrenome" value="#{usuarioController.usuario.sobrenome}">
-								<f:validateLength minimum="5" />
+								<f:validateLength minimum="4" />
+								<f:validateRequired />
 								<p:ajax event="blur" update="sobrenomeMsg" />
-							</p:inputText> <p:message id="sobrenomeMsg" for="sobrenome" display="icon" />						
-						</td>
+							</p:inputText>
+							<p:message id="sobrenomeMsg" for="sobrenome" display="icon" />						
+						</td>						
 					</tr>
 					<tr>
 						<td><h:outputLabel for="dataNascimento" value="Nascimento : " /></td>												
 						<td>
-							<p:calendar value="#{usuarioController.usuario.dataNascimento}" id="dataNascimento" showOn="button" />
+							<p:calendar value="#{usuarioController.usuario.dataNascimento}" id="dataNascimento" showOn="button">
+								<f:validateRequired />
+								<p:ajax event="blur" update="dataNascimentoMsg" />
+							</p:calendar>							
 							<p:dialog header="Selected Dates" widgetVar="dialog" showEffect="fade" hideEffect="fade">  								
 								<h:outputText   id="popupButtonCalendario" value="#{calendarioBean.date}">
 									<f:convertDateTime pattern="dd/MM/yyyy" /> 			 		
 								</h:outputText > 																
 							</p:dialog> 
+							<p:message id="dataNascimentoMsg" for="dataNascimento" display="icon" />	
 						</td>
 					</tr>
 					<tr>
@@ -54,18 +62,22 @@
 						<td>
 							<p:inputText id="login" value="#{usuarioController.usuario.login}">
 								<f:validateLength minimum="5" />
+								<f:validateRequired />
 								<p:ajax event="blur" update="loginMsg" />
-							</p:inputText> <p:message id="loginMsg" for="login" display="icon" />
-						</td>
+							</p:inputText>
+							<p:message id="loginMsg" for="login" display="icon" />
+						</td>						
 					</tr>
 					<tr>
 						<td><h:outputLabel for="senha" value="Senha : " /></td>
-						<td>
-							<p:inputText id="senha" value="#{usuarioController.usuario.senha}">
-								<f:validateLength minimum="5" />
-								<p:ajax event="blur" update="senhaMsg" />
-							</p:inputText> <p:message id="senhaMsg" for="senha" display="icon" />
-						</td>
+						<td>						
+							<p:password id="senha" value="#{usuarioController.usuario.senha}" feedback="true">
+								<f:validateLength minimum="8" />
+								<f:validateRequired />
+								<p:ajax event="blur" update="senhaMsg" />						
+							</p:password> 
+							<p:message id="senhaMsg" for="senha" display="icon" />
+						</td>						
 					</tr>
 					<tr>
 						<td>
