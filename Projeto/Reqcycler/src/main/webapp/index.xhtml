@@ -20,18 +20,18 @@
 					<p:growl id="growl" showDetail="true" sticky="true" />
 
 					<h:form id="painel_login"
-						rendered="#{(userController.loggedUser) == false}">
+						rendered="#{(usuarioController.usuarioLogado) == null}">
 						<h:outputText for="login" value="Login: " />
-						<p:inputText id="login" value="#{userController.login}"
+						<p:inputText id="login" value="#{usuarioController.usuario.login}"
 							style="margin-left:4px"></p:inputText>
 						<br />
 
 						<h:outputText for="senha" value="Senha: " />
-						<p:password id="senha" value="#{userController.password}"></p:password>
+						<p:password id="senha" value="#{usuarioController.usuario.senha}"></p:password>
 						<br />
 
 						<p:commandButton id="botao_entrar" value="Entrar"
-							actionListener="#{userController.logon}" ajax="false" />
+							actionListener="#{usuarioController.logon}" ajax="false" />
 					</h:form>
 				</center>
 			</p:panel>

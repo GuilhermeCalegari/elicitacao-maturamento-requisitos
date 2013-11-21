@@ -8,58 +8,84 @@
 	<ui:define name="content">
 
 		<style type="text/css">
-			html.progress,html.progress * {
-				cursor: progress !important;
-			}
+		html.progress,html.progress * {
+			cursor: progress !important;
+		}
 		</style>
 
-		<h:form>
-		
-		 <p:panel header="Cadastrar Usuário">
-		 
-		 <p:growl id="growl" showDetail="true" sticky="true"/>
-		       
-	     <table> 
-		     <tr>
-		     	<td><h:outputLabel for="login" value="Login : " /></td>
-		     	<td><p:inputText id="login" value="#{userController.login}">
-		     			<f:validateLength minimum="5" /> 
-		     		    <p:ajax event="blur" update="loginMsg" />
-		     		</p:inputText>
-		     		<p:message id="loginMsg" for="login" display="icon"/> 
-		     	</td>
-		     </tr>
-		     <tr>
-		     	<td><h:outputLabel for="password" value="Password : " /></td>
-		     	<td><p:inputText id="password" value="#{userController.password}">
-		     			<f:validateLength minimum="5" /> 
-		     		    <p:ajax event="blur" update="passwordMsg" />
-		     		</p:inputText>
-		     		<p:message id="passwordMsg" for="password" display="icon"/> 
-		     	</td>
-		     </tr>
-		     <tr>
-		     	<td><h:outputLabel for="name" value="Name : " /></td>
-		     	<td><p:inputText id="name" value="#{userController.name}">
-		     			<f:validateLength minimum="5" /> 
-		     			<p:ajax event="blur" update="nameMsg" />
-		     		</p:inputText>
-		     		<p:message id="nameMsg" for="name" display="icon"/> 
-		     	</td>
-		     </tr>		             
-	         <tr>
-		     	<td><p:commandButton id="addUser" value="Add" action="#{userController.addUser}" ajax="false"/></td>
-		     	<td><p:commandButton id="reset" value="Reset" action="#{userController.reset}" ajax="false"/></td>
-		     </tr>   
-	     </table>
-	     </p:panel>
-     	</h:form>      
-		
+		<h:form rendered="#{(usuarioController.usuarioLogado) != null}">
+					 
+			<p:panel header="Cadastrar Usuario">
+
+				<p:growl id="growl" showDetail="true" sticky="true" />
+
+				<table>					
+					<tr>
+						<td><h:outputLabel for="nome" value="Nome : " /></td>
+						<td>
+							<p:inputText id="nome" value="#{usuarioController.usuario.nome}">
+								<f:validateLength minimum="5" />
+								<p:ajax event="blur" update="nomeMsg" />
+							</p:inputText> <p:message id="nomeMsg" for="nome" display="icon" />
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="sobrenome" value="Sobrenome : " /></td>
+						<td>
+							<p:inputText id="sobrenome" value="#{usuarioController.usuario.sobrenome}">
+								<f:validateLength minimum="5" />
+								<p:ajax event="blur" update="sobrenomeMsg" />
+							</p:inputText> <p:message id="sobrenomeMsg" for="sobrenome" display="icon" />						
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="dataNascimento" value="Nascimento : " /></td>												
+						<td>
+							<p:calendar value="#{usuarioController.usuario.dataNascimento}" id="dataNascimento" showOn="button" />
+							<p:dialog header="Selected Dates" widgetVar="dialog" showEffect="fade" hideEffect="fade">  								
+								<h:outputText   id="popupButtonCalendario" value="#{calendarioBean.date}">
+									<f:convertDateTime pattern="dd/MM/yyyy" /> 			 		
+								</h:outputText > 																
+							</p:dialog> 
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="login" value="Login : " /></td>
+						<td>
+							<p:inputText id="login" value="#{usuarioController.usuario.login}">
+								<f:validateLength minimum="5" />
+								<p:ajax event="blur" update="loginMsg" />
+							</p:inputText> <p:message id="loginMsg" for="login" display="icon" />
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="senha" value="Senha : " /></td>
+						<td>
+							<p:inputText id="senha" value="#{usuarioController.usuario.senha}">
+								<f:validateLength minimum="5" />
+								<p:ajax event="blur" update="senhaMsg" />
+							</p:inputText> <p:message id="senhaMsg" for="senha" display="icon" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p:commandButton id="adicionaUsuario" value="Add"
+								action="#{usuarioController.adicionaUsuario}" ajax="false" />
+						</td>
+						<td>
+							<p:commandButton id="limparCampos" value="Limpar"
+								action="#{usuarioController.limparUsuario}" ajax="false" />
+						</td>
+					</tr>
+				</table>
+			</p:panel>
+		</h:form>
+
 		<script>
 			$(document).ajaxStart(function() {
-			    $("html").addClass("progress");
+				$("html").addClass("progress");
 			}).ajaxStop(function() {
-			    $("html").removeClass("progress");
+				$("html").removeClass("progress");
 			});
 		</script>
 
