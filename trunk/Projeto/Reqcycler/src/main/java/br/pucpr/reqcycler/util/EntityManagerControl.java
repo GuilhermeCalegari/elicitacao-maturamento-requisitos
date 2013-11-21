@@ -6,34 +6,34 @@ import javax.persistence.Persistence;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-/** 
+/**
  * 
  * EntityManagerFactory
  * 
  * @author Rodrigo Moreschi Valoski
- *
+ * 
  */
 
-  public class EntityManagerControl implements ServletContextListener {
+public class EntityManagerControl implements ServletContextListener {
 
-     private static EntityManagerFactory emf;
+	private static EntityManagerFactory emf;
 
-     @Override
-     public void contextInitialized(ServletContextEvent event) {
-         emf = Persistence.createEntityManagerFactory("ReqcyclerPU");
-     }
+	@Override
+	public void contextInitialized(ServletContextEvent event) {
+		emf = Persistence.createEntityManagerFactory("ReqcyclerPU");
+	}
 
-     @Override
-     public void contextDestroyed(ServletContextEvent event) {
-         emf.close();
-     }
+	@Override
+	public void contextDestroyed(ServletContextEvent event) {
+		emf.close();
+	}
 
-     public static EntityManager createEntityManager() {
-         if (emf == null) {
-             throw new IllegalStateException("Context is not initialized yet.");
-         }
+	public static EntityManager createEntityManager() {
+		if (emf == null) {
+			throw new IllegalStateException("Context is not initialized yet.");
+		}
 
-         return emf.createEntityManager();
-     }
+		return emf.createEntityManager();
+	}
 
- }
+}
