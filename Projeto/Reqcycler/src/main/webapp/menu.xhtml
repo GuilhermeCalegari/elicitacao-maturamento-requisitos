@@ -9,12 +9,36 @@
 	
 	<ul>		
 		<h:panelGroup rendered="#{(usuarioController.usuarioLogado) != null}">
-		<li><h:link value="#{msg.menu_home}" outcome="index" /></li>
-		<li><h:link value="#{msg.menu_cadastrar}" outcome="usuario" />						
+		
+		<li>
+			<h:link value="#{msg.menu_home}" outcome="index" />
+		</li>
+		
+		<li><h:link value="#{msg.menu_projeto}"/>						
 			<ul>
-				<li><h:link value="#{msg.menu_usuario}" outcome="usuario" /></li>							
+				<li>
+					<h:link value="#{msg.menu_cadastrar}"/>
+					<ul>
+						<li>
+							<h:link value="#{msg.menu_usuario}" outcome="usuario" />
+						</li>
+					</ul>
+				</li>								
+			</ul>			
+		</li>
+		
+		<li>
+			<h:link value="#{msg.menu_requisito}" />
+		</li>
+		
+		<li>						
+			<ul>
+				<li>
+					<h:link value="#{msg.menu_cadastrar}" />
+				</li>							
 			</ul>
 		</li>
+		
 		<li>
 			<h:form>
 				<h:commandLink action="#{usuarioController.logout}">
@@ -22,6 +46,7 @@
 				</h:commandLink>
 			</h:form>
 		</li>
+		
 		</h:panelGroup>
 	</ul>
 

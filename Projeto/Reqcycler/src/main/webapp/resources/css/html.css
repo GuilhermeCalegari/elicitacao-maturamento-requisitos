@@ -1,24 +1,24 @@
-body { 
-	margin:0; 
-	padding:0; 
-	font-family:Arial,Tahoma,Helvetica; 
-	font-size:11px; 
-	background-color:#8EA4AF; 
-	}
-	
-#container { 
-	width:100%; 
-	background-color:#F3F2F2;
-	}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Tahoma, Helvetica;
+	font-size: 11px;
+	background-color: #8EA4AF;
+}
 
-#headPage { 
-	background-color:#212758; 
-	width:100%; 
-	height:40px;
-	padding-top:5px;
-	text-align:center;
-	border:0;
-	}
+#container {
+	width: 100%;
+	background-color: #F3F2F2;
+}
+
+#headPage {
+	background-color: #212758;
+	width: 100%;
+	height: 40px;
+	padding-top: 5px;
+	text-align: center;
+	border: 0;
+}
 
 #headPage h1 {
 	font-size: 18px;
@@ -30,45 +30,45 @@ body {
 	-webkit-margin-end: 0px;
 	margin-right: 4.0em;
 	font-weight: bold;
-	}
+}
 
 #headPage h2 {
-	position:absolute;
+	position: absolute;
 	left: 100px;
 	up: 10px;
-	margin-bottom:20px;
-	color:white; 
-	font-weight:bold;
-	font-size:14px;
-	}
+	margin-bottom: 20px;
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
+}
 
 #menuPage {
-	width:100%; 
-	}
-	
-#content {
-	height:70%;
-	width:100%;
-	float:left;
-	background: #F8F9F9;
-	}
-	
-#calendar {
-	height:70%;
-	width:20%;
-	float:left;
-	background: #F8F9F9;
-	}
-	
-#footer {
-	clear:both;
-	height:5%;
-	color:#212758;
-	background-color:#f5f8f9;
-	text-align:center;
-	}
+	width: 100%;
+}
 
-	.ui-widget-content {
+#content {
+	height: 70%;
+	width: 100%;
+	float: left;
+	background: #F8F9F9;
+}
+
+#calendar {
+	height: 70%;
+	width: 20%;
+	float: left;
+	background: #F8F9F9;
+}
+
+#footer {
+	clear: both;
+	height: 5%;
+	color: #212758;
+	background-color: #f5f8f9;
+	text-align: center;
+}
+
+.ui-widget-content {
 	border: 1px solid #a6c9e2;
 	background: #fcfdfd
 		url(/Reqcycler/resources/images/theme/ui-bg_inset-hard_100_fcfdfd_1x100.png)

@@ -96,9 +96,9 @@
 		</dependency>
 		<dependency>
 			<groupId>org.primefaces.themes</groupId>
-			<artifactId>redmond</artifactId>
-			<version>1.0.10</version>
-		</dependency>	
+			<artifactId>bootstrap</artifactId>
+			<version>1.0.9</version>
+		</dependency>
 	</dependencies>
 
 </project>
