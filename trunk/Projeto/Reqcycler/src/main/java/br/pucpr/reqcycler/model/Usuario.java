@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 
 /**
  * 
- * User Entity
+ * Usuario Entity
  * 
  * @author Rodrigo Moreschi Valoski
  *
@@ -36,8 +36,8 @@ public class Usuario {
 	 * @return the Id
 	 */
 	@Id
-	@SequenceGenerator( name = "USUARIO_ID", sequenceName = "USUARIO_SEQ", allocationSize = 1 )  
-    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "USUARIO_ID" )  
+	@SequenceGenerator( name = "USUARIO_SEQ", sequenceName = "USUARIO_SEQ", allocationSize = 1 )  
+    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "USUARIO_SEQ" )  
 	@Column(name="ID", unique = true, nullable = false)
 	public int getId() {
 		return id;

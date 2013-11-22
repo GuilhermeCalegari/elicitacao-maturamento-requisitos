@@ -6,66 +6,66 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
 
-import br.pucpr.reqcycler.dao.IUsuarioDAO;
-import br.pucpr.reqcycler.model.Usuario;
+import br.pucpr.reqcycler.dao.IRequisitoDAO;
+import br.pucpr.reqcycler.model.Requisito;
 import br.pucpr.reqcycler.util.EntityManagerControl;
 
 /**
  * 
- * Usuario DAO
+ * Requisito DAO
  * 
  * @author Rodrigo Moreschi Valoski
  *
  */
 
-@ManagedBean(name="usuarioDAO")
+@ManagedBean(name="requisitoDAO")
 @SessionScoped
-public class UsuarioDAO implements IUsuarioDAO {		
+public class RequisitoDAO implements IRequisitoDAO {		
 
 	
 	@Override
-	public void adicionaUsuario(Usuario usuario) {
+	public void adicionaRequisito(Requisito requisito) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
 		entityManager.getTransaction().begin();
-		entityManager.persist(usuario);
+		entityManager.persist(requisito);
 		entityManager.getTransaction().commit();		
 	}
 	
 	@Override	
-	public void atualizaUsuario(Usuario usuario) {
+	public void atualizaRequisito(Requisito requisito) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
 		entityManager.getTransaction().begin();
-        entityManager.merge(usuario);
+        entityManager.merge(requisito);
         entityManager.getTransaction().commit();
 	}
 	
 	@Override
-	public void deletaUsuario(Usuario usuario) {
+	public void deletaRequisito(Requisito requisito) {
 		  EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
 		  entityManager.getTransaction().begin();
-		  usuario = entityManager.find(Usuario.class, usuario.getId());
-          entityManager.remove(usuario);
+		  requisito = entityManager.find(Requisito.class, requisito.getId());
+          entityManager.remove(requisito);
           entityManager.getTransaction().commit();
 	}
 	
 	@Override
 	@SuppressWarnings("rawtypes")
-	public Usuario getUsuarioById(int id) {
+	public Requisito getRequisitoById(int id) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
 		List list = entityManager.createQuery("FROM USUARIO WHERE id = " + id).getResultList();
-		return (Usuario)list.get(0);
+		return (Requisito)list.get(0);
 	}
 
 	@Override
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public List<Usuario> getUsuarios() {
+	public List<Requisito> getRequisitos() {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();		
-		List list = entityManager.createQuery("FROM " + Usuario.class.getName())
+		List list = entityManager.createQuery("FROM " + Requisito.class.getName())
                 .getResultList();
 		return list;
 	}

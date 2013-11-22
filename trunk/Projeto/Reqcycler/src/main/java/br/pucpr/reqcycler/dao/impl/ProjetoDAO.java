@@ -6,66 +6,66 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
 
-import br.pucpr.reqcycler.dao.IUsuarioDAO;
-import br.pucpr.reqcycler.model.Usuario;
+import br.pucpr.reqcycler.dao.IProjetoDAO;
+import br.pucpr.reqcycler.model.Projeto;
 import br.pucpr.reqcycler.util.EntityManagerControl;
 
 /**
  * 
- * Usuario DAO
+ * Projeto DAO
  * 
  * @author Rodrigo Moreschi Valoski
  *
  */
 
-@ManagedBean(name="usuarioDAO")
+@ManagedBean(name="projetoDAO")
 @SessionScoped
-public class UsuarioDAO implements IUsuarioDAO {		
+public class ProjetoDAO implements IProjetoDAO {		
 
 	
 	@Override
-	public void adicionaUsuario(Usuario usuario) {
+	public void adicionaProjeto(Projeto projeto) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
 		entityManager.getTransaction().begin();
-		entityManager.persist(usuario);
+		entityManager.persist(projeto);
 		entityManager.getTransaction().commit();		
 	}
 	
 	@Override	
-	public void atualizaUsuario(Usuario usuario) {
+	public void atualizaProjeto(Projeto projeto) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
 		entityManager.getTransaction().begin();
-        entityManager.merge(usuario);
+        entityManager.merge(projeto);
         entityManager.getTransaction().commit();
 	}
 	
 	@Override
-	public void deletaUsuario(Usuario usuario) {
+	public void deletaProjeto(Projeto projeto) {
 		  EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
 		  entityManager.getTransaction().begin();
-		  usuario = entityManager.find(Usuario.class, usuario.getId());
-          entityManager.remove(usuario);
+		  projeto = entityManager.find(Projeto.class, projeto.getId());
+          entityManager.remove(projeto);
           entityManager.getTransaction().commit();
 	}
 	
 	@Override
 	@SuppressWarnings("rawtypes")
-	public Usuario getUsuarioById(int id) {
+	public Projeto getProjetoById(int id) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
 		List list = entityManager.createQuery("FROM USUARIO WHERE id = " + id).getResultList();
-		return (Usuario)list.get(0);
+		return (Projeto)list.get(0);
 	}
 
 	@Override
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public List<Usuario> getUsuarios() {
+	public List<Projeto> getProjetos() {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();		
-		List list = entityManager.createQuery("FROM " + Usuario.class.getName())
+		List list = entityManager.createQuery("FROM " + Projeto.class.getName())
                 .getResultList();
 		return list;
 	}

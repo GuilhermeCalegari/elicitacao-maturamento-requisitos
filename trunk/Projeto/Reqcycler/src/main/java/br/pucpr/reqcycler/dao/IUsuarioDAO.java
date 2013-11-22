@@ -6,7 +6,7 @@ import br.pucpr.reqcycler.model.Usuario;
 
 /**
  * 
- * User DAO Interface
+ * Usuario DAO Interface
  * 
  * @author Rodrigo Moreschi Valoski
  *
