@@ -12,7 +12,7 @@ import br.pucpr.reqcycler.service.IUsuarioService;
 
 /**
  * 
- * User Service
+ * Usuario Service
  * 
  * @author Rodrigo Moreschi Valoski
  *

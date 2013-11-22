@@ -14,7 +14,7 @@ import br.pucpr.reqcycler.service.impl.UsuarioService;
 
 /**
  * 
- * User Managed Bean
+ * Usuario Managed Bean
  * 
  * @author Rodrigo Moreschi Valoski
  *
