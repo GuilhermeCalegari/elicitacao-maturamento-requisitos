@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" template="/default.xhtml">
+
+	<ui:define name="content">
+
+		<style type="text/css">
+		html.progress,html.progress * {
+			cursor: progress !important;
+		}
+		</style>
+
+		<h:form rendered="#{(usuarioController.usuarioLogado) != null}">
+					 
+			<p:panel header="Cadastrar Usuario">
+
+				<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />  
+
+				<table>					
+					<tr>
+						<td><h:outputLabel for="nome" value="Nome : " /></td>
+						<td>
+							<p:inputText id="nome" value="#{usuarioController.usuario.nome}"  required="true" requiredMessage="Nome é um campo obrigatório">
+								<f:validateLength minimum="4" />								
+								<p:ajax event="blur" update="nomeMsg" />
+							</p:inputText>
+							<p:message id="nomeMsg" for="nome" display="icon" />
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="sobrenome" value="Sobrenome : "/></td>
+						<td>
+							<p:inputText id="sobrenome" value="#{usuarioController.usuario.sobrenome}">
+								<f:validateLength minimum="4"  required="true"/>							
+								<p:ajax event="blur" update="sobrenomeMsg" />
+							</p:inputText>
+							<p:message id="sobrenomeMsg" for="sobrenome" display="icon" />						
+						</td>						
+					</tr>
+					<tr>
+						<td><h:outputLabel for="dataNascimento" value="Nascimento : "/></td>												
+						<td>
+							<p:calendar value="#{usuarioController.usuario.dataNascimento}" id="dataNascimento" showOn="button"
+									    required="true" requiredMessage="Nascimento é um campo obrigatório"/>								
+							<p:dialog header="Selected Dates" widgetVar="dialog" showEffect="fade" hideEffect="fade">  								
+								<h:outputText   id="popupButtonCalendario" value="#{calendarioBean.date}">
+									<f:convertDateTime pattern="dd/MM/yyyy" /> 			 		
+								</h:outputText > 																
+							</p:dialog> 
+							<p:message id="dataNascimentoMsg" for="dataNascimento" display="icon" />	
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="email" value="Email : " /></td>
+						<td>
+							<p:inputText id="email" value="#{usuarioController.usuario.email}" required="true" requiredMessage="Email é um campo obrigatório">
+								<f:validateLength minimum="5" />								
+								<p:ajax event="blur" update="emailMsg" />
+							</p:inputText>
+							<p:message id="emailMsg" for="email" display="icon" />
+						</td>						
+					</tr>
+					<tr>
+						<td><h:outputLabel for="login" value="Login : " /></td>
+						<td>
+							<p:inputText id="login" value="#{usuarioController.usuario.login}" required="true" requiredMessage="Login é um campo obrigatório">
+								<f:validateLength minimum="5" />								
+								<p:ajax event="blur" update="loginMsg" />
+							</p:inputText>
+							<p:message id="loginMsg" for="login" display="icon" />
+						</td>						
+					</tr>
+					<tr>
+						<td><h:outputLabel for="senha" value="Senha : " /></td>
+						<td>						
+							<p:password id="senha" value="#{usuarioController.usuario.senha}" feedback="true" required="true" requiredMessage="Senha é um campo obrigatório">
+								<f:validateLength minimum="8" />								
+								<p:ajax event="blur" update="senhaMsg" />						
+							</p:password> 
+							<p:message id="senhaMsg" for="senha" display="icon" />
+						</td>						
+					</tr>
+					<tr>
+						<td>
+							<p:commandButton id="adicionaUsuario" value="Add"
+								action="#{usuarioController.adicionaUsuario}" ajax="false" />
+						</td>
+						<td>
+							<p:commandButton id="limparCampos" value="Limpar"
+								action="#{usuarioController.limparUsuario}" ajax="false" />
+						</td>
+					</tr>
+				</table>
+			</p:panel>
+		</h:form>
+
+		<script>
+			$(document).ajaxStart(function() {
+				$("html").addClass("progress");
+			}).ajaxStop(function() {
+				$("html").removeClass("progress");
+			});
+		</script>
+
+	</ui:define>
+
+</ui:composition>

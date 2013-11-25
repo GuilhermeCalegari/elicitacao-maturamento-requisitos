@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 
 import br.pucpr.reqcycler.dao.IProjetoDAO;
 import br.pucpr.reqcycler.model.Projeto;
+import br.pucpr.reqcycler.model.Usuario;
 import br.pucpr.reqcycler.util.EntityManagerControl;
 
 /**
@@ -26,7 +27,7 @@ public class ProjetoDAO implements IProjetoDAO {
 	@Override
 	public void adicionaProjeto(Projeto projeto) {
 		EntityManager entityManager =
-				EntityManagerControl.createEntityManager();
+				EntityManagerControl.createEntityManager();		
 		entityManager.getTransaction().begin();
 		entityManager.persist(projeto);
 		entityManager.getTransaction().commit();		

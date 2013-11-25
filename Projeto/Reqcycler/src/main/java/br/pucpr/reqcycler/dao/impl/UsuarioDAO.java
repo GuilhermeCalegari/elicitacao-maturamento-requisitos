@@ -59,6 +59,25 @@ public class UsuarioDAO implements IUsuarioDAO {
 		List list = entityManager.createQuery("FROM USUARIO WHERE id = " + id).getResultList();
 		return (Usuario)list.get(0);
 	}
+	
+	@Override
+	@SuppressWarnings({ "rawtypes" })
+	public Usuario getUsuarioByLogin(String login){
+		
+		List list = null;		
+		try{
+			EntityManager entityManager =
+					EntityManagerControl.createEntityManager();			
+			list = entityManager
+						.createQuery("FROM "  + Usuario.class.getName() + " WHERE LOGIN =  :login")
+						.setParameter("login", login)
+						.getResultList();
+		}catch(Exception ex){
+			ex.printStackTrace();
+			
+		}
+		return (Usuario)list.get(0);
+	}
 
 	@Override
 	@SuppressWarnings({ "rawtypes", "unchecked" })

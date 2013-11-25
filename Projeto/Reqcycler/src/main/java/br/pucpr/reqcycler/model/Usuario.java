@@ -17,49 +17,52 @@ import javax.persistence.TemporalType;
  * Usuario Entity
  * 
  * @author Rodrigo Moreschi Valoski
- *
+ * 
  */
 @Entity
-@Table(name="USUARIO")
+@Table(name = "USUARIO")
 public class Usuario {
 
 	private int id;
 	private String nome;
 	private String sobrenome;
-	private Date   dataNascimento;
-	private Date   dataInicio;
-	private Date   dataFim;
+	private Date dataNascimento;
+	private String email;
 	private String login;
 	private String senha;
-	
+	private Date dataInicio;
+	private Date dataFim;
+
 	/**
 	 * @return the Id
 	 */
 	@Id
-	@SequenceGenerator( name = "USUARIO_SEQ", sequenceName = "USUARIO_SEQ", allocationSize = 1 )  
-    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "USUARIO_SEQ" )  
-	@Column(name="ID", unique = true, nullable = false)
+	@SequenceGenerator(name = "USUARIO_SEQ", sequenceName = "USUARIO_SEQ", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USUARIO_SEQ")
+	@Column(name = "ID", unique = true, nullable = false)
 	public int getId() {
 		return id;
 	}
-	
-	/** 
-	 * @param id the id to set
+
+	/**
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	/**
 	 * @return the nome
 	 */
-	@Column(name="NOME", unique = false, nullable = false)
+	@Column(name = "NOME", unique = false, nullable = false)
 	public String getNome() {
 		return nome;
 	}
 
 	/**
-	 * @param nome the nome to set
+	 * @param nome
+	 *            the nome to set
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -68,13 +71,14 @@ public class Usuario {
 	/**
 	 * @return the sobreNome
 	 */
-	@Column(name="SOBRENOME", unique = false, nullable = true)
+	@Column(name = "SOBRENOME", unique = false, nullable = true)
 	public String getSobrenome() {
 		return sobrenome;
 	}
 
 	/**
-	 * @param sobreNome the sobreNome to set
+	 * @param sobreNome
+	 *            the sobreNome to set
 	 */
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
@@ -83,31 +87,81 @@ public class Usuario {
 	/**
 	 * @return the dataNascimento
 	 */
-	
-	@Column(name="DATA_NASCIMENTO", unique = false, nullable = false)
+
+	@Column(name = "DATA_NASCIMENTO", unique = false, nullable = false)
 	@Temporal(TemporalType.DATE)
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
 
 	/**
-	 * @param dataNascimento the dataNascimento to set
+	 * @param dataNascimento
+	 *            the dataNascimento to set
 	 */
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
 	/**
+	 * @return the email
+	 */
+	@Column(name = "EMAIL", unique = true, nullable = false)
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * @param email
+	 *            the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
+	 * @return the login
+	 */
+	@Column(name = "LOGIN", unique = true, nullable = false)
+	public String getLogin() {
+		return login;
+	}
+
+	/**
+	 * @param login
+	 *            the login to set
+	 */
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	/**
+	 * @return the senha
+	 */
+	@Column(name = "SENHA", unique = false, nullable = false)
+	public String getSenha() {
+		return senha;
+	}
+
+	/**
+	 * @param senha
+	 *            the senha to set
+	 */
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	/**
 	 * @return the dataInicio
 	 */
-	@Column(name="DATA_INICIO", unique = false, nullable = false)
+	@Column(name = "DATA_INICIO", unique = false, nullable = false)
 	@Temporal(TemporalType.DATE)
 	public Date getDataInicio() {
 		return dataInicio;
 	}
 
 	/**
-	 * @param dataInicio the dataInicio to set
+	 * @param dataInicio
+	 *            the dataInicio to set
 	 */
 	public void setDataInicio(Date dataInicio) {
 		this.dataInicio = dataInicio;
@@ -116,53 +170,24 @@ public class Usuario {
 	/**
 	 * @return the dataFim
 	 */
-	@Column(name="DATA_FIM", unique = false, nullable = true)
+	@Column(name = "DATA_FIM", unique = false, nullable = true)
 	@Temporal(TemporalType.DATE)
 	public Date getDataFim() {
 		return dataFim;
 	}
 
 	/**
-	 * @param dataFim the dataFim to set
+	 * @param dataFim
+	 *            the dataFim to set
 	 */
 	public void setDataFim(Date dataFim) {
 		this.dataFim = dataFim;
 	}
 
-	/**
-	 * @return the senha
-	 */
-	@Column(name="SENHA", unique = false, nullable = false)
-	public String getSenha() {
-		return senha;
-	}
-
-	/**
-	 * @param senha the senha to set
-	 */
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-	
-	/**
-	 * @return the login
-	 */
-	@Column(name="LOGIN", unique = true, nullable = false)
-	public String getLogin() {
-		return login;
-	}
-
-	/**
-	 * @param login the login to set
-	 */	
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
 	@Override
 	public String toString() {
 		StringBuffer strBuff = new StringBuffer();
-		strBuff.append("id : ").append(getId());			
+		strBuff.append("id : ").append(getId());
 		return strBuff.toString();
 	}
 }

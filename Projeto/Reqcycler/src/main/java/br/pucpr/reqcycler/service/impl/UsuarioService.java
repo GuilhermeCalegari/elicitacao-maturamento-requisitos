@@ -40,13 +40,17 @@ public class UsuarioService implements IUsuarioService {
 
 	@Override
 	public void deletaUsuario(Usuario usuario) {
-		usuarioDAO.deletaUsuario(usuario);
-		
+		usuarioDAO.deletaUsuario(usuario);	
 	}
 
 	@Override
 	public Usuario getUsuarioById(int id) {		
 		return usuarioDAO.getUsuarioById(id);
+	}
+	
+	@Override
+	public Usuario getUsuarioByLogin(String login){
+		return usuarioDAO.getUsuarioByLogin(login);
 	}
 
 	@Override

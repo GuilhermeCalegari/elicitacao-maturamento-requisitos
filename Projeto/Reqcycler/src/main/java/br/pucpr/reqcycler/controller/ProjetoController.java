@@ -9,7 +9,9 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import br.pucpr.reqcycler.enumeration.StatusProjetoEnum;
 import br.pucpr.reqcycler.model.Projeto;
+import br.pucpr.reqcycler.model.Usuario;
 import br.pucpr.reqcycler.service.impl.ProjetoService;
 
 /**
@@ -30,10 +32,18 @@ public class ProjetoController {
 	public void setProjetoService(ProjetoService projetoService) {
 		this.projetoService = projetoService;
 	}
-		
-	private Projeto projeto; 
-		
-	private Projeto projetoLogado;
+	
+	@ManagedProperty(value= "#{usuarioController.usuarioLogado}")
+	private Usuario usuarioLogado;		
+	
+	/**
+	 * @param usuarioLogado the usuarioLogado to set
+	 */
+	public void setUsuarioLogado(Usuario usuarioLogado) {
+		this.usuarioLogado = usuarioLogado;
+	}
+
+	private Projeto projeto; 		
 	
 	/**
 	 * Add User
@@ -43,7 +53,6 @@ public class ProjetoController {
 	
 	@PostConstruct
 	private void init(){
-		this.projetoLogado = null;
 		this.projeto = new Projeto();
 	}
 		
@@ -52,7 +61,10 @@ public class ProjetoController {
 		FacesContext context = FacesContext.getCurrentInstance();
 		try {			
 			
-			projeto.setDataCriado(new Date());						
+			
+			projeto.setSponsor(this.usuarioLogado);
+			projeto.setDataInicio(new Date());								
+			projeto.setStatus(StatusProjetoEnum.ABERTO);			
 			projetoService.adicionaProjeto(projeto);
 						
 			context.addMessage(null, new FacesMessage("Transação OK!", 
@@ -69,18 +81,7 @@ public class ProjetoController {
 		this.projeto = null;
 		this.projeto = new Projeto();
 	}	
-			
-	public void logon(){
-		this.projetoLogado = this.projeto;
-		limparProjeto();
-	}
-	
-	public String logout(){
-		this.projetoLogado = null;
-		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-	    return "/index.xhtml?faces-redirect=true";
-	}
-
+				
 	/**
 	 * @return the projeto
 	 */
@@ -93,20 +94,6 @@ public class ProjetoController {
 	 */
 	public void setProjeto(Projeto projeto) {
 		this.projeto = projeto;
-	}
-
-	/**
-	 * @return the projetoLogado
-	 */
-	public Projeto getProjetoLogado() {
-		return projetoLogado;
-	}
-
-	/**
-	 * @param projetoLogado the projetoLogado to set
-	 */
-	public void setProjetoLogado(Projeto projetoLogado) {
-		this.projetoLogado = projetoLogado;
 	}
 		
 }

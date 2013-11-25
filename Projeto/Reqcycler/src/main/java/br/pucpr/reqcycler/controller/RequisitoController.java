@@ -32,8 +32,6 @@ public class RequisitoController {
 	}
 		
 	private Requisito requisito; 
-		
-	private Requisito requisitoLogado;
 	
 	/**
 	 * Add User
@@ -42,8 +40,7 @@ public class RequisitoController {
 	 */
 	
 	@PostConstruct
-	private void init(){
-		this.requisitoLogado = null;
+	private void init(){		
 		this.requisito = new Requisito();
 	}
 		
@@ -69,17 +66,6 @@ public class RequisitoController {
 		this.requisito = null;
 		this.requisito = new Requisito();
 	}	
-			
-	public void logon(){
-		this.requisitoLogado = this.requisito;
-		limparRequisito();
-	}
-	
-	public String logout(){
-		this.requisitoLogado = null;
-		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-	    return "/index.xhtml?faces-redirect=true";
-	}
 
 	/**
 	 * @return the requisito
@@ -93,20 +79,6 @@ public class RequisitoController {
 	 */
 	public void setRequisito(Requisito requisito) {
 		this.requisito = requisito;
-	}
-
-	/**
-	 * @return the requisitoLogado
-	 */
-	public Requisito getRequisitoLogado() {
-		return requisitoLogado;
-	}
-
-	/**
-	 * @param requisitoLogado the requisitoLogado to set
-	 */
-	public void setRequisitoLogado(Requisito requisitoLogado) {
-		this.requisitoLogado = requisitoLogado;
 	}
 		
 }
