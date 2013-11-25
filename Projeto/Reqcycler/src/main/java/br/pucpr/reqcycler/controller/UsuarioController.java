@@ -58,15 +58,16 @@ public class UsuarioController {
 			context.addMessage(null, new FacesMessage("Transação OK!", 
 					                                  "USUARIO CRIADO COM SUCESSO!"));
 			
+			limparUsuario();
+			
 		} catch (Exception e) {										
 			context.addMessage(null, new FacesMessage("Transação NÃO OK!", 
 					                                  "USUARIO NÃO FOI CRIADO!"));
-		} 			
+		} 					
 
 	}
 	
-	public void limparUsuario() {
-		this.usuario = null;
+	public void limparUsuario() {		
 		this.usuario = new Usuario();
 	}	
 			

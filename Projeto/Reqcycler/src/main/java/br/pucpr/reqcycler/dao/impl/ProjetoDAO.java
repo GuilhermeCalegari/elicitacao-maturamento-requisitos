@@ -27,7 +27,12 @@ public class ProjetoDAO implements IProjetoDAO {
 	@Override
 	public void adicionaProjeto(Projeto projeto) {
 		EntityManager entityManager =
-				EntityManagerControl.createEntityManager();		
+				EntityManagerControl.createEntityManager();
+
+		//Detached to Transient
+		projeto.setSponsor(entityManager.
+				find(Usuario.class, projeto.getSponsor().getId()));
+								
 		entityManager.getTransaction().begin();
 		entityManager.persist(projeto);
 		entityManager.getTransaction().commit();		

@@ -13,6 +13,7 @@ import br.pucpr.reqcycler.enumeration.StatusProjetoEnum;
 import br.pucpr.reqcycler.model.Projeto;
 import br.pucpr.reqcycler.model.Usuario;
 import br.pucpr.reqcycler.service.impl.ProjetoService;
+import br.pucpr.reqcycler.service.impl.UsuarioService;
 
 /**
  * 
@@ -33,6 +34,13 @@ public class ProjetoController {
 		this.projetoService = projetoService;
 	}
 	
+	@ManagedProperty(value = "#{usuarioService}")
+	private UsuarioService usuarioService;
+	
+	public void setUsuarioService(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
+	}
+
 	@ManagedProperty(value= "#{usuarioController.usuarioLogado}")
 	private Usuario usuarioLogado;		
 	
@@ -61,7 +69,6 @@ public class ProjetoController {
 		FacesContext context = FacesContext.getCurrentInstance();
 		try {			
 			
-			
 			projeto.setSponsor(this.usuarioLogado);
 			projeto.setDataInicio(new Date());								
 			projeto.setStatus(StatusProjetoEnum.ABERTO);			
@@ -70,15 +77,17 @@ public class ProjetoController {
 			context.addMessage(null, new FacesMessage("Transação OK!", 
 					                                  "PROJETO CRIADO COM SUCESSO!"));
 			
-		} catch (Exception e) {										
-			context.addMessage(null, new FacesMessage("Transação NÃO OK!", 
+			limparProjeto();
+			
+		} catch (Exception e) {	
+			e.printStackTrace();
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Transação NÃO OK!", 
 					                                  "PROJETO NÃO FOI CRIADO!"));
-		} 			
+		} 					
 
 	}
 	
-	public void limparProjeto() {
-		this.projeto = null;
+	public void limparProjeto() {		
 		this.projeto = new Projeto();
 	}	
 				

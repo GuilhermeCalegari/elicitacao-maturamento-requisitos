@@ -56,8 +56,8 @@ public class UsuarioDAO implements IUsuarioDAO {
 	public Usuario getUsuarioById(int id) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
-		List list = entityManager.createQuery("FROM USUARIO WHERE id = " + id).getResultList();
-		return (Usuario)list.get(0);
+		Usuario usuario = entityManager.find(Usuario.class, id) ;
+		return usuario;
 	}
 	
 	@Override

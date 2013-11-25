@@ -40,8 +40,7 @@ public class ProjetoService implements IProjetoService {
 
 	@Override
 	public void deletaProjeto(Projeto projeto) {
-		projetoDAO.deletaProjeto(projeto);
-		
+		projetoDAO.deletaProjeto(projeto);		
 	}
 
 	@Override
