@@ -16,19 +16,25 @@
 		
 		<li><h:link value="#{msg.menu_projeto}"/>						
 			<ul>
+				<li><h:link value="#{msg.menu_cadastrar}" outcome="cadastrarProjeto" />
+				</li>
 				<li>
-					<h:link value="#{msg.menu_cadastrar}"/>
+					<h:link value="#{msg.menu_usuario}"/>
 					<ul>
 						<li>
-							<h:link value="#{msg.menu_usuario}" outcome="usuario" />
+							<h:link value="#{msg.menu_cadastrar}" outcome="cadastrarUsuario" />
 						</li>
 					</ul>
 				</li>								
 			</ul>			
 		</li>
 		
-		<li>
-			<h:link value="#{msg.menu_requisito}" />
+		<li><h:link value="#{msg.menu_requisito}"/>						
+			<ul>				
+				<li>
+					<h:link value="#{msg.menu_cadastrar}" outcome="cadastrarRequisito" />
+				</li>
+			</ul>			
 		</li>
 		
 		<li>						

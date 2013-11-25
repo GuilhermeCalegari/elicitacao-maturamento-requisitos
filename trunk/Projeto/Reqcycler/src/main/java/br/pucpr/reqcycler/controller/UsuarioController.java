@@ -71,8 +71,17 @@ public class UsuarioController {
 	}	
 			
 	public void logon(){
-		this.usuarioLogado = this.usuario;
-		limparUsuario();
+		try{				
+			if(this.usuario.getLogin().equalsIgnoreCase("admin")){
+				this.usuarioLogado = this.usuario;
+			}else{
+				this.usuarioLogado = usuarioService.getUsuarioByLogin(this.usuario.getLogin());
+			}			
+			limparUsuario();			
+		}catch(Exception e){
+			
+		}
+		
 	}
 	
 	public String logout(){

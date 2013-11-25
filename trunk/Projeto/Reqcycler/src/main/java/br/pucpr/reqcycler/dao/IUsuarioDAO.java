@@ -42,6 +42,13 @@ public interface IUsuarioDAO {
 	public Usuario getUsuarioById(int id);
 	
 	/**
+	 * Get Usuario
+	 * 
+	 * @param  String Usuario login
+	 */
+	public Usuario getUsuarioByLogin(String login);
+	
+	/**
 	 * Get Usuario List
 	 * 
 	 */

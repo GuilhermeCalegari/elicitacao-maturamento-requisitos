@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" template="/default.xhtml">
+
+	<ui:define name="content">
+
+		<style type="text/css">
+		html.progress,html.progress * {
+			cursor: progress !important;
+		}
+		</style>
+
+		<h:form rendered="#{(usuarioController.usuarioLogado) != null}">
+					 
+			<p:panel header="Cadastrar Projeto">
+
+				<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />  
+
+				<table>					
+					<tr>
+						<td><h:outputLabel for="nome" value="Nome : " /></td>
+						<td>
+							<p:inputText id="nome" value="#{projetoController.projeto.nome}"  
+										 required="true" requiredMessage="Nome é um campo obrigatório">
+								<f:validateLength minimum="4" />								
+								<p:ajax event="blur" update="nomeMsg" />
+							</p:inputText>
+							<p:message id="nomeMsg" for="nome" display="icon" />
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="objetivo" value="Objetivo : "/></td>
+						<td>
+							<p:inputText id="objetivo" value="#{projetoController.projeto.objetivo}" 
+										 required="false">
+							</p:inputText>												
+						</td>						
+					</tr>
+					<tr>
+						<td><h:outputLabel for="escopo" value="Escopo : "/></td>
+						<td>
+							<p:inputText id="escopo" value="#{projetoController.projeto.escopo}"
+										  required="false">
+							</p:inputText>
+						</td>						
+					</tr>					
+					<tr>
+						<td><h:outputLabel for="descricao" value="Descrição : " /></td>
+						<td>
+							<p:inputText id="email" value="#{projetoController.projeto.descricao}"
+										  required="false">
+							</p:inputText>							
+						</td>						
+					</tr>					
+					<tr>
+						<td>
+							<p:commandButton id="adicionaProjeto" value="Add"
+								action="#{projetoController.adicionaProjeto}" ajax="false" />
+						</td>
+						<td>
+							<p:commandButton id="limparCampos" value="Limpar"
+								action="#{projetoController.limparProjeto}" ajax="false" />
+						</td>
+					</tr>
+				</table>
+			</p:panel>
+		</h:form>
+
+		<script>
+			$(document).ajaxStart(function() {
+				$("html").addClass("progress");
+			}).ajaxStop(function() {
+				$("html").removeClass("progress");
+			});
+		</script>
+
+	</ui:define>
+
+</ui:composition>
