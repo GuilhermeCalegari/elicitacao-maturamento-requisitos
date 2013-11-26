@@ -1,26 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
-    version="1.0" xmlns="http://java.sun.com/xml/ns/persistence">
-    <persistence-unit name="ReqcyclerPU" transaction-type="RESOURCE_LOCAL">
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <class>br.pucpr.reqcycler.model.Projeto</class>
-        <class>br.pucpr.reqcycler.model.Requisito</class>
-        <class>br.pucpr.reqcycler.model.Usuario</class>       
-        <properties>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
-            <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost" />
-            <property name="javax.persistence.jdbc.user" value="sa" />
-            <property name="javax.persistence.jdbc.password" value="" />
-                         
-            <!-- Scan for annotated classes and Hibernate mapping XML files -->
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
-            <property name="hibernate.use_sql_comments" value="true" />
-            <property name="hibernate.jdbc.wrap_result_sets" value="false" />
-            <property name="hibernate.hibernate.cache.use_query_cache" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
-        </properties>
-    </persistence-unit>
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0" xmlns="http://java.sun.com/xml/ns/persistence">
+	<persistence-unit name="ReqcyclerPU_OLD" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>br.pucpr.reqcycler.model.Projeto</class>
+		<class>br.pucpr.reqcycler.model.Requisito</class>
+		<class>br.pucpr.reqcycler.model.Usuario</class>
+		
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:hsql://localhost" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="" />
+
+			<!-- Scan for annotated classes and Hibernate mapping XML files -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.use_sql_comments" value="true" />
+			<property name="hibernate.jdbc.wrap_result_sets" value="false" />
+			<property name="hibernate.hibernate.cache.use_query_cache" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="ReqcyclerPU" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<class>br.pucpr.reqcycler.model.Projeto</class>
+		<class>br.pucpr.reqcycler.model.Requisito</class>
+		<class>br.pucpr.reqcycler.model.Usuario</class>
+		
+		<properties>
+			<!-- DADOS CONEXÃO-->
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />  
+            <property name="hibernate.connection.username" value="usuario" />  
+            <property name="hibernate.connection.password" value="usuario1234" />  
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/reqcycler" />  
+            <property name="hibernate.default_schema" value="reqcycler"/>  
+				
+		 	<!-- CONFIGURACAO -->  
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />  
+            <property name="hibernate.hbm2ddl.auto" value="update" />  
+            <property name="hibernate.show_sql" value="true" />  
+            <property name="hibernate.format_sql" value="true" />  
+            <property name="hibernate.archive.autodetection" value="class" />  
+		</properties>
+	</persistence-unit>
 </persistence>
