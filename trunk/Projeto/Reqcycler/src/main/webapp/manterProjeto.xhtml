@@ -17,23 +17,28 @@
   		
   			<p:panel header="Manter Projeto">
 
-				<p:growl id="messages" showDetail="true"/> 				
+				<p:growl id="messages" showDetail="true"/> 			
 			
 			    <p:dataTable id="projetos" var="projeto" value="#{projetoController.projetoList}"
 			    			 paginator="true" rows="10"  
-               				 editable="true"
-               				 >  
+               				 editable="true" emptyMessage="No projects found with given criteria" 
+               				 widgetVar="projetoTable" filteredValue="#{projetoController.projetoFiltro}">  
 			    
-			    	<f:facet name="header">  
-			    		<p:outputLabel>Projetos </p:outputLabel>
-			            <p:commandButton id="refresh" action="#{projetoController.limparProjeto}"
-				            				 icon="ui-icon-arrowrefresh-1-w"/>				        
+			    	<f:facet name="header">  		
+			    		<p:outputPanel>	    	
+				    		<p:outputLabel>Projetos </p:outputLabel>
+				            <p:commandButton id="refresh" action="#{projetoController.limparProjeto}"
+					            				 icon="ui-icon-arrowrefresh-1-w" ajax="true" update="projetos"/>										            				
+						    <h:outputText value="Localizar:" />  
+		                	<p:inputText id="projetoFilter" onkeyup="projetoTable.filter()" style="width:150px" />  				        
+	                	</p:outputPanel>
 			        </f:facet>
 			         			        
-       			    <p:ajax event="rowEdit" listener="#{projetoController.atualizarProjeto}" update=":form:messages" />  
+       			    <p:ajax event="rowEdit" listener="#{projetoController.atualizarProjeto}" 
+       			    		ajax="true" update="projetos,:form:messages" />  
         			<p:ajax event="rowEditCancel" />  
        			      
-			        <p:column sortBy="name" headerText="Nome">
+			        <p:column sortBy="#{projeto.nome}" headerText="Nome">
 			        	<p:cellEditor>  
 				        	<f:facet name="input">  
 			                    <p:inputText value="#{projeto.nome}"/>  
@@ -42,36 +47,70 @@
 				        		<h:outputText value="#{projeto.nome}"/>
 				        	</f:facet>
 				        </p:cellEditor>
-			        </p:column>  
-			  
-			        <p:column headerText="Status">
-			        	<h:outputText value="#{projeto.status}"/>  				             
-			        </p:column>  
-			  
-			        <p:column headerText="Sponsor" >
-			        	<h:outputText value="#{projeto.sponsor.nome}"/>  				            
-			        </p:column>  
-			  
-			        <p:column headerText="Data Inicio">
-			        	<h:outputText value="#{projeto.dataInicio}"/>				        	  				            
 			        </p:column>
 			        
-			        <p:column headerText="Data Fim">
-			        	<h:outputText value="#{projeto.dataFim}"/>				        	
+			        <p:column sortBy="#{projeto.status}" headerText="Status">
+			        	<p:cellEditor>  
+				        	<f:facet name="input">  			                    
+			                    <h:selectOneMenu id="status" value="#{projeto.status}">  
+								     <f:selectItems value="#{projetoController.statusValues}" />  
+								</h:selectOneMenu>    
+			                </f:facet>    
+			                <f:facet name="output">
+				        		<h:outputText value="#{projeto.status}"/>
+				        	</f:facet>
+				        </p:cellEditor>
+			        </p:column>			        			        
+			  
+			        <p:column sortBy="#{projeto.sponsor}" headerText="Sponsor" >
+			        	<h:outputText value="#{projeto.sponsor.nome}"/>  				            
+			        </p:column>  
+			        			        			  
+			        <p:column sortBy="#{projeto.dataInicio}" headerText="Data Inicio">
+			        	 <h:outputText value="#{projeto.dataInicio}">
+			        	 	<f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/>
+			        	 </h:outputText> 			        				        	  				          
+			        </p:column>
+			        
+			        <p:column sortBy="#{projeto.dataFim}"  headerText="Data Fim">
+			        	<h:outputText value="#{projeto.dataFim}">
+			        		<f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/>
+			        	</h:outputText>				        	
 			        </p:column>    
 			        
 			        <p:column headerText="Objetivo">
-			        	<h:outputText value="#{projeto.objetivo}"/>  				            
+			        	<p:cellEditor>  
+				        	<f:facet name="input">  
+			                    <p:inputText value="#{projeto.objetivo}"/>  
+			                </f:facet>    
+			                <f:facet name="output">
+				        		<h:outputText value="#{projeto.objetivo}"/>
+				        	</f:facet>
+				        </p:cellEditor>
 			        </p:column>
 			        
 			        <p:column headerText="Escopo">
-			        	<h:outputText value="#{projeto.escopo}"/>
+			        	<p:cellEditor>  
+				        	<f:facet name="input">  
+			                    <p:inputText value="#{projeto.escopo}"/>  
+			                </f:facet>    
+			                <f:facet name="output">
+				        		<h:outputText value="#{projeto.escopo}"/>
+				        	</f:facet>
+				        </p:cellEditor>
 			        </p:column>
 			        
 			        <p:column headerText="Descrição">
-			        	<h:outputText value="#{projeto.descricao}"/>
+			        	<p:cellEditor>  
+				        	<f:facet name="input">  
+			                    <p:inputText value="#{projeto.descricao}"/>  
+			                </f:facet>    
+			                <f:facet name="output">
+				        		<h:outputText value="#{projeto.descricao}"/>
+				        	</f:facet>
+				        </p:cellEditor>
 			        </p:column>
-			        
+			        			   			    
 			        <p:column>  
 			            <p:rowEditor />  
 			        </p:column> 

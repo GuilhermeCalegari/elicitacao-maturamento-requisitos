@@ -28,7 +28,7 @@ public class ProjetoDAO implements IProjetoDAO {
 	public void adicionaProjeto(Projeto projeto) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
-
+		
 		//Detached to Transient
 		projeto.setSponsor(entityManager.
 				find(Usuario.class, projeto.getSponsor().getId()));
@@ -42,14 +42,21 @@ public class ProjetoDAO implements IProjetoDAO {
 	public void atualizaProjeto(Projeto projeto) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
-		
+
 		//Detached to Transient
-		projeto.setSponsor(entityManager.
-						find(Usuario.class, projeto.getSponsor().getId()));
-		
+		Projeto projetoMerge = (Projeto) entityManager.
+				find(Projeto.class, projeto.getId());
+			
+		projetoMerge.setNome(projeto.getNome());
+		projetoMerge.setStatus(projeto.getStatus());
+		projetoMerge.setObjetivo(projeto.getObjetivo());
+		projetoMerge.setEscopo(projeto.getEscopo());
+		projetoMerge.setDescricao(projeto.getDescricao());
+				
 		entityManager.getTransaction().begin();
-        entityManager.merge(projeto);
+        entityManager.merge(projetoMerge);
         entityManager.getTransaction().commit();
+        
 	}
 	
 	@Override

@@ -11,6 +11,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.model.SelectItem;
 
 import org.primefaces.event.RowEditEvent;
 
@@ -51,11 +52,7 @@ public class ProjetoController implements Serializable {
 	
 	private List<Projeto> projetoList;
 	
-	/**
-	 * Add User
-	 * 
-	 * @return String - Response Message
-	 */
+	private List<Projeto> projetoFiltro;
 	
 	@PostConstruct
 	private void init(){
@@ -94,15 +91,15 @@ public class ProjetoController implements Serializable {
 			projetoService.atualizaProjeto(projeto);
 			
 			context.addMessage(null, new FacesMessage("Transação OK!", 
-                    								  "PROJETO ALTERADO CRIADO COM SUCESSO!"));
-			
-			limparProjeto();
-			
+                    								  "PROJETO ALTERADO COM SUCESSO!"));
+									
 		}catch(Exception e){
 			e.printStackTrace();
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Transação NÃO OK!", 
-													  "PROJETO NÃO FOI ALTERADO!"));
+													  "PROJETO NÃO FOI ALTERADO!"));					
 		}
+		
+		limparProjeto();
 				
 	}
 	
@@ -115,6 +112,15 @@ public class ProjetoController implements Serializable {
 		this.projetoList = new ArrayList<Projeto>();
 		this.projetoList.addAll(getProjetos());
 	}	
+	
+	public SelectItem[] getStatusValues() {
+	    SelectItem[] items = new SelectItem[StatusProjetoEnum.values().length];
+	    int i = 0;
+	    for(StatusProjetoEnum g: StatusProjetoEnum.values()) {
+	      items[i++] = new SelectItem(g, g.getStatus());
+	    }
+	    return items;
+	 }
 				
 	/**
 	 * @return the projeto
@@ -142,6 +148,21 @@ public class ProjetoController implements Serializable {
 	 */
 	public void setProjetoList(List<Projeto> projetoList) {
 		this.projetoList = projetoList;
+	}
+	
+	
+	/**
+	 * @return the projetoFiltro
+	 */
+	public List<Projeto> getProjetoFiltro() {
+		return projetoFiltro;
+	}
+
+	/**
+	 * @param projetoFiltro the projetoFiltro to set
+	 */
+	public void setProjetoFiltro(List<Projeto> projetoFiltro) {
+		this.projetoFiltro = projetoFiltro;
 	}
 		
 }
