@@ -1,6 +1,9 @@
 package br.pucpr.reqcycler.controller;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -9,11 +12,12 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import org.primefaces.event.RowEditEvent;
+
 import br.pucpr.reqcycler.enumeration.StatusProjetoEnum;
 import br.pucpr.reqcycler.model.Projeto;
 import br.pucpr.reqcycler.model.Usuario;
 import br.pucpr.reqcycler.service.impl.ProjetoService;
-import br.pucpr.reqcycler.service.impl.UsuarioService;
 
 /**
  * 
@@ -25,8 +29,10 @@ import br.pucpr.reqcycler.service.impl.UsuarioService;
 
 @ManagedBean(name="projetoController")
 @SessionScoped
-public class ProjetoController {
+public class ProjetoController implements Serializable {
 			
+	private static final long serialVersionUID = 1674553816474363886L;
+
 	@ManagedProperty(value = "#{projetoService}")
 	private ProjetoService projetoService;
 	
@@ -34,24 +40,16 @@ public class ProjetoController {
 		this.projetoService = projetoService;
 	}
 	
-	@ManagedProperty(value = "#{usuarioService}")
-	private UsuarioService usuarioService;
-	
-	public void setUsuarioService(UsuarioService usuarioService) {
-		this.usuarioService = usuarioService;
-	}
-
 	@ManagedProperty(value= "#{usuarioController.usuarioLogado}")
 	private Usuario usuarioLogado;		
 	
-	/**
-	 * @param usuarioLogado the usuarioLogado to set
-	 */
 	public void setUsuarioLogado(Usuario usuarioLogado) {
 		this.usuarioLogado = usuarioLogado;
 	}
 
-	private Projeto projeto; 		
+	private Projeto projeto; 	
+	
+	private List<Projeto> projetoList;
 	
 	/**
 	 * Add User
@@ -61,7 +59,7 @@ public class ProjetoController {
 	
 	@PostConstruct
 	private void init(){
-		this.projeto = new Projeto();
+		limparProjeto();
 	}
 		
 	public void adicionaProjeto() {
@@ -87,8 +85,35 @@ public class ProjetoController {
 
 	}
 	
+	public void atualizarProjeto(RowEditEvent event) {
+		
+		FacesContext context = FacesContext.getCurrentInstance();
+		try{
+					
+			Projeto projeto = (Projeto) event.getObject();
+			projetoService.atualizaProjeto(projeto);
+			
+			context.addMessage(null, new FacesMessage("Transação OK!", 
+                    								  "PROJETO ALTERADO CRIADO COM SUCESSO!"));
+			
+			limparProjeto();
+			
+		}catch(Exception e){
+			e.printStackTrace();
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Transação NÃO OK!", 
+													  "PROJETO NÃO FOI ALTERADO!"));
+		}
+				
+	}
+	
+	public List<Projeto> getProjetos(){
+		return projetoService.getProjetos();		
+	}
+	
 	public void limparProjeto() {		
-		this.projeto = new Projeto();
+		this.projeto = new Projeto();		
+		this.projetoList = new ArrayList<Projeto>();
+		this.projetoList.addAll(getProjetos());
 	}	
 				
 	/**
@@ -103,6 +128,20 @@ public class ProjetoController {
 	 */
 	public void setProjeto(Projeto projeto) {
 		this.projeto = projeto;
+	}
+
+	/**
+	 * @return the projetoList
+	 */
+	public List<Projeto> getProjetoList() {
+		return projetoList;
+	}
+
+	/**
+	 * @param projetoList the projetoList to set
+	 */
+	public void setProjetoList(List<Projeto> projetoList) {
+		this.projetoList = projetoList;
 	}
 		
 }

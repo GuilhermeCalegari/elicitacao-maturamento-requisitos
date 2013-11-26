@@ -42,6 +42,11 @@ public class ProjetoDAO implements IProjetoDAO {
 	public void atualizaProjeto(Projeto projeto) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
+		
+		//Detached to Transient
+		projeto.setSponsor(entityManager.
+						find(Usuario.class, projeto.getSponsor().getId()));
+		
 		entityManager.getTransaction().begin();
         entityManager.merge(projeto);
         entityManager.getTransaction().commit();

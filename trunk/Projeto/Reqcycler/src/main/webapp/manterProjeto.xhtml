@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" template="/default.xhtml">
+
+	<ui:define name="content">
+
+		<style type="text/css">
+		html.progress,html.progress * {
+			cursor: progress !important;
+		}
+		</style>
+		
+		<h:form id="form">  
+  		
+  			<p:panel header="Manter Projeto">
+
+				<p:growl id="messages" showDetail="true"/> 				
+			
+			    <p:dataTable id="projetos" var="projeto" value="#{projetoController.projetoList}"
+			    			 paginator="true" rows="10"  
+               				 editable="true"
+               				 >  
+			    
+			    	<f:facet name="header">  
+			    		<p:outputLabel>Projetos </p:outputLabel>
+			            <p:commandButton id="refresh" action="#{projetoController.limparProjeto}"
+				            				 icon="ui-icon-arrowrefresh-1-w"/>				        
+			        </f:facet>
+			         			        
+       			    <p:ajax event="rowEdit" listener="#{projetoController.atualizarProjeto}" update=":form:messages" />  
+        			<p:ajax event="rowEditCancel" />  
+       			      
+			        <p:column sortBy="name" headerText="Nome">
+			        	<p:cellEditor>  
+				        	<f:facet name="input">  
+			                    <p:inputText value="#{projeto.nome}"/>  
+			                </f:facet>    
+			                <f:facet name="output">
+				        		<h:outputText value="#{projeto.nome}"/>
+				        	</f:facet>
+				        </p:cellEditor>
+			        </p:column>  
+			  
+			        <p:column headerText="Status">
+			        	<h:outputText value="#{projeto.status}"/>  				             
+			        </p:column>  
+			  
+			        <p:column headerText="Sponsor" >
+			        	<h:outputText value="#{projeto.sponsor.nome}"/>  				            
+			        </p:column>  
+			  
+			        <p:column headerText="Data Inicio">
+			        	<h:outputText value="#{projeto.dataInicio}"/>				        	  				            
+			        </p:column>
+			        
+			        <p:column headerText="Data Fim">
+			        	<h:outputText value="#{projeto.dataFim}"/>				        	
+			        </p:column>    
+			        
+			        <p:column headerText="Objetivo">
+			        	<h:outputText value="#{projeto.objetivo}"/>  				            
+			        </p:column>
+			        
+			        <p:column headerText="Escopo">
+			        	<h:outputText value="#{projeto.escopo}"/>
+			        </p:column>
+			        
+			        <p:column headerText="Descrição">
+			        	<h:outputText value="#{projeto.descricao}"/>
+			        </p:column>
+			        
+			        <p:column>  
+			            <p:rowEditor />  
+			        </p:column> 
+
+			    </p:dataTable>
+			</p:panel>  
+	  
+		</h:form> 
+		
+		<script>
+			$(document).ajaxStart(function() {
+				$("html").addClass("progress");
+			}).ajaxStop(function() {
+				$("html").removeClass("progress");
+			});
+		</script>
+
+	</ui:define>
+
+</ui:composition>
