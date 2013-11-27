@@ -86,15 +86,6 @@
 	text-align: left;
 }
 
-.menu li ul a:hover,.menu li ul li:hover a {
-	background: #2580a2
-		url('/Reqcycler/resources/images/menu/hover_sub.gif') center left
-		no-repeat;
-	border: 0px;
-	color: #ffffff;
-	text-decoration: none;
-}
-
 .menu li:hover ul ul {
 	display:none;
 	}
@@ -104,6 +95,16 @@
 	margin-top:-35px; 
 	display:block;
 	}
+	
+.menu li ul a:hover {
+	background: #2580a2
+		url('/Reqcycler/resources/images/menu/hover_sub.gif') center left
+		no-repeat;
+	border: 0px;
+	color: #ffffff;
+	text-decoration: none;
+}
+
 
 .menu p {
 	clear: left;

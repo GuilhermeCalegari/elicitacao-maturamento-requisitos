@@ -12,114 +12,162 @@
 			cursor: progress !important;
 		}
 		</style>
-		
-		<h:form id="form">  
-  		
-  			<p:panel header="Manter Projeto">
 
-				<p:growl id="messages" showDetail="true"/> 			
-			
-			    <p:dataTable id="projetos" var="projeto" value="#{projetoController.projetoList}"
-			    			 paginator="true" rows="10"  
-               				 editable="true" emptyMessage="No projects found with given criteria" 
-               				 widgetVar="projetoTable" filteredValue="#{projetoController.projetoFiltro}">  
-			    
-			    	<f:facet name="header">  		
-			    		<p:outputPanel>	    	
-				    		<p:outputLabel>Projetos </p:outputLabel>
-				            <p:commandButton id="refresh" action="#{projetoController.limparProjeto}"
-					            				 icon="ui-icon-arrowrefresh-1-w" ajax="true" update="projetos"/>										            				
-						    <h:outputText value="Localizar:" />  
-		                	<p:inputText id="projetoFilter" onkeyup="projetoTable.filter()" style="width:150px" />  				        
-	                	</p:outputPanel>
-			        </f:facet>
-			         			        
-       			    <p:ajax event="rowEdit" listener="#{projetoController.atualizarProjeto}" 
-       			    		ajax="true" update="projetos,:form:messages" />  
-        			<p:ajax event="rowEditCancel" />  
-       			      
-			        <p:column sortBy="#{projeto.nome}" headerText="Nome">
-			        	<p:cellEditor>  
-				        	<f:facet name="input">  
-			                    <p:inputText value="#{projeto.nome}"/>  
-			                </f:facet>    
-			                <f:facet name="output">
-				        		<h:outputText value="#{projeto.nome}"/>
-				        	</f:facet>
-				        </p:cellEditor>
-			        </p:column>
-			        
-			        <p:column sortBy="#{projeto.status}" headerText="Status">
-			        	<p:cellEditor>  
-				        	<f:facet name="input">  			                    
-			                    <h:selectOneMenu id="status" value="#{projeto.status}">  
-								     <f:selectItems value="#{projetoController.statusValues}" />  
-								</h:selectOneMenu>    
-			                </f:facet>    
-			                <f:facet name="output">
-				        		<h:outputText value="#{projeto.status}"/>
-				        	</f:facet>
-				        </p:cellEditor>
-			        </p:column>			        			        
-			  
-			        <p:column sortBy="#{projeto.sponsor}" headerText="Sponsor" >
-			        	<h:outputText value="#{projeto.sponsor.nome}"/>  				            
-			        </p:column>  
-			        			        			  
-			        <p:column sortBy="#{projeto.dataInicio}" headerText="Data Inicio">
-			        	 <h:outputText value="#{projeto.dataInicio}">
-			        	 	<f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/>
-			        	 </h:outputText> 			        				        	  				          
-			        </p:column>
-			        
-			        <p:column sortBy="#{projeto.dataFim}"  headerText="Data Fim">
-			        	<h:outputText value="#{projeto.dataFim}">
-			        		<f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/>
-			        	</h:outputText>				        	
-			        </p:column>    
-			        
-			        <p:column headerText="Objetivo">
-			        	<p:cellEditor>  
-				        	<f:facet name="input">  
-			                    <p:inputText value="#{projeto.objetivo}"/>  
-			                </f:facet>    
-			                <f:facet name="output">
-				        		<h:outputText value="#{projeto.objetivo}"/>
-				        	</f:facet>
-				        </p:cellEditor>
-			        </p:column>
-			        
-			        <p:column headerText="Escopo">
-			        	<p:cellEditor>  
-				        	<f:facet name="input">  
-			                    <p:inputText value="#{projeto.escopo}"/>  
-			                </f:facet>    
-			                <f:facet name="output">
-				        		<h:outputText value="#{projeto.escopo}"/>
-				        	</f:facet>
-				        </p:cellEditor>
-			        </p:column>
-			        
-			        <p:column headerText="Descrição">
-			        	<p:cellEditor>  
-				        	<f:facet name="input">  
-			                    <p:inputText value="#{projeto.descricao}"/>  
-			                </f:facet>    
-			                <f:facet name="output">
-				        		<h:outputText value="#{projeto.descricao}"/>
-				        	</f:facet>
-				        </p:cellEditor>
-			        </p:column>
-			        			   			    
-			        <p:column>  
-			            <p:rowEditor />  
-			        </p:column> 
+		<h:form id="form">
 
-			    </p:dataTable>
-			</p:panel>  
-	  
-		</h:form> 
-		
+			<p:panel header="Manter Projeto">
+
+				<p:growl id="messages" showDetail="true" />
+
+				<p:dataTable id="projetosDataTable" 
+							 var="projeto"
+							 widgetVar="projetoTable"
+							 value="#{projetoController.projetoList}"
+							 paginator="true"
+							 rows="10"
+							 editable="true"
+							 ajax="true"
+							 emptyMessage="Nenhum projeto encontrado com os dados informados!"					
+							 filteredValue="#{projetoController.projetoFiltro}">							 							 
+
+					<f:facet name="header">
+						<p:outputPanel>						
+							<table >							
+								<tr style="width: 100%">
+									<td style="border-style:none; text-align:left; width: 40%">
+										<h:outputText value="Localizar: " />
+										<p:inputText id="globalFilter"
+													 onkeyup="projetoTable.filter()" />
+									</td>
+									<td style="border-style: none; text-align:center; width: 20%">
+										<p:outputLabel>Projetos</p:outputLabel>
+									</td>
+									<td style="border-style: none; text-align:right; width: 40%">
+										<p:commandButton id="refresh"
+											 			 action="#{projetoController.limparProjeto}"
+											 			 icon="ui-icon-arrowrefresh-1-w" 
+											 			 ajax="true"
+											 			 update="projetosDataTable" />
+									</td>
+								</tr>
+							</table>							
+						</p:outputPanel>
+					</f:facet>
+
+					<p:ajax event="rowEdit"
+							listener="#{projetoController.atualizarProjeto}" 
+							ajax="true"
+							update="projetosDataTable,:form:messages" />
+					<p:ajax event="rowEditCancel" />
+
+					<p:column sortBy="#{projeto.nome}" 
+							  filterBy="#{projeto.nome}"
+							  headerText="Nome"
+							  filterMatchMode="contains"
+							  style="max-width: 50px;">
+						<p:cellEditor>
+							<f:facet name="input">
+								<p:inputText value="#{projeto.nome}" />
+							</f:facet>
+							<f:facet name="output">
+								<h:outputText value="#{projeto.nome}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+
+					<p:column sortBy="#{projeto.status}" 
+							  filterBy="#{projeto.status}"
+							  headerText="Status"
+							  style="max-width: 50px;">
+						<p:cellEditor>
+							<f:facet name="input">
+								<h:selectOneMenu id="status"
+												 value="#{projeto.status}">
+									<f:selectItems value="#{projetoController.statusValues}" />
+								</h:selectOneMenu>
+							</f:facet>
+							<f:facet name="output">
+								<h:outputText value="#{projeto.status}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+
+					<p:column sortBy="#{projeto.sponsor}" 
+							  filterBy="#{projeto.sponsor}"
+							  headerText="Sponsor" 
+							  style="max-width: 50px;">
+						<h:outputText value="#{projeto.sponsor.nome}" />
+					</p:column>
+
+					<p:column sortBy="#{projeto.dataInicio}"							 
+							  headerText="Data Inicio"
+							  style="max-width: 50px;">
+						<h:outputText value="#{projeto.dataInicio}">
+							<f:convertDateTime pattern="dd/MM/yyyy HH:mm"
+											   timeZone="GMT-03:00" />
+						</h:outputText>
+					</p:column>
+
+					<p:column sortBy="#{projeto.dataFim}" 							 
+							  headerText="Data Fim" 
+							  style="max-width: 50px;">
+						<h:outputText value="#{projeto.dataFim}">
+							<f:convertDateTime pattern="dd/MM/yyyy HH:mm"
+								timeZone="GMT-03:00" />
+						</h:outputText>
+					</p:column>
+
+					<p:column headerText="Objetivo"
+							  style="max-width: 50px;">
+						<p:cellEditor>
+							<f:facet name="input">
+								<p:inputTextarea value="#{projeto.objetivo}" 
+												 rows="6"
+												 cols="33" />
+							</f:facet>
+							<f:facet name="output">
+								<h:outputText value="#{projeto.objetivo}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+
+					<p:column headerText="Escopo"
+							  style="max-width: 50px;">
+						<p:cellEditor>
+							<f:facet name="input">
+								<p:inputTextarea value="#{projeto.escopo}"
+												 rows="6" 
+												 cols="33" />
+							</f:facet>
+							<f:facet name="output">
+								<h:outputText value="#{projeto.escopo}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+
+					<p:column headerText="Descrição"
+						style="max-width: 50px;">
+						<p:cellEditor>
+							<f:facet name="input">
+								<p:inputTextarea value="#{projeto.descricao}" 
+												 rows="6" 
+												 cols="33" />
+							</f:facet>
+							<f:facet name="output">
+								<h:outputText value="#{projeto.descricao}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+
+					<p:column>
+						<p:rowEditor />
+					</p:column>
+
+				</p:dataTable>
+			</p:panel>
+
+		</h:form>
+
 		<script>
 			$(document).ajaxStart(function() {
 				$("html").addClass("progress");
