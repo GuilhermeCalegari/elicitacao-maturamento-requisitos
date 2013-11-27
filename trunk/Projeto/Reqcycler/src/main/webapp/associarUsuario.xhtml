@@ -3,25 +3,19 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui" template="/default.xhtml">
+	xmlns:p="http://primefaces.org/ui" 
+	template="/default.xhtml">
 
 	<ui:define name="content">
-
 		<style type="text/css">
-		html.progress,html.progress * {
-			cursor: progress !important;
-		}
+			html.progress,html.progress * {cursor: progress !important;}	
 		</style>
 
 		<h:form rendered="#{(usuarioController.usuarioLogado) != null}">
-					 
 			<p:panel header="Associar Usuario">
-
-			
-
 			</p:panel>
 		</h:form>
-
+		
 		<script>
 			$(document).ajaxStart(function() {
 				$("html").addClass("progress");
@@ -29,7 +23,5 @@
 				$("html").removeClass("progress");
 			});
 		</script>
-
 	</ui:define>
-
 </ui:composition>
