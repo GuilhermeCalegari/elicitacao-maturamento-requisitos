@@ -71,14 +71,14 @@ public class ProjetoController implements Serializable {
 						
 			context.addMessage(null, new FacesMessage("Transação OK!", 
 					                                  "PROJETO CRIADO COM SUCESSO!"));
-			
-			limparProjeto();
-			
+									
 		} catch (Exception e) {	
 			e.printStackTrace();
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Transação NÃO OK!", 
 					                                  "PROJETO NÃO FOI CRIADO!"));
-		} 					
+		} 				
+		
+		limparProjeto();
 
 	}
 	

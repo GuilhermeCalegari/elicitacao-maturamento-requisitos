@@ -34,25 +34,34 @@
 					<tr>
 						<td><h:outputLabel for="objetivo" value="Objetivo : "/></td>
 						<td>
-							<p:inputText id="objetivo" value="#{projetoController.projeto.objetivo}" 
-										 required="false">
-							</p:inputText>												
+							<p:inputTextarea id="objetivo" 
+											 value="#{projetoController.projeto.objetivo}" 
+										 	 required="false"
+										 	 rows="10"
+										 	 cols="100" >
+							</p:inputTextarea>												
 						</td>						
 					</tr>
 					<tr>
 						<td><h:outputLabel for="escopo" value="Escopo : "/></td>
 						<td>
-							<p:inputText id="escopo" value="#{projetoController.projeto.escopo}"
-										  required="false">
-							</p:inputText>
+							<p:inputTextarea id="escopo" 
+							                 value="#{projetoController.projeto.escopo}"
+										  	 required="false"
+										  	 rows="10"
+										 	 cols="100" >
+							</p:inputTextarea>
 						</td>						
 					</tr>					
 					<tr>
 						<td><h:outputLabel for="descricao" value="Descrição : " /></td>
 						<td>
-							<p:inputText id="email" value="#{projetoController.projeto.descricao}"
-										  required="false">
-							</p:inputText>							
+							<p:inputTextarea id="email" 
+											 value="#{projetoController.projeto.descricao}"
+										  	 required="false"
+										  	 rows="10"
+										 	 cols="100" >
+							</p:inputTextarea>							
 						</td>						
 					</tr>					
 					<tr>
