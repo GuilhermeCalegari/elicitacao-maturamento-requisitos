@@ -3,7 +3,7 @@ package br.pucpr.reqcycler.enumeration;
 import java.io.Serializable;
 
 public enum ClassificacaoRequisitoEnum implements Serializable {
-	BAIXO("Baixo"), MEDIO("Medio"), ALTO("enum_alto");
+	BAIXO("Baixo"), MEDIO("Medio"), ALTO("Alto");
 
 	private final String classificacao;
 

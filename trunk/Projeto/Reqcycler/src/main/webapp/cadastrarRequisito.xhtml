@@ -17,6 +17,71 @@
 					 
 			<p:panel header="Cadastrar Requisito">
 
+				<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />  
+
+				<table>										
+					
+					<tr>
+						<td><h:outputLabel for="projeto" value="Projeto : " /></td>
+						<td>
+							<h:selectOneMenu id="projeto"
+												 value="#{requisitoController.requisito.projeto}">
+									<f:selectItems value="#{projetoController.projetosValues}" />
+							</h:selectOneMenu>
+						</td>
+					</tr>					
+					<tr>
+						<td><h:outputLabel for="complexidade" value="Complexidade : " /></td>
+						<td>
+							<h:selectOneMenu id="complexidade"
+											 value="#{requisitoController.requisito.complexidade}">
+									<f:selectItems value="#{requisitoController.complexidadeValues}" />
+							</h:selectOneMenu>
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="classificacao" value="Classificação : " /></td>
+						<td>
+							<h:selectOneMenu id="classificacao"
+											 value="#{requisitoController.requisito.classificacao}">
+									<f:selectItems value="#{requisitoController.classificacaoValues}" />
+							</h:selectOneMenu>
+						</td>
+					</tr>	
+					<tr>
+						<td><h:outputLabel for="tipo" value="Tipo : " /></td>
+						<td>
+							<p:inputText id="tipo" value="#{requisitoController.requisito.tipo}"  
+										 required="true" requiredMessage="Tipo é um campo obrigatório">
+								<f:validateLength minimum="4" />								
+								<p:ajax event="blur" update="tipoMsg" />
+							</p:inputText>
+							<p:message id="tipoMsg" for="tipo" display="icon" />
+						</td>
+					</tr>
+					<tr>
+						<td><h:outputLabel for="descricao" value="Descrição : " /></td>
+						<td>
+							<p:inputText id="descricao" value="#{requisitoController.requisito.descricao}"  
+										 required="true" requiredMessage="Descrição é um campo obrigatório">
+								<f:validateLength minimum="4" />								
+								<p:ajax event="blur" update="descricaoMsg" />
+							</p:inputText>
+							<p:message id="descricaoMsg" for="descricao" display="icon" />
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<p:commandButton id="adicionaRequisito" value="Cadastrar"
+								action="#{requisitoController.adicionaRequisito}" ajax="false" />
+						</td>
+						<td>
+							<p:commandButton id="limparCampos" value="Limpar"
+								action="#{requisitoController.limparRequisito}" ajax="false" />
+						</td>
+					</tr>			
+												
+				</table>
 				
 			</p:panel>
 		</h:form>
