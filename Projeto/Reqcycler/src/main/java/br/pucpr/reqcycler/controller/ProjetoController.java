@@ -14,8 +14,6 @@ import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 
 import org.primefaces.event.RowEditEvent;
-import org.primefaces.event.SelectEvent;
-import org.primefaces.event.UnselectEvent;
 
 import br.pucpr.reqcycler.enumeration.StatusProjetoEnum;
 import br.pucpr.reqcycler.model.Projeto;
@@ -106,16 +104,26 @@ public class ProjetoController implements Serializable {
 		limparProjeto();
 				
 	} 
-	
-	public List<Projeto> getProjetos(){
-		return projetoService.getProjetos();		
-	}
-	
+			
 	public void limparProjeto() {		
 		this.projeto = new Projeto();		
 		this.projetoList = new ArrayList<Projeto>();
 		this.projetoList.addAll(getProjetos());
 	}	
+	
+	public List<Projeto> getProjetos(){
+		return projetoService.getProjetos();		
+	}
+	
+	public SelectItem[] getProjetosValues() {
+		List<Projeto> listProjetos = this.getProjetos();
+	    SelectItem[] items = new SelectItem[listProjetos.size()];
+	    int i = 0;
+	    for(Projeto projeto: listProjetos) {
+	      items[i++] = new SelectItem(projeto.getId(), projeto.getNome());
+	    }
+	    return items;
+	}
 	
 	public SelectItem[] getStatusValues() {
 	    SelectItem[] items = new SelectItem[StatusProjetoEnum.values().length];

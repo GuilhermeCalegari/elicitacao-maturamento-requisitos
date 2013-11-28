@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,6 +19,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import br.pucpr.reqcycler.enumeration.ClassificacaoRequisitoEnum;
+import br.pucpr.reqcycler.enumeration.ComplexidadeRequisitoEnum;
+import br.pucpr.reqcycler.enumeration.StatusRequisitoEnum;
 
 /**
  * 
@@ -35,9 +38,9 @@ public class Requisito {
 	private ClassificacaoRequisitoEnum classificacao;
 	private Date dataCriado;
 	private String tipo;
-	private String complexidade;
-	private Date descricao;
-	private String status;
+	private ComplexidadeRequisitoEnum complexidade;
+	private String descricao;
+	private StatusRequisitoEnum status;
 
 	/**
 	 * @return the Id
@@ -61,8 +64,9 @@ public class Requisito {
 	/**
 	 * @return the projeto
 	 */
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Projeto.class)
-    @JoinColumn(name = "PROJETO", unique = false, nullable = false)	
+	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name = "PROJETO", unique = false, 
+				nullable = false, referencedColumnName="ID")	
 	public Projeto getProjeto() {
 		return projeto;
 	}
@@ -129,7 +133,7 @@ public class Requisito {
 	 * @return the complexidade
 	 */
 	@Column(name = "COMPLEXIDADE", unique = false, nullable = true)
-	public String getComplexidade() {
+	public ComplexidadeRequisitoEnum getComplexidade() {
 		return complexidade;
 	}
 
@@ -137,42 +141,43 @@ public class Requisito {
 	 * @param complexidade
 	 *            the complexidade to set
 	 */
-	public void setComplexidade(String complexidade) {
+	public void setComplexidade(ComplexidadeRequisitoEnum complexidade) {
 		this.complexidade = complexidade;
 	}
+
 
 	/**
 	 * @return the descricao
 	 */
-
 	@Column(name = "DESCRICAO", unique = false, nullable = false)
-	public Date getDescricao() {
+	public String getDescricao() {
 		return descricao;
 	}
 
 	/**
-	 * @param descricao
-	 *            the descricao to set
+	 * @param descricao the descricao to set
 	 */
-	public void setDescricao(Date descricao) {
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
+	
 	/**
 	 * @return the status
 	 */
 	@Column(name = "STATUS", unique = false, nullable = false)
-	public String getStatus() {
+	@Enumerated(EnumType.STRING)	
+	public StatusRequisitoEnum getStatus() {
 		return status;
 	}
 
 	/**
-	 * @param status
-	 *            the status to set
+	 * @param status the status to set
 	 */
-	public void setStatus(String status) {
+	public void setStatus(StatusRequisitoEnum status) {
 		this.status = status;
-	}
+	}	
+	
+	
 
 	@Override
 	public String toString() {
@@ -180,4 +185,5 @@ public class Requisito {
 		strBuff.append("id : ").append(getId());
 		return strBuff.toString();
 	}
+	
 }

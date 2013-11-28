@@ -7,6 +7,8 @@ import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
 
 import br.pucpr.reqcycler.dao.IRequisitoDAO;
+import br.pucpr.reqcycler.enumeration.ComplexidadeRequisitoEnum;
+import br.pucpr.reqcycler.model.Projeto;
 import br.pucpr.reqcycler.model.Requisito;
 import br.pucpr.reqcycler.util.EntityManagerControl;
 
@@ -21,12 +23,16 @@ import br.pucpr.reqcycler.util.EntityManagerControl;
 @ManagedBean(name="requisitoDAO")
 @SessionScoped
 public class RequisitoDAO implements IRequisitoDAO {		
-
 	
 	@Override
 	public void adicionaRequisito(Requisito requisito) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
+		
+		//Detached to Transient
+		requisito.setProjeto(entityManager.
+				find(Projeto.class, requisito.getProjeto().getId()));
+												
 		entityManager.getTransaction().begin();
 		entityManager.persist(requisito);
 		entityManager.getTransaction().commit();		
@@ -36,6 +42,16 @@ public class RequisitoDAO implements IRequisitoDAO {
 	public void atualizaRequisito(Requisito requisito) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();
+		
+		//Detached to Transient
+		Requisito requisitoMerge = (Requisito) entityManager.
+				find(Requisito.class, requisito.getId());
+		
+		requisitoMerge.setClassificacao(requisito.getClassificacao());
+		requisitoMerge.setComplexidade(requisito.getComplexidade());
+		requisitoMerge.setDescricao(requisito.getDescricao());
+		requisitoMerge.setTipo(requisito.getTipo());		
+				
 		entityManager.getTransaction().begin();
         entityManager.merge(requisito);
         entityManager.getTransaction().commit();
