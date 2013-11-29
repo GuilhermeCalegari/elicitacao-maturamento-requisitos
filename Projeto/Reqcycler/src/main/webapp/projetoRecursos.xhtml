@@ -3,68 +3,40 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui" 
-	template="/default.xhtml">
+	xmlns:p="http://primefaces.org/ui" template="/default.xhtml">
 
 	<ui:define name="content">
 		<style type="text/css">
-			html.progress,html.progress * {cursor: progress !important;}</style>
-
+html.progress,html.progress * {
+	cursor: progress !important;
+}
+</style>
 		<h:form id="formProjetoRecursos">
-			<p:fieldset legend="Recursos disponíveis">
-				<p:dataGrid 
-					id="recursosDisponiveis" 
-					var="recurso"
-					value="#{projetoRecursosController.usuariosDisponiveis}"
-					columns="4">
-					<p:column>
-						<p:panel id="pnlRecursoDisponivel" header="#{recurso.nome}">
-							<h:panelGrid columns="1">
-								<h:outputText value="#{recurso.login}"></h:outputText>
-							</h:panelGrid>
-						</p:panel>
-					</p:column>
-					<p:draggable 
-						for="pnlRecursoDisponivel" 
-						revert="true"
-						handle=".ui-panel-titlebar"></p:draggable>
-				</p:dataGrid>
-			</p:fieldset>
-
-			<p:fieldset id="recursosSelecionados" legend="Recursos selecionados">
-				<p:outputPanel id="areaDestino">
-					<h:outputText 
-						value="Arraste e solte o recurso aqui"
-						rendered="#{empty projetoRecursosController.usuariosSelecionados}"
-						style="font-size:30px;" />
-					<p:dataTable 
-						var="recurso"
-						value="#{projetoRecursosController.usuariosSelecionados}"
-						rendered="#{not empty projetoRecursosController.usuariosSelecionados}">
-
-						<p:column headerText="Nome">
-							<h:outputText value="#{recurso.nome}"></h:outputText>
-						</p:column>
-
-						<p:column headerText="Sobrenome">
-							<h:outputText value="#{recurso.sobrenome}"></h:outputText>
-						</p:column>
-
-						<p:column headerText="Login">
-							<h:outputText value="#{recurso.login}"></h:outputText>
-						</p:column>
-					</p:dataTable>
-				</p:outputPanel>
-			</p:fieldset>
-			<p:droppable 
-				activeStyleClass="ui-state-highlight"
-				for="recursosSelecionados" 
-				tolerance="touch"
-				datasource="recursosDisponiveis"
-				onDrop="tratarDrop">
-				<p:ajax listener="#{projetoRecursosController.onRecursoSelecionado}"
-					update="recursosDisponiveis areaDestino" />
-			</p:droppable>
+			<table>
+				<tr>
+					<td><h:selectOneMenu onchange="" immediate="true"
+							id="comboProjetos"
+							value="#{projetoRecursosController.projetoSelecionado.id}"
+							required="true">
+							<f:selectItems value="#{projetoRecursosController.comboProjetos}"
+								itemLabel="#{projeto.nome}" itemValue="#{projeto}" />
+						</h:selectOneMenu></td>
+				</tr>
+				<tr>
+					<td><h:selectOneMenu onchange="" immediate="true"
+							id="comboUsuarios"
+							value="#{projetoRecursosController.usuarioSelecionado.id}"
+							required="true">
+							<f:selectItems value="#{projetoRecursosController.comboUsuarios}"
+								itemLabel="#{usuario.nome}" itemValue="#{usuario}" />
+						</h:selectOneMenu></td>
+				</tr>
+				<tr>
+					<td><h:commandButton value="Teste" styleClass="button"
+							action="#{projetoRecursosController.verificarObjetos}">
+						</h:commandButton></td>
+				</tr>
+			</table>
 		</h:form>
 
 		<script>

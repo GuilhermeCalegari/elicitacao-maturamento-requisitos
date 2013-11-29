@@ -1,5 +1,6 @@
 package br.pucpr.reqcycler.controller;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,8 +26,13 @@ import br.pucpr.reqcycler.service.impl.UsuarioService;
 
 @ManagedBean(name="usuarioController")
 @SessionScoped
-public class UsuarioController {
+public class UsuarioController implements Serializable{
 			
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@ManagedProperty(value = "#{usuarioService}")
 	private UsuarioService usuarioService;
 	
