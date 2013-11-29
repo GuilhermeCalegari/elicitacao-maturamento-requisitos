@@ -186,6 +186,7 @@ public class Requisito {
 	 * @return the complexidade
 	 */
 	@Column(name = "COMPLEXIDADE", unique = false, nullable = true)
+	@Enumerated(EnumType.STRING)
 	public ComplexidadeRequisitoEnum getComplexidade() {
 		return complexidade;
 	}

@@ -52,7 +52,7 @@ public class UsuarioController {
 	
 	@PostConstruct
 	private void init(){
-		this.usuarioLogado = new Usuario();
+		limparUsuario();
 	}
 	
 	public void limparUsuario() {		

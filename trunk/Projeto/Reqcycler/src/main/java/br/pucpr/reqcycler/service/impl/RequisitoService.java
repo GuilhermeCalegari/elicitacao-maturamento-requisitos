@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 
 import br.pucpr.reqcycler.dao.impl.RequisitoDAO;
+import br.pucpr.reqcycler.model.Projeto;
 import br.pucpr.reqcycler.model.Requisito;
 import br.pucpr.reqcycler.service.IRequisitoService;
 
@@ -53,6 +54,10 @@ public class RequisitoService implements IRequisitoService {
 	public List<Requisito> getRequisitos() { 
 		return requisitoDAO.getRequisitos();
 	}
-
+	
+	@Override
+	public List<Requisito> getRequisitosByProjeto(Projeto projeto) {
+		return requisitoDAO.getRequisitosByProjeto(projeto);
+	}
 
 }

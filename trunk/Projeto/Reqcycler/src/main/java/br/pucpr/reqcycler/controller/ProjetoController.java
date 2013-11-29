@@ -91,6 +91,12 @@ public class ProjetoController implements Serializable {
 					
 			Projeto projeto = (Projeto) event.getObject();
 			
+			if ("FECHADO".equalsIgnoreCase(projeto.getStatus().getStatus())){
+				projeto.setDataFim(new Date());
+			}else{
+				projeto.setDataFim(null);
+			}
+			
 			projetoService.atualizaProjeto(projeto);
 			
 			context.addMessage(null, new FacesMessage("Transação OK!", 

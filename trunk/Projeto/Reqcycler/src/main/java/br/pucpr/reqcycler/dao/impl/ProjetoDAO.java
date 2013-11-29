@@ -49,6 +49,7 @@ public class ProjetoDAO implements IProjetoDAO {
 			
 		projetoMerge.setNome(projeto.getNome());
 		projetoMerge.setStatus(projeto.getStatus());
+		projetoMerge.setDataFim(projeto.getDataFim());
 		projetoMerge.setObjetivo(projeto.getObjetivo());
 		projetoMerge.setEscopo(projeto.getEscopo());
 		projetoMerge.setDescricao(projeto.getDescricao());
