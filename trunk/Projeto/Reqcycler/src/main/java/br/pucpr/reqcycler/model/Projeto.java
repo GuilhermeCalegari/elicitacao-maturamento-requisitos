@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import br.pucpr.reqcycler.enumeration.StatusProjetoEnum;
 
@@ -96,6 +98,7 @@ public class Projeto {
 	 * @return the dataInicio
 	 */
 	@Column(name = "DATA_INICIO", unique = false, nullable = false)
+	@Temporal(TemporalType.DATE)
 	public Date getDataInicio() {
 		return dataInicio;
 	}
@@ -112,6 +115,7 @@ public class Projeto {
 	 * @return the dataFim
 	 */
 	@Column(name = "DATA_FIM", unique = false, nullable = true)
+	@Temporal(TemporalType.DATE)
 	public Date getDataFim() {
 		return dataFim;
 	}

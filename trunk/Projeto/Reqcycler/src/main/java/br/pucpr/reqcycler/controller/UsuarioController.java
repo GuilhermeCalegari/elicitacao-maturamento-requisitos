@@ -1,6 +1,8 @@
 package br.pucpr.reqcycler.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
@@ -8,6 +10,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.model.SelectItem;
 
 import br.pucpr.reqcycler.model.Usuario;
 import br.pucpr.reqcycler.service.impl.UsuarioService;
@@ -35,6 +38,12 @@ public class UsuarioController {
 		
 	private Usuario usuarioLogado;
 	
+	private Usuario usuarioSelecionado;
+	
+	private List<Usuario> usuarioList;
+	
+	private List<Usuario> usuarioFiltroList;
+	
 	/**
 	 * Add User
 	 * 
@@ -43,8 +52,30 @@ public class UsuarioController {
 	
 	@PostConstruct
 	private void init(){
-		this.usuarioLogado = null;
+		this.usuarioLogado = new Usuario();
+	}
+	
+	public void limparUsuario() {		
 		this.usuario = new Usuario();
+		this.usuarioList = new ArrayList<Usuario>();
+		this.usuarioList.addAll(getUsuarios());
+	}	
+	
+	public List<Usuario> getUsuarios(){
+		return usuarioService.getUsuarios();		
+	}
+
+	public SelectItem[] getUsuariosValues() {
+		List<Usuario> listUsuarios = this.getUsuarios();
+	    SelectItem[] items = new SelectItem[listUsuarios.size()];
+	    int i = 0;
+	    for(Usuario usuario: listUsuarios) {
+	      items[i++] = new SelectItem(usuario.getId(), 
+	    		  					  usuario.getNome()
+	    		  					  +" "+ 
+	    		  					  usuario.getSobrenome());
+	    }
+	    return items;
 	}
 		
 	public void adicionaUsuario() {
@@ -66,11 +97,7 @@ public class UsuarioController {
 		} 					
 
 	}
-	
-	public void limparUsuario() {		
-		this.usuario = new Usuario();
-	}	
-			
+				
 	public void logon(){
 		try{				
 			if(this.usuario.getLogin().equalsIgnoreCase("admin")){
@@ -118,5 +145,48 @@ public class UsuarioController {
 	public void setUsuarioLogado(Usuario usuarioLogado) {
 		this.usuarioLogado = usuarioLogado;
 	}
+
+	/**
+	 * @return the usuarioSelecionado
+	 */
+	public Usuario getUsuarioSelecionado() {
+		return usuarioSelecionado;
+	}
+
+	/**
+	 * @param usuarioSelecionado the usuarioSelecionado to set
+	 */
+	public void setUsuarioSelecionado(Usuario usuarioSelecionado) {
+		this.usuarioSelecionado = usuarioSelecionado;
+	}
+
+	/**
+	 * @return the usuarioList
+	 */
+	public List<Usuario> getUsuarioList() {
+		return usuarioList;
+	}
+
+	/**
+	 * @param usuarioList the usuarioList to set
+	 */
+	public void setUsuarioList(List<Usuario> usuarioList) {
+		this.usuarioList = usuarioList;
+	}
+
+	/**
+	 * @return the usuarioFiltroList
+	 */
+	public List<Usuario> getUsuarioFiltroList() {
+		return usuarioFiltroList;
+	}
+
+	/**
+	 * @param usuarioFiltroList the usuarioFiltroList to set
+	 */
+	public void setUsuarioFiltroList(List<Usuario> usuarioFiltroList) {
+		this.usuarioFiltroList = usuarioFiltroList;
+	}
+		
 		
 }

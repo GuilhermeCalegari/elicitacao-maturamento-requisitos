@@ -52,7 +52,6 @@ public class UsuarioDAO implements IUsuarioDAO {
 	}
 	
 	@Override
-	@SuppressWarnings("rawtypes")
 	public Usuario getUsuarioById(int id) {
 		EntityManager entityManager =
 				EntityManagerControl.createEntityManager();

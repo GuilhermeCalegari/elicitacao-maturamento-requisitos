@@ -15,9 +15,10 @@ import javax.faces.model.SelectItem;
 
 import org.primefaces.event.RowEditEvent;
 
-import br.pucpr.reqcycler.enumeration.ComplexidadeRequisitoEnum;
 import br.pucpr.reqcycler.enumeration.ClassificacaoRequisitoEnum;
+import br.pucpr.reqcycler.enumeration.ComplexidadeRequisitoEnum;
 import br.pucpr.reqcycler.enumeration.StatusRequisitoEnum;
+import br.pucpr.reqcycler.model.Projeto;
 import br.pucpr.reqcycler.model.Requisito;
 import br.pucpr.reqcycler.model.Usuario;
 import br.pucpr.reqcycler.service.impl.RequisitoService;
@@ -52,6 +53,8 @@ public class RequisitoController implements Serializable {
 
 	private Requisito requisito;
 	
+	private Projeto projeto;
+	
 	private Requisito requisitoSelecionado;	
 	
 	private List<Requisito> requisitoList;
@@ -68,8 +71,12 @@ public class RequisitoController implements Serializable {
 		
 		FacesContext context = FacesContext.getCurrentInstance();
 		try {			
-						
-			requisito.setDataCriado(new Date());								
+				
+			requisito.setProjeto(this.projeto);
+			requisito.setDataCriado(new Date());
+			requisito.setDataAlterado(null);														
+			requisito.setUsuarioCriacao(usuarioLogado);
+			requisito.setUsuarioAlteracao(null);
 			requisito.setStatus(StatusRequisitoEnum.ABERTO);			
 			requisitoService.adicionaRequisito(requisito);
 						
@@ -112,10 +119,11 @@ public class RequisitoController implements Serializable {
 	}
 	
 	public void limparRequisito() {		
-		this.requisito = new Requisito();		
+		this.requisito = new Requisito();
+		this.projeto = new Projeto();
 		this.requisitoList = new ArrayList<Requisito>();
 		this.requisitoList.addAll(getRequisitos());
-	}
+	}	
 	
 	public SelectItem[] getComplexidadeValues() {
 	    SelectItem[] items = new SelectItem[ComplexidadeRequisitoEnum.values().length];
@@ -158,6 +166,20 @@ public class RequisitoController implements Serializable {
 		this.requisito = requisito;
 	}
 	
+	/**
+	 * @return the projeto
+	 */
+	public Projeto getProjeto() {
+		return projeto;
+	}
+
+	/**
+	 * @param projeto the projeto to set
+	 */
+	public void setProjeto(Projeto projeto) {
+		this.projeto = projeto;
+	}
+
 	/**
 	 * @return the requisitoSelecionado
 	 */

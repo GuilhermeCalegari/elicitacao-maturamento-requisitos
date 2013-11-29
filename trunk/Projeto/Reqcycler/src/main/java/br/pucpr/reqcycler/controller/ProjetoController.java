@@ -90,6 +90,7 @@ public class ProjetoController implements Serializable {
 		try{
 					
 			Projeto projeto = (Projeto) event.getObject();
+			
 			projetoService.atualizaProjeto(projeto);
 			
 			context.addMessage(null, new FacesMessage("Transação OK!", 
