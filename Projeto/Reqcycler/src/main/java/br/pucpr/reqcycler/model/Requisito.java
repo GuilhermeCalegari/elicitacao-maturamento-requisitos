@@ -37,6 +37,9 @@ public class Requisito {
 	private Projeto projeto;
 	private ClassificacaoRequisitoEnum classificacao;
 	private Date dataCriado;
+	private Date dataAlterado;
+	private Usuario usuarioCriacao;
+	private Usuario usuarioAlteracao;
 	private String tipo;
 	private ComplexidadeRequisitoEnum complexidade;
 	private String descricao;
@@ -111,6 +114,56 @@ public class Requisito {
 	 */
 	public void setDataCriado(Date dataCriado) {
 		this.dataCriado = dataCriado;
+	}
+	
+	/**
+	 * @return the dataAlterado
+	 */
+	@Column(name = "DATA_ALTERADO", unique = false, nullable = true)
+	@Temporal(TemporalType.DATE)
+	public Date getDataAlterado() {
+		return dataAlterado;
+	}
+
+	/**
+	 * @param dataAlterado the dataAlterado to set
+	 */
+	public void setDataAlterado(Date dataAlterado) {
+		this.dataAlterado = dataAlterado;
+	}
+
+	/**
+	 * @return the usuarioCriacao
+	 */
+	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name = "USUARIO_CRIACAO", unique = false, 
+				nullable = false, referencedColumnName="ID")		
+	public Usuario getUsuarioCriacao() {
+		return usuarioCriacao;
+	}
+
+	/**
+	 * @param usuarioCriacao the usuarioCriacao to set
+	 */
+	public void setUsuarioCriacao(Usuario usuarioCriacao) {
+		this.usuarioCriacao = usuarioCriacao;
+	}
+
+	/**
+	 * @return the usuarioAlteracao
+	 */
+	@ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinColumn(name = "USUARIO_ALTERACAO", unique = false, 
+				nullable = true, referencedColumnName="ID")			
+	public Usuario getUsuarioAlteracao() {
+		return usuarioAlteracao;
+	}
+
+	/**
+	 * @param usuarioAlteracao the usuarioAlteracao to set
+	 */
+	public void setUsuarioAlteracao(Usuario usuarioAlteracao) {
+		this.usuarioAlteracao = usuarioAlteracao;
 	}
 
 	/**

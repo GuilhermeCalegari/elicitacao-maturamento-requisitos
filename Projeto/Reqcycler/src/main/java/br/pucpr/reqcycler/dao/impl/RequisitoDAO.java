@@ -7,9 +7,9 @@ import javax.faces.bean.SessionScoped;
 import javax.persistence.EntityManager;
 
 import br.pucpr.reqcycler.dao.IRequisitoDAO;
-import br.pucpr.reqcycler.enumeration.ComplexidadeRequisitoEnum;
 import br.pucpr.reqcycler.model.Projeto;
 import br.pucpr.reqcycler.model.Requisito;
+import br.pucpr.reqcycler.model.Usuario;
 import br.pucpr.reqcycler.util.EntityManagerControl;
 
 /**
@@ -32,7 +32,10 @@ public class RequisitoDAO implements IRequisitoDAO {
 		//Detached to Transient
 		requisito.setProjeto(entityManager.
 				find(Projeto.class, requisito.getProjeto().getId()));
-												
+
+		requisito.setUsuarioCriacao(entityManager.
+				find(Usuario.class, requisito.getUsuarioCriacao().getId()));
+									
 		entityManager.getTransaction().begin();
 		entityManager.persist(requisito);
 		entityManager.getTransaction().commit();		
