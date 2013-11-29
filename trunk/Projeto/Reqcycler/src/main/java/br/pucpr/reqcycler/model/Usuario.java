@@ -1,5 +1,6 @@
 package br.pucpr.reqcycler.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -21,8 +22,8 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "USUARIO")
-public class Usuario {
-
+public class Usuario implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String nome;
 	private String sobrenome;
