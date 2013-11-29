@@ -2,6 +2,7 @@ package br.pucpr.reqcycler.dao;
 
 import java.util.List;
 
+import br.pucpr.reqcycler.model.Projeto;
 import br.pucpr.reqcycler.model.Requisito;
 
 /**
@@ -46,4 +47,12 @@ public interface IRequisitoDAO {
 	 * 
 	 */
 	public List<Requisito> getRequisitos();
+	
+	/**
+	 * Get Requisito List by Projeto
+	 * 
+	 * @param  Projeto projeto
+	 */
+	public List<Requisito> getRequisitosByProjeto(Projeto projeto);
+	
 }

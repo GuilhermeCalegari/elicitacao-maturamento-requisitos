@@ -113,16 +113,21 @@ public class RequisitoController implements Serializable {
 		limparRequisito();
 				
 	} 
-	
-	public List<Requisito> getRequisitos(){
-		return requisitoService.getRequisitos();		
+			
+	public void getRequisitos(){	
+		this.requisitoList = new ArrayList<Requisito>();
+		this.requisitoList.addAll(requisitoService.getRequisitos());		
 	}
 	
-	public void limparRequisito() {		
-		this.requisito = new Requisito();
-		this.projeto = new Projeto();
+	public void getRequisitosByProjeto(){				
 		this.requisitoList = new ArrayList<Requisito>();
-		this.requisitoList.addAll(getRequisitos());
+		this.requisitoList.addAll(requisitoService.getRequisitosByProjeto(projeto));		
+	}
+	
+	public void limparRequisito() {			
+		this.requisito = new Requisito();
+		this.projeto = new Projeto();	
+		this.requisitoList = new ArrayList<Requisito>();
 	}	
 	
 	public SelectItem[] getComplexidadeValues() {

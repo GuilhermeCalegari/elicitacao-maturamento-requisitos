@@ -31,7 +31,7 @@
 		
 		<li><h:link value="#{msg.menu_elicitacao}"/>						
 			<ul>
-				<li><h:link value="#{msg.menu_cadastrar}" /></li>
+				<li><h:link value="#{msg.menu_cadastrar}"/></li>
 				<li><h:link value="#{msg.menu_manter}" /></li>															
 			</ul>			
 		</li>
@@ -40,14 +40,13 @@
 			<ul>				
 				<li><h:link value="#{msg.menu_cadastrar}" outcome="cadastrarRequisito" /></li>
 				<li><h:link value="#{msg.menu_manter}" outcome="manterRequisito" /></li>
-				<li><h:link value="#{msg.menu_gerar_pacote}" /></li>				
+				<li><h:link value="#{msg.menu_gerar_pacote}" outcome="gerarPacote"/></li>				
 			</ul>			
 		</li>
 		
 		<li><h:link value="#{msg.menu_workflow}"/>						
 			<ul>				
-				<li><h:link value="#{msg.menu_cadastrar}" /></li>
-				<li><h:link value="#{msg.menu_manter}" /></li>
+				<li><h:link value="#{msg.menu_gerenciar}" /></li>				
 				<li><h:link value="#{msg.menu_aprovar}" /></li>		
 			</ul>			
 		</li>

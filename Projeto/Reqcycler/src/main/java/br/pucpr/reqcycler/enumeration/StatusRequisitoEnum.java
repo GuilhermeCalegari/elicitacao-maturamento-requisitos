@@ -3,7 +3,8 @@ package br.pucpr.reqcycler.enumeration;
 import java.io.Serializable;
 
 public enum StatusRequisitoEnum implements Serializable {	
-	ABERTO("Aberto"), PENDENTE("Pendente"), RECUSADO("Recusado"), APROVADO("Recusado");
+	ABERTO("Aberto"), PENDENTE("Pendente"), 
+	RECUSADO("Recusado"), APROVADO("Recusado"), CANCELADO("Cancelado");
 	private final String status;
 
 	private StatusRequisitoEnum(String status) {

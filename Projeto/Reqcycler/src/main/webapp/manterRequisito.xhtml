@@ -17,8 +17,192 @@
 
 			<p:panel header="Manter Requisito">
 
+				<p:growl id="messages" showDetail="true" />
 				
+				<p:growl id="growlDialog" showDetail="true"  />
+				
+				<p:panel style="margin-bottom:10px;">  
+			        <h:panelGrid columns="2" cellpadding="5">  
+			        	<h:selectOneMenu id="seletorProjeto" value="#{requisitoController.projeto.id}">
+			        			<f:selectItem itemLabel="Selecione um projeto" itemValue="" />  												 
+								<f:selectItems value="#{projetoController.projetosValues}"/>								
+						</h:selectOneMenu>			           
+						<p:commandButton icon="ui-icon-search"
+										 actionListener="#{requisitoController.getRequisitosByProjeto()}" 
+										 update="requisitosDataTable"/>						
+			  		</h:panelGrid>
+ 			          					
+			    </p:panel>
+			    
+			<p:separator />  								
+				
+				<p:dataTable id="requisitosDataTable" 
+							 var="requisito"
+							 widgetVar="requisitoTable"
+							 value="#{requisitoController.requisitoList}"
+							 paginator="true"
+							 rows="10"
+							 editable="true"
+							 ajax="true"
+							 emptyMessage="Nenhum requisito encontrado com os dados informados!"					
+							 filteredValue="#{requisitoController.requisitoFiltroList}">							 							 
+
+					<f:facet name="header">
+						<p:outputPanel>						
+							<table >							
+								<tr style="width: 100%">
+									<td style="border-style:none; text-align:left; width: 40%">
+										<h:outputText value="Localizar: " />
+										<p:inputText id="globalFilter"
+													 onkeyup="requisitoTable.filter()" />
+									</td>
+									<td style="border-style: none; text-align:center; width: 20%">
+										<p:outputLabel>Requisitos</p:outputLabel>
+									</td>
+									<td style="border-style: none; text-align:right; width: 40%">									
+									</td>
+								</tr>
+							</table>							
+						</p:outputPanel>
+					</f:facet>
+
+					<p:ajax event="rowEdit"
+							listener="#{requisitoController.atualizarRequisito}" 
+							ajax="true"
+							update="requisitosDataTable,:form:messages" />
+							
+					<p:ajax event="rowEditCancel" />
+					
+					<p:column sortBy="#{requisito.tipo}" 
+							  filterBy="#{requisito.tipo}"
+							  headerText="Nome"
+							  filterMatchMode="contains"
+							  style="max-width: 30px;">
+						<p:cellEditor>
+							<f:facet name="input">
+								<p:inputText value="#{requisito.tipo}" />
+							</f:facet>
+							<f:facet name="output">
+								<h:outputText value="#{requisito.tipo}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+
+					<p:column sortBy="#{requisito.status}" 
+							  filterBy="#{requisito.status}"
+							  headerText="Status"
+							  style="max-width: 30px;">						
+							<h:outputText value="#{requisito.status}" />												
+					</p:column>
+					
+					<p:column sortBy="#{requisito.classificacao}" 
+							  filterBy="#{requisito.classificacao}"
+							  headerText="Classificação"
+							  style="max-width: 30px;">
+						<p:cellEditor>
+							<f:facet name="input">
+								<h:selectOneMenu id="classificacao"
+												 value="#{requisito.classificacao}">
+									<f:selectItems value="#{requisitoController.classificacaoValues}" />
+								</h:selectOneMenu>
+							</f:facet>
+							<f:facet name="output">
+								<h:outputText value="#{requisito.classificacao}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+					
+					<p:column sortBy="#{requisito.complexidade}" 
+							  filterBy="#{requisito.complexidade}"
+							  headerText="Complexidade"
+							  style="max-width: 30px;">
+						<p:cellEditor>
+							<f:facet name="input">
+								<h:selectOneMenu id="complexidade"
+												 value="#{requisito.complexidade}">
+									<f:selectItems value="#{requisitoController.complexidadeValues}" />
+								</h:selectOneMenu>
+							</f:facet>
+							<f:facet name="output">
+								<h:outputText value="#{requisito.complexidade}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+
+					<p:column headerText="Descrição"
+						style="max-width: 150px;">
+						<p:cellEditor>
+							<f:facet name="input">
+								<p:inputTextarea value="#{requisito.descricao}" 
+												 rows="6" 
+												 cols="33" />
+							</f:facet>
+							<f:facet name="output" >
+								<h:outputText value="#{requisito.descricao}" />
+							</f:facet>
+						</p:cellEditor>
+					</p:column>
+														
+					<p:column style="max-width: 5px;">						
+						<p:rowEditor rendered="#{(requisito.projeto.status != 'FECHADO')}" />																			
+					</p:column>
+					
+					<p:column style="max-width: 5px;">
+			                <p:commandButton id="selectButton" 
+			                				 update=":form:display" 
+			                				 oncomplete="requisitoDialog.show()" 
+			                				 icon="ui-icon-search">  
+			                <f:setPropertyActionListener value="#{requisito}" 
+			                							 target="#{requisitoController.requisitoSelecionado}" />  
+			            </p:commandButton>  
+			        </p:column>													
+
+				</p:dataTable>
 			</p:panel>
+			
+			<p:dialog id="dialog" header="Detalhes Requisito" widgetVar="requisitoDialog" resizable="false"  
+                showEffect="fade" hideEffect="explode" modal="true">  
+  
+	        <h:panelGrid id="display" columns="2" cellpadding="4">  
+	        
+	        		<h:outputText value="Projeto:" />  
+		            <h:outputText value="#{requisitoController.requisitoSelecionado.projeto.nome}" />
+	  
+		            <h:outputText value="Tipo:" />  
+		            <h:outputText value="#{requisitoController.requisitoSelecionado.tipo}" />
+		            
+		            <h:outputText value="Status: " />  
+		            <h:outputText value="#{requisitoController.requisitoSelecionado.status}" />
+		            
+		            <h:outputText value="Data Criação: " />  
+		            <h:outputText value="#{requisitoController.requisitoSelecionado.dataCriado}" >
+		            		<f:convertDateTime pattern="dd/MM/yyyy HH:mm"
+											   timeZone="GMT-03:00" />
+					</h:outputText>
+												           
+		            <h:outputText value="Usuário Criação: " />  
+		            <h:outputText value="#{requisitoController.requisitoSelecionado.usuarioCriacao.nome}" />
+		            
+		          	<h:outputText value="Data Alteração: " />  
+		            <h:outputText value="#{requisitoController.requisitoSelecionado.dataAlterado}" >
+		            		<f:convertDateTime pattern="dd/MM/yyyy HH:mm"
+											   timeZone="GMT-03:00" />
+					</h:outputText>
+												           
+		            <h:outputText value="Usuário Alteração: " />  
+		            <h:outputText value="#{requisitoController.requisitoSelecionado.usuarioAlteracao.nome}" />
+		          		            
+		            <h:outputText value="Classificação: " />  
+		            <h:outputText value="#{requisitoController.requisitoSelecionado.classificacao}" />
+		            
+		            <h:outputText value="Complexidade: " />  
+		            <h:outputText value="#{requisitoController.requisitoSelecionado.complexidade}" />
+		            
+		            <h:outputText value="Descrição: " />  
+		            <h:outputText value="#{requisitoController.requisitoSelecionado.descricao}" />		            
+		            
+		        </h:panelGrid>  
+		    </p:dialog> 
 
 		</h:form>
 

@@ -62,11 +62,13 @@
 					<tr>
 						<td><h:outputLabel for="descricao" value="Descrição : " /></td>
 						<td>
-							<p:inputText id="descricao" value="#{requisitoController.requisito.descricao}"  
-										 required="true" requiredMessage="Descrição é um campo obrigatório">
+							<p:inputTextarea id="descricao" value="#{requisitoController.requisito.descricao}"  
+										 required="true" requiredMessage="Descrição é um campo obrigatório"
+										 rows="10"
+										 cols="100" >
 								<f:validateLength minimum="4" />								
 								<p:ajax event="blur" update="descricaoMsg" />
-							</p:inputText>
+							</p:inputTextarea>
 							<p:message id="descricaoMsg" for="descricao" display="icon" />
 						</td>
 					</tr>	

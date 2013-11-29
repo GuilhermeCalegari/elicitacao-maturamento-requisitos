@@ -88,5 +88,18 @@ public class RequisitoDAO implements IRequisitoDAO {
                 .getResultList();
 		return list;
 	}
+	
+	@Override
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public List<Requisito> getRequisitosByProjeto(Projeto projeto) {
+		EntityManager entityManager =
+				EntityManagerControl.createEntityManager();		
+		List list = entityManager
+				.createQuery("FROM "  + Requisito.class.getName() + " WHERE PROJETO =  :projeto")
+				.setParameter("projeto", projeto.getId())
+				.getResultList();
+		return list;
+	}
+		
 
 }

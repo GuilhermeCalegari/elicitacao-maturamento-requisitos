@@ -162,8 +162,8 @@
 						</p:cellEditor>
 					</p:column>
 
-					<p:column style="max-width: 5px;">						
-						<p:rowEditor/>					
+					<p:column style="max-width: 5px;" >						
+						<p:rowEditor rendered="#{(projeto.status) != 'FECHADO'}" />					
 					</p:column>
 					
 					<p:column style="max-width: 5px;">
