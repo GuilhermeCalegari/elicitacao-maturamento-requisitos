@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ReqcyclerModelStoreContainer" CdmEntityContainer="ReqcyclerEntities">
+    <EntitySetMapping Name="Area">
+      <EntityTypeMapping TypeName="ReqcyclerModel.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClassificacaoRequisito">
+      <EntityTypeMapping TypeName="ReqcyclerModel.ClassificacaoRequisito">
+        <MappingFragment StoreEntitySet="ClassificacaoRequisito">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comentario">
+      <EntityTypeMapping TypeName="ReqcyclerModel.Comentario">
+        <MappingFragment StoreEntitySet="Comentario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="comentario1" ColumnName="comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FluxoAprovacaoProjeto">
+      <EntityTypeMapping TypeName="ReqcyclerModel.FluxoAprovacaoProjeto">
+        <MappingFragment StoreEntitySet="FluxoAprovacaoProjeto">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="projetoUsuarioId" ColumnName="projetoUsuarioId" />
+          <ScalarProperty Name="ordem" ColumnName="ordem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pacote">
+      <EntityTypeMapping TypeName="ReqcyclerModel.Pacote">
+        <MappingFragment StoreEntitySet="Pacote">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PapelUsuario">
+      <EntityTypeMapping TypeName="ReqcyclerModel.PapelUsuario">
+        <MappingFragment StoreEntitySet="PapelUsuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projeto">
+      <EntityTypeMapping TypeName="ReqcyclerModel.Projeto">
+        <MappingFragment StoreEntitySet="Projeto">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="responsavelId" ColumnName="responsavelId" />
+          <ScalarProperty Name="areaResponsavelId" ColumnName="areaResponsavelId" />
+          <ScalarProperty Name="focalProjetoId" ColumnName="focalProjetoId" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="dataInicio" ColumnName="dataInicio" />
+          <ScalarProperty Name="dataFim" ColumnName="dataFim" />
+          <ScalarProperty Name="logotipo" ColumnName="logotipo" />
+          <ScalarProperty Name="objetivo" ColumnName="objetivo" />
+          <ScalarProperty Name="escopo" ColumnName="escopo" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjetoRequisito">
+      <EntityTypeMapping TypeName="ReqcyclerModel.ProjetoRequisito">
+        <MappingFragment StoreEntitySet="ProjetoRequisito">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="requisitoId" ColumnName="requisitoId" />
+          <ScalarProperty Name="pacoteId" ColumnName="pacoteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjetoUsuario">
+      <EntityTypeMapping TypeName="ReqcyclerModel.ProjetoUsuario">
+        <MappingFragment StoreEntitySet="ProjetoUsuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="papelUsuarioId" ColumnName="papelUsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requisito">
+      <EntityTypeMapping TypeName="ReqcyclerModel.Requisito">
+        <MappingFragment StoreEntitySet="Requisito">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="classificacaoRequisitoId" ColumnName="classificacaoRequisitoId" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="tipoRequisito" ColumnName="tipoRequisito" />
+          <ScalarProperty Name="versaoSistema" ColumnName="versaoSistema" />
+          <ScalarProperty Name="solicitante" ColumnName="solicitante" />
+          <ScalarProperty Name="complexidade" ColumnName="complexidade" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoUsuario">
+      <EntityTypeMapping TypeName="ReqcyclerModel.TipoUsuario">
+        <MappingFragment StoreEntitySet="TipoUsuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="ReqcyclerModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoUsuarioID" ColumnName="tipoUsuarioID" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="sobrenome" ColumnName="sobrenome" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

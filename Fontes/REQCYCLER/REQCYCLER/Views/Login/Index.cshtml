@@ -5,17 +5,20 @@
 }
 
 @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "form-signin", role = "form" }))
-{       
+{   
+    
+    @Html.ValidationSummary()   
+       
     <img src="~/Content/Images/logo.png" />
     <h2 class="form-signin-heading">Efetuar Login</h2>
+      
     @Html.TextBoxFor(m => m.LoginMail, new { @class = "form-control", placeholder = "E-mail" })
-    @Html.TextBoxFor(m => m.Senha, new { @class = "form-control", placeholder = "Senha" })
+    @Html.TextBoxFor(m => m.Senha, new { @class = "form-control", placeholder = "Senha", type = "password" })
     
     <br />
     
     <button class="btn btn-lg btn-primary btn-block" type="submit">ENTRAR</button>
 }
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

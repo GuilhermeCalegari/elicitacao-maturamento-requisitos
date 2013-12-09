@@ -1,0 +1,689 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ReqcyclerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ReqcyclerModelStoreContainer">
+          <EntitySet Name="Area" EntityType="ReqcyclerModel.Store.Area" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ClassificacaoRequisito" EntityType="ReqcyclerModel.Store.ClassificacaoRequisito" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comentario" EntityType="ReqcyclerModel.Store.Comentario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FluxoAprovacaoProjeto" EntityType="ReqcyclerModel.Store.FluxoAprovacaoProjeto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pacote" EntityType="ReqcyclerModel.Store.Pacote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PapelUsuario" EntityType="ReqcyclerModel.Store.PapelUsuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Projeto" EntityType="ReqcyclerModel.Store.Projeto" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProjetoRequisito" EntityType="ReqcyclerModel.Store.ProjetoRequisito" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProjetoUsuario" EntityType="ReqcyclerModel.Store.ProjetoUsuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Requisito" EntityType="ReqcyclerModel.Store.Requisito" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoUsuario" EntityType="ReqcyclerModel.Store.TipoUsuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="ReqcyclerModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_areaResponsavelId" Association="ReqcyclerModel.Store.FK_areaResponsavelId">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="Projeto" EntitySet="Projeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_classificacaoRequisitoId" Association="ReqcyclerModel.Store.FK_classificacaoRequisitoId">
+            <End Role="ClassificacaoRequisito" EntitySet="ClassificacaoRequisito" />
+            <End Role="Requisito" EntitySet="Requisito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fluxoAprovacaoProjetoProjetoUsuario" Association="ReqcyclerModel.Store.FK_fluxoAprovacaoProjetoProjetoUsuario">
+            <End Role="ProjetoUsuario" EntitySet="ProjetoUsuario" />
+            <End Role="FluxoAprovacaoProjeto" EntitySet="FluxoAprovacaoProjeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_papelUsuarioId" Association="ReqcyclerModel.Store.FK_papelUsuarioId">
+            <End Role="PapelUsuario" EntitySet="PapelUsuario" />
+            <End Role="ProjetoUsuario" EntitySet="ProjetoUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projetoId" Association="ReqcyclerModel.Store.FK_projetoId">
+            <End Role="Projeto" EntitySet="Projeto" />
+            <End Role="Pacote" EntitySet="Pacote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projetoUsuarioUsuarioId" Association="ReqcyclerModel.Store.FK_projetoUsuarioUsuarioId">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ProjetoUsuario" EntitySet="ProjetoUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_requisitoId" Association="ReqcyclerModel.Store.FK_requisitoId">
+            <End Role="Requisito" EntitySet="Requisito" />
+            <End Role="ProjetoRequisito" EntitySet="ProjetoRequisito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioTipoUsuarioID" Association="ReqcyclerModel.Store.FK_UsuarioTipoUsuarioID">
+            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="valor" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ClassificacaoRequisito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="valor" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Comentario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="comentario" Type="varchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="FluxoAprovacaoProjeto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="projetoUsuarioId" Type="int" />
+          <Property Name="ordem" Type="int" />
+        </EntityType>
+        <EntityType Name="Pacote">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="projetoId" Type="int" />
+          <Property Name="numero" Type="int" />
+          <Property Name="status" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="PapelUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="valor" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Projeto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="responsavelId" Type="int" />
+          <Property Name="areaResponsavelId" Type="int" />
+          <Property Name="focalProjetoId" Type="int" />
+          <Property Name="nome" Type="varchar" MaxLength="100" />
+          <Property Name="dataInicio" Type="datetime" />
+          <Property Name="dataFim" Type="datetime" />
+          <Property Name="logotipo" Type="image" />
+          <Property Name="objetivo" Type="varchar" MaxLength="1048" />
+          <Property Name="escopo" Type="varchar" MaxLength="1048" />
+          <Property Name="descricao" Type="varchar" MaxLength="2096" />
+        </EntityType>
+        <EntityType Name="ProjetoRequisito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="projetoId" Type="int" />
+          <Property Name="requisitoId" Type="int" />
+          <Property Name="pacoteId" Type="int" />
+        </EntityType>
+        <EntityType Name="ProjetoUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="usuarioId" Type="int" />
+          <Property Name="projetoId" Type="int" />
+          <Property Name="papelUsuarioId" Type="int" />
+        </EntityType>
+        <EntityType Name="Requisito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="projetoId" Type="int" />
+          <Property Name="classificacaoRequisitoId" Type="int" />
+          <Property Name="nome" Type="varchar" MaxLength="50" />
+          <Property Name="tipoRequisito" Type="char" MaxLength="1" />
+          <Property Name="versaoSistema" Type="decimal" Precision="8" Scale="3" />
+          <Property Name="solicitante" Type="varchar" MaxLength="50" />
+          <Property Name="complexidade" Type="char" MaxLength="1" />
+          <Property Name="descricao" Type="varchar" MaxLength="4096" />
+        </EntityType>
+        <EntityType Name="TipoUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="valor" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tipoUsuarioID" Type="int" />
+          <Property Name="nome" Type="varchar" MaxLength="255" />
+          <Property Name="sobrenome" Type="varchar" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="80" />
+          <Property Name="senha" Type="varchar" MaxLength="16" />
+          <Property Name="empresa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_areaResponsavelId">
+          <End Role="Area" Type="ReqcyclerModel.Store.Area" Multiplicity="0..1" />
+          <End Role="Projeto" Type="ReqcyclerModel.Store.Projeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Projeto">
+              <PropertyRef Name="areaResponsavelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_classificacaoRequisitoId">
+          <End Role="ClassificacaoRequisito" Type="ReqcyclerModel.Store.ClassificacaoRequisito" Multiplicity="0..1" />
+          <End Role="Requisito" Type="ReqcyclerModel.Store.Requisito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassificacaoRequisito">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Requisito">
+              <PropertyRef Name="classificacaoRequisitoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fluxoAprovacaoProjetoProjetoUsuario">
+          <End Role="ProjetoUsuario" Type="ReqcyclerModel.Store.ProjetoUsuario" Multiplicity="0..1" />
+          <End Role="FluxoAprovacaoProjeto" Type="ReqcyclerModel.Store.FluxoAprovacaoProjeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjetoUsuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="FluxoAprovacaoProjeto">
+              <PropertyRef Name="projetoUsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_papelUsuarioId">
+          <End Role="PapelUsuario" Type="ReqcyclerModel.Store.PapelUsuario" Multiplicity="0..1" />
+          <End Role="ProjetoUsuario" Type="ReqcyclerModel.Store.ProjetoUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PapelUsuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProjetoUsuario">
+              <PropertyRef Name="papelUsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projetoId">
+          <End Role="Projeto" Type="ReqcyclerModel.Store.Projeto" Multiplicity="0..1" />
+          <End Role="Pacote" Type="ReqcyclerModel.Store.Pacote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projeto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Pacote">
+              <PropertyRef Name="projetoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projetoUsuarioUsuarioId">
+          <End Role="Usuario" Type="ReqcyclerModel.Store.Usuario" Multiplicity="0..1" />
+          <End Role="ProjetoUsuario" Type="ReqcyclerModel.Store.ProjetoUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProjetoUsuario">
+              <PropertyRef Name="usuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_requisitoId">
+          <End Role="Requisito" Type="ReqcyclerModel.Store.Requisito" Multiplicity="0..1" />
+          <End Role="ProjetoRequisito" Type="ReqcyclerModel.Store.ProjetoRequisito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Requisito">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProjetoRequisito">
+              <PropertyRef Name="requisitoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioTipoUsuarioID">
+          <End Role="TipoUsuario" Type="ReqcyclerModel.Store.TipoUsuario" Multiplicity="0..1" />
+          <End Role="Usuario" Type="ReqcyclerModel.Store.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoUsuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="tipoUsuarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ReqcyclerModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ReqcyclerEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Area" EntityType="ReqcyclerModel.Area" />
+          <EntitySet Name="ClassificacaoRequisito" EntityType="ReqcyclerModel.ClassificacaoRequisito" />
+          <EntitySet Name="Comentario" EntityType="ReqcyclerModel.Comentario" />
+          <EntitySet Name="FluxoAprovacaoProjeto" EntityType="ReqcyclerModel.FluxoAprovacaoProjeto" />
+          <EntitySet Name="Pacote" EntityType="ReqcyclerModel.Pacote" />
+          <EntitySet Name="PapelUsuario" EntityType="ReqcyclerModel.PapelUsuario" />
+          <EntitySet Name="Projeto" EntityType="ReqcyclerModel.Projeto" />
+          <EntitySet Name="ProjetoRequisito" EntityType="ReqcyclerModel.ProjetoRequisito" />
+          <EntitySet Name="ProjetoUsuario" EntityType="ReqcyclerModel.ProjetoUsuario" />
+          <EntitySet Name="Requisito" EntityType="ReqcyclerModel.Requisito" />
+          <EntitySet Name="TipoUsuario" EntityType="ReqcyclerModel.TipoUsuario" />
+          <EntitySet Name="Usuario" EntityType="ReqcyclerModel.Usuario" />
+          <AssociationSet Name="FK_areaResponsavelId" Association="ReqcyclerModel.FK_areaResponsavelId">
+            <End Role="Area" EntitySet="Area" />
+            <End Role="Projeto" EntitySet="Projeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_classificacaoRequisitoId" Association="ReqcyclerModel.FK_classificacaoRequisitoId">
+            <End Role="ClassificacaoRequisito" EntitySet="ClassificacaoRequisito" />
+            <End Role="Requisito" EntitySet="Requisito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_fluxoAprovacaoProjetoProjetoUsuario" Association="ReqcyclerModel.FK_fluxoAprovacaoProjetoProjetoUsuario">
+            <End Role="ProjetoUsuario" EntitySet="ProjetoUsuario" />
+            <End Role="FluxoAprovacaoProjeto" EntitySet="FluxoAprovacaoProjeto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projetoId" Association="ReqcyclerModel.FK_projetoId">
+            <End Role="Projeto" EntitySet="Projeto" />
+            <End Role="Pacote" EntitySet="Pacote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_papelUsuarioId" Association="ReqcyclerModel.FK_papelUsuarioId">
+            <End Role="PapelUsuario" EntitySet="PapelUsuario" />
+            <End Role="ProjetoUsuario" EntitySet="ProjetoUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_requisitoId" Association="ReqcyclerModel.FK_requisitoId">
+            <End Role="Requisito" EntitySet="Requisito" />
+            <End Role="ProjetoRequisito" EntitySet="ProjetoRequisito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projetoUsuarioUsuarioId" Association="ReqcyclerModel.FK_projetoUsuarioUsuarioId">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ProjetoUsuario" EntitySet="ProjetoUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioTipoUsuarioID" Association="ReqcyclerModel.FK_UsuarioTipoUsuarioID">
+            <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="valor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Projeto" Relationship="ReqcyclerModel.FK_areaResponsavelId" FromRole="Area" ToRole="Projeto" />
+        </EntityType>
+        <EntityType Name="ClassificacaoRequisito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="valor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Requisito" Relationship="ReqcyclerModel.FK_classificacaoRequisitoId" FromRole="ClassificacaoRequisito" ToRole="Requisito" />
+        </EntityType>
+        <EntityType Name="Comentario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="comentario1" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FluxoAprovacaoProjeto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="projetoUsuarioId" Type="Int32" />
+          <Property Name="ordem" Type="Int32" />
+          <NavigationProperty Name="ProjetoUsuario" Relationship="ReqcyclerModel.FK_fluxoAprovacaoProjetoProjetoUsuario" FromRole="FluxoAprovacaoProjeto" ToRole="ProjetoUsuario" />
+        </EntityType>
+        <EntityType Name="Pacote">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="projetoId" Type="Int32" />
+          <Property Name="numero" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="Projeto" Relationship="ReqcyclerModel.FK_projetoId" FromRole="Pacote" ToRole="Projeto" />
+        </EntityType>
+        <EntityType Name="PapelUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="valor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ProjetoUsuario" Relationship="ReqcyclerModel.FK_papelUsuarioId" FromRole="PapelUsuario" ToRole="ProjetoUsuario" />
+        </EntityType>
+        <EntityType Name="Projeto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="responsavelId" Type="Int32" />
+          <Property Name="areaResponsavelId" Type="Int32" />
+          <Property Name="focalProjetoId" Type="Int32" />
+          <Property Name="nome" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="dataInicio" Type="DateTime" Precision="3" />
+          <Property Name="dataFim" Type="DateTime" Precision="3" />
+          <Property Name="logotipo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="objetivo" Type="String" MaxLength="1048" Unicode="false" FixedLength="false" />
+          <Property Name="escopo" Type="String" MaxLength="1048" Unicode="false" FixedLength="false" />
+          <Property Name="descricao" Type="String" MaxLength="2096" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Area" Relationship="ReqcyclerModel.FK_areaResponsavelId" FromRole="Projeto" ToRole="Area" />
+          <NavigationProperty Name="Pacote" Relationship="ReqcyclerModel.FK_projetoId" FromRole="Projeto" ToRole="Pacote" />
+        </EntityType>
+        <EntityType Name="ProjetoRequisito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="projetoId" Type="Int32" />
+          <Property Name="requisitoId" Type="Int32" />
+          <Property Name="pacoteId" Type="Int32" />
+          <NavigationProperty Name="Requisito" Relationship="ReqcyclerModel.FK_requisitoId" FromRole="ProjetoRequisito" ToRole="Requisito" />
+        </EntityType>
+        <EntityType Name="ProjetoUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="usuarioId" Type="Int32" />
+          <Property Name="projetoId" Type="Int32" />
+          <Property Name="papelUsuarioId" Type="Int32" />
+          <NavigationProperty Name="FluxoAprovacaoProjeto" Relationship="ReqcyclerModel.FK_fluxoAprovacaoProjetoProjetoUsuario" FromRole="ProjetoUsuario" ToRole="FluxoAprovacaoProjeto" />
+          <NavigationProperty Name="PapelUsuario" Relationship="ReqcyclerModel.FK_papelUsuarioId" FromRole="ProjetoUsuario" ToRole="PapelUsuario" />
+          <NavigationProperty Name="Usuario" Relationship="ReqcyclerModel.FK_projetoUsuarioUsuarioId" FromRole="ProjetoUsuario" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Requisito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="projetoId" Type="Int32" />
+          <Property Name="classificacaoRequisitoId" Type="Int32" />
+          <Property Name="nome" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="tipoRequisito" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="versaoSistema" Type="Decimal" Precision="8" Scale="3" />
+          <Property Name="solicitante" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="complexidade" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="descricao" Type="String" MaxLength="4096" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ClassificacaoRequisito" Relationship="ReqcyclerModel.FK_classificacaoRequisitoId" FromRole="Requisito" ToRole="ClassificacaoRequisito" />
+          <NavigationProperty Name="ProjetoRequisito" Relationship="ReqcyclerModel.FK_requisitoId" FromRole="Requisito" ToRole="ProjetoRequisito" />
+        </EntityType>
+        <EntityType Name="TipoUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="valor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Usuario" Relationship="ReqcyclerModel.FK_UsuarioTipoUsuarioID" FromRole="TipoUsuario" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="tipoUsuarioID" Type="Int32" />
+          <Property Name="nome" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="sobrenome" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="senha" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+          <Property Name="empresa" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ProjetoUsuario" Relationship="ReqcyclerModel.FK_projetoUsuarioUsuarioId" FromRole="Usuario" ToRole="ProjetoUsuario" />
+          <NavigationProperty Name="TipoUsuario" Relationship="ReqcyclerModel.FK_UsuarioTipoUsuarioID" FromRole="Usuario" ToRole="TipoUsuario" />
+        </EntityType>
+        <Association Name="FK_areaResponsavelId">
+          <End Role="Area" Type="ReqcyclerModel.Area" Multiplicity="0..1" />
+          <End Role="Projeto" Type="ReqcyclerModel.Projeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Area">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Projeto">
+              <PropertyRef Name="areaResponsavelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_classificacaoRequisitoId">
+          <End Role="ClassificacaoRequisito" Type="ReqcyclerModel.ClassificacaoRequisito" Multiplicity="0..1" />
+          <End Role="Requisito" Type="ReqcyclerModel.Requisito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClassificacaoRequisito">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Requisito">
+              <PropertyRef Name="classificacaoRequisitoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_fluxoAprovacaoProjetoProjetoUsuario">
+          <End Role="ProjetoUsuario" Type="ReqcyclerModel.ProjetoUsuario" Multiplicity="0..1" />
+          <End Role="FluxoAprovacaoProjeto" Type="ReqcyclerModel.FluxoAprovacaoProjeto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjetoUsuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="FluxoAprovacaoProjeto">
+              <PropertyRef Name="projetoUsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projetoId">
+          <End Role="Projeto" Type="ReqcyclerModel.Projeto" Multiplicity="0..1" />
+          <End Role="Pacote" Type="ReqcyclerModel.Pacote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projeto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Pacote">
+              <PropertyRef Name="projetoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_papelUsuarioId">
+          <End Role="PapelUsuario" Type="ReqcyclerModel.PapelUsuario" Multiplicity="0..1" />
+          <End Role="ProjetoUsuario" Type="ReqcyclerModel.ProjetoUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PapelUsuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProjetoUsuario">
+              <PropertyRef Name="papelUsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_requisitoId">
+          <End Role="Requisito" Type="ReqcyclerModel.Requisito" Multiplicity="0..1" />
+          <End Role="ProjetoRequisito" Type="ReqcyclerModel.ProjetoRequisito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Requisito">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProjetoRequisito">
+              <PropertyRef Name="requisitoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projetoUsuarioUsuarioId">
+          <End Role="Usuario" Type="ReqcyclerModel.Usuario" Multiplicity="0..1" />
+          <End Role="ProjetoUsuario" Type="ReqcyclerModel.ProjetoUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ProjetoUsuario">
+              <PropertyRef Name="usuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioTipoUsuarioID">
+          <End Role="TipoUsuario" Type="ReqcyclerModel.TipoUsuario" Multiplicity="0..1" />
+          <End Role="Usuario" Type="ReqcyclerModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoUsuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="tipoUsuarioID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ReqcyclerModelStoreContainer" CdmEntityContainer="ReqcyclerEntities">
+          <EntitySetMapping Name="Area">
+            <EntityTypeMapping TypeName="ReqcyclerModel.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClassificacaoRequisito">
+            <EntityTypeMapping TypeName="ReqcyclerModel.ClassificacaoRequisito">
+              <MappingFragment StoreEntitySet="ClassificacaoRequisito">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comentario">
+            <EntityTypeMapping TypeName="ReqcyclerModel.Comentario">
+              <MappingFragment StoreEntitySet="Comentario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="comentario1" ColumnName="comentario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FluxoAprovacaoProjeto">
+            <EntityTypeMapping TypeName="ReqcyclerModel.FluxoAprovacaoProjeto">
+              <MappingFragment StoreEntitySet="FluxoAprovacaoProjeto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="projetoUsuarioId" ColumnName="projetoUsuarioId" />
+                <ScalarProperty Name="ordem" ColumnName="ordem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pacote">
+            <EntityTypeMapping TypeName="ReqcyclerModel.Pacote">
+              <MappingFragment StoreEntitySet="Pacote">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PapelUsuario">
+            <EntityTypeMapping TypeName="ReqcyclerModel.PapelUsuario">
+              <MappingFragment StoreEntitySet="PapelUsuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projeto">
+            <EntityTypeMapping TypeName="ReqcyclerModel.Projeto">
+              <MappingFragment StoreEntitySet="Projeto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="responsavelId" ColumnName="responsavelId" />
+                <ScalarProperty Name="areaResponsavelId" ColumnName="areaResponsavelId" />
+                <ScalarProperty Name="focalProjetoId" ColumnName="focalProjetoId" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="dataInicio" ColumnName="dataInicio" />
+                <ScalarProperty Name="dataFim" ColumnName="dataFim" />
+                <ScalarProperty Name="logotipo" ColumnName="logotipo" />
+                <ScalarProperty Name="objetivo" ColumnName="objetivo" />
+                <ScalarProperty Name="escopo" ColumnName="escopo" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjetoRequisito">
+            <EntityTypeMapping TypeName="ReqcyclerModel.ProjetoRequisito">
+              <MappingFragment StoreEntitySet="ProjetoRequisito">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+                <ScalarProperty Name="requisitoId" ColumnName="requisitoId" />
+                <ScalarProperty Name="pacoteId" ColumnName="pacoteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjetoUsuario">
+            <EntityTypeMapping TypeName="ReqcyclerModel.ProjetoUsuario">
+              <MappingFragment StoreEntitySet="ProjetoUsuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="usuarioId" ColumnName="usuarioId" />
+                <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+                <ScalarProperty Name="papelUsuarioId" ColumnName="papelUsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requisito">
+            <EntityTypeMapping TypeName="ReqcyclerModel.Requisito">
+              <MappingFragment StoreEntitySet="Requisito">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+                <ScalarProperty Name="classificacaoRequisitoId" ColumnName="classificacaoRequisitoId" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="tipoRequisito" ColumnName="tipoRequisito" />
+                <ScalarProperty Name="versaoSistema" ColumnName="versaoSistema" />
+                <ScalarProperty Name="solicitante" ColumnName="solicitante" />
+                <ScalarProperty Name="complexidade" ColumnName="complexidade" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoUsuario">
+            <EntityTypeMapping TypeName="ReqcyclerModel.TipoUsuario">
+              <MappingFragment StoreEntitySet="TipoUsuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="ReqcyclerModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tipoUsuarioID" ColumnName="tipoUsuarioID" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="sobrenome" ColumnName="sobrenome" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="empresa" ColumnName="empresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

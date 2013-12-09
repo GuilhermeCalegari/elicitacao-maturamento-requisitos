@@ -1,4 +1,5 @@
-﻿using System;
+﻿using REQCYCLER.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,97 +9,37 @@ namespace REQCYCLER.Controllers
 {
     public class LoginController : Controller
     {
-        //
-        // GET: /Login/
-
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
 
-        //
-        // GET: /Login/Details/5
-
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        //
-        // GET: /Login/Create
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        //
-        // POST: /Login/Create
-
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [AllowAnonymous]
+        public ActionResult Login(LoginModel model)
         {
-            try
+            using (var db = new ReqcyclerEntities())
             {
-                // TODO: Add insert logic here
+                var tmpUser = (db.Usuario
+                    .Where(u => u.email == model.LoginMail)
+                    .FirstOrDefault()) as Usuario;
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
-        //
-        // GET: /Login/Edit/5
+                if (tmpUser != null)
+                {
+                    var numProjetos = (from projetoUsuario in db.ProjetoUsuario
+                                       where projetoUsuario.id.Equals(tmpUser.id)
+                                       select projetoUsuario).Count();
 
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Login/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        //
-        // GET: /Login/Delete/5
-
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Login/Delete/5
-
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
+                    Session["UsuarioLogado"] = ((Usuario)tmpUser).nome;
+                    Session["NumProjetos"] = (Int32)numProjetos;
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Login");
+                }
             }
         }
     }
