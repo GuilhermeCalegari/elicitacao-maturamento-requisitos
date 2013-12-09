@@ -1,0 +1,102 @@
+﻿@model REQCYCLER.Projeto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Projeto</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.responsavelId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.responsavelId)
+            @Html.ValidationMessageFor(model => model.responsavelId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.areaResponsavelId, "Area")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("areaResponsavelId", String.Empty)
+            @Html.ValidationMessageFor(model => model.areaResponsavelId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.focalProjetoId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.focalProjetoId)
+            @Html.ValidationMessageFor(model => model.focalProjetoId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nome)
+            @Html.ValidationMessageFor(model => model.nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dataInicio)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dataInicio)
+            @Html.ValidationMessageFor(model => model.dataInicio)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dataFim)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dataFim)
+            @Html.ValidationMessageFor(model => model.dataFim)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.objetivo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.objetivo)
+            @Html.ValidationMessageFor(model => model.objetivo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.escopo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.escopo)
+            @Html.ValidationMessageFor(model => model.escopo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.descricao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.descricao)
+            @Html.ValidationMessageFor(model => model.descricao)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

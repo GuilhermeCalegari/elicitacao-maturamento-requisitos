@@ -1,0 +1,82 @@
+﻿@model REQCYCLER.Projeto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Projeto</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.responsavelId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.responsavelId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Area.valor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Area.valor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.focalProjetoId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.focalProjetoId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dataInicio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dataInicio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dataFim)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dataFim)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.objetivo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.objetivo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.escopo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.escopo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descricao)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

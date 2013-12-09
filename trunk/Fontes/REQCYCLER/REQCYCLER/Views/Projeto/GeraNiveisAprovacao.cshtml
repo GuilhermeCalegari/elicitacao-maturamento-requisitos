@@ -1,0 +1,39 @@
+﻿@{
+    Int32 numNiveis = ViewBag.NumeroNiveis;
+}
+
+@using (Html.BeginForm("SalvarProjetoFinal", "Projeto"))
+{
+    <table class="table-responsive">
+        <tr>
+            <td>
+                 Nível
+            </td>
+            <td>
+                Usuário
+            </td>
+            <td>
+                Papel
+            </td>
+        </tr>
+
+        @for (int i = 0; i < @numNiveis; i++)
+        {
+            <tr>
+                <td>
+                    <b>@(i + 1)</b>
+                </td>
+                <td>
+                    <div class="form-group">
+                         @Html.DropDownList("ListaUsuarios", "SELECIONE")
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        @Html.DropDownList("ListaPapeis", "SELECIONE")
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>                       
+}
