@@ -204,6 +204,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\FluxoViewModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Pacote.cs">
       <DependentUpon>ReqcyclerModel.tt</DependentUpon>
