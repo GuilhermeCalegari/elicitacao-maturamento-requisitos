@@ -67,20 +67,20 @@ namespace REQCYCLER.Controllers
         public PartialViewResult DefinirNiveis(Projeto projeto)
         {
             ViewBag.NumeroNiveis = projeto.NumeroNiveis;
-            return PartialView("GeraNiveisAprovacao", new FluxoViewModel());
+
+            List<FluxoViewModel> listaFluxoVM = new List<FluxoViewModel>();
+
+            for (int i = 0; i < projeto.NumeroNiveis; i++)
+            {
+                listaFluxoVM.Add(new FluxoViewModel());
+            }
+
+            return PartialView("GeraNiveisAprovacao", listaFluxoVM);
         }
 
         [HttpPost]
-        public String SalvarProjetoFinal(FormCollection teste)
+        public String SalvarProjetoFinal(List<UsuarioFluxo> listaUsuarios)
         {
-            foreach (var item in teste.AllKeys)
-            {
-                
-            }
-
-            //Int32 usuarioSelecionado = Int32.Parse(teste["UsuarioSelecionado"]);
-            //Int32 papelUsuarioSelecionado = Int32.Parse(teste["PapelUsuarioSelecionado"]);
-
             return null;
         }
         
