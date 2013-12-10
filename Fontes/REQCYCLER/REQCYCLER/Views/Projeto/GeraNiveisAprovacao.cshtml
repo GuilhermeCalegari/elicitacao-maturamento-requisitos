@@ -1,39 +1,38 @@
-﻿@{
-    Int32 numNiveis = ViewBag.NumeroNiveis;
-}
+﻿@model  REQCYCLER.Models.FluxoViewModel
 
 @using (Html.BeginForm("SalvarProjetoFinal", "Projeto"))
 {
     <table class="table-responsive">
         <tr>
-            <td>
-                 Nível
-            </td>
-            <td>
-                Usuário
-            </td>
-            <td>
-                Papel
-            </td>
+            <th>Nível
+            </th>
+            <th>Usuário
+            </th>
+            <th>Papel
+            </th>
         </tr>
 
-        @for (int i = 0; i < @numNiveis; i++)
+        @for (int i = 0; i < ViewBag.NumeroNiveis; i++)
         {
             <tr>
                 <td>
-                    <b>@(i + 1)</b>
+                    <input type="hidden" name="nivel@(i)" value="@(i)" />
+                    <b>@(i + 1)</b> °
                 </td>
                 <td>
                     <div class="form-group">
-                         @Html.DropDownList("ListaUsuarios", "SELECIONE")
+                        <input type="hidden" name="usuario@(i)" value="@(Model.UsuarioSelecionado[i] = new SelectListItem())" />
+                        @Html.DropDownListFor(m => m.UsuarioSelecionado, Model.ListaUsuarios, "SELECIONE")
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
-                        @Html.DropDownList("ListaPapeis", "SELECIONE")
+                        @Html.DropDownListFor(m => m.PapelUsuarioSelecionado, Model.ListaPapeis, "SELECIONE")
                     </div>
                 </td>
             </tr>
         }
-    </table>                       
+    </table>    
+    
+    <button type="submit" class="btn btn-primary">Concluir</button>                   
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using REQCYCLER.Models;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -53,7 +55,6 @@ namespace REQCYCLER.Controllers
 
         public FileContentResult CarregarLogotipo(int projetoID)
         {
-
             var stream = (from proj in db.Projeto
                           where proj.id == projetoID
                           select proj.logotipo)
@@ -65,20 +66,24 @@ namespace REQCYCLER.Controllers
         [HttpPost]
         public PartialViewResult DefinirNiveis(Projeto projeto)
         {
-            var tmpPapeis = from p in db.PapelUsuario
-                            select p;
-
-            var tmpUsuarios = from u in db.Usuario
-                              select u;
-
-            ViewBag.ListaUsuarios = new SelectList(tmpUsuarios, "id", "nome");
-            ViewBag.ListaPapeis = new SelectList(tmpPapeis, "id", "valor");
             ViewBag.NumeroNiveis = projeto.NumeroNiveis;
+            return PartialView("GeraNiveisAprovacao", new FluxoViewModel());
+        }
 
-            return PartialView("GeraNiveisAprovacao");
+        [HttpPost]
+        public String SalvarProjetoFinal(FormCollection teste)
+        {
+            foreach (var item in teste.AllKeys)
+            {
+                
+            }
+
+            //Int32 usuarioSelecionado = Int32.Parse(teste["UsuarioSelecionado"]);
+            //Int32 papelUsuarioSelecionado = Int32.Parse(teste["PapelUsuarioSelecionado"]);
+
+            return null;
         }
         
-
 
         //
         // GET: /Projeto/Details/5
