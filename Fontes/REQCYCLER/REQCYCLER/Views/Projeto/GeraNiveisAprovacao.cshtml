@@ -1,4 +1,4 @@
-﻿@model  REQCYCLER.Models.FluxoViewModel
+﻿@model  IList<REQCYCLER.Models.FluxoViewModel>
 
 @using (Html.BeginForm("SalvarProjetoFinal", "Projeto"))
 {
@@ -12,25 +12,31 @@
             </th>
         </tr>
 
-        @for (int i = 0; i < ViewBag.NumeroNiveis; i++)
+        @{ var contador = 0;}
+        @foreach (var item in Model)
         {
             <tr>
                 <td>
-                    <input type="hidden" name="nivel@(i)" value="@(i)" />
-                    <b>@(i + 1)</b> °
+                    <b>@(contador + 1)</b> °
                 </td>
                 <td>
                     <div class="form-group">
-                        <input type="hidden" name="usuario@(i)" value="@(Model.UsuarioSelecionado[i] = new SelectListItem())" />
-                        @Html.DropDownListFor(m => m.UsuarioSelecionado, Model.ListaUsuarios, "SELECIONE")
+                        <select id="@contador" name="UsuariosSelecionados">
+                            @foreach (var tmpUsr in Model[contador].ListaUsuarios)
+                            {
+                                <option value="@tmpUsr.Id">@tmpUsr.Nome</option>
+                            }
+                        </select>
+                        @*@Html.DropDownListFor(m => m.UsuarioSelecionado, Model.ListaUsuarios, "SELECIONE")*@
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
-                        @Html.DropDownListFor(m => m.PapelUsuarioSelecionado, Model.ListaPapeis, "SELECIONE")
+                        @*@Html.DropDownListFor(m => m.PapelUsuarioSelecionado, Model.ListaPapeis, "SELECIONE")*@
                     </div>
                 </td>
             </tr>
+            @{contador++};
         }
     </table>    
     
