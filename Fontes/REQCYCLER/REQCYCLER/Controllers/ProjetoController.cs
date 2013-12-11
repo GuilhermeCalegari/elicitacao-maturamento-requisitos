@@ -1,6 +1,5 @@
 ﻿using REQCYCLER.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -48,13 +47,13 @@ namespace REQCYCLER.Controllers
             }
 
             Session["TempProjeto"] = projeto;
-            Session["TempFluxoAprovacao"] = new FluxoAprovacaoProjeto();
 
             return true;
         }
 
         public FileContentResult CarregarLogotipo(int projetoID)
         {
+
             var stream = (from proj in db.Projeto
                           where proj.id == projetoID
                           select proj.logotipo)
@@ -67,23 +66,16 @@ namespace REQCYCLER.Controllers
         public PartialViewResult DefinirNiveis(Projeto projeto)
         {
             ViewBag.NumeroNiveis = projeto.NumeroNiveis;
-
-            List<FluxoViewModel> listaFluxoVM = new List<FluxoViewModel>();
-
-            for (int i = 0; i < projeto.NumeroNiveis; i++)
-            {
-                listaFluxoVM.Add(new FluxoViewModel());
-            }
-
-            return PartialView("GeraNiveisAprovacao", listaFluxoVM);
+            return PartialView("GeraNiveisAprovacao", new FluxoViewModel());
         }
 
         [HttpPost]
-        public String SalvarProjetoFinal(List<UsuarioFluxo> listaUsuarios)
+        public String SalvarProjetoFinal(FluxoViewModel[] FluxoAprovacao)
         {
             return null;
         }
         
+
 
         //
         // GET: /Projeto/Details/5

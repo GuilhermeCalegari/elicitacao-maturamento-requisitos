@@ -10,32 +10,29 @@ namespace REQCYCLER.Models
     public class FluxoViewModel
     {
         public List<UsuarioFluxo> ListaUsuarios { get; set; }
-        public int[] UsuariosSelecionados { get; set; }
+        public List<PapelFluxo> ListaPapeis { get; set; }
 
-
-        public FluxoViewModel()
+         public FluxoViewModel()
         {
             using (ReqcyclerEntities dbLocal = new ReqcyclerEntities())
             {
-                  var tmpUsuarios = (from u in dbLocal.Usuario
-                                    select u).ToList();
+                var tmpUsuarios = (from u in dbLocal.Usuario.ToList()
+                                   select new UsuarioFluxo
+                                   {
+                                       Id = u.id,
+                                       Nome = u.nome
+                                   }).ToList();
 
-                  //var tmpPapeis = (from p in dbLocal.PapelUsuario
-                  //                   select p).ToList();
+                var tmpPapeis = (from p in dbLocal.PapelUsuario.ToList()
+                                 select new PapelFluxo
+                                  {
+                                      Id = p.id,
+                                      Valor = p.valor
+                                  }).ToList();
 
-                  this.ListaUsuarios = new List<UsuarioFluxo>();
-                  //this.ListaPapeis = new List<SelectListItem>();
-
-                  foreach (var item in tmpUsuarios)
-                  {
-                      this.ListaUsuarios.Add(new UsuarioFluxo {  Id = item.id, Nome = item.nome});
-                  }
-
-                  //foreach (var item in tmpPapeis)
-                  //{
-                  //    this.ListaPapeis.Add(new SelectListItem { Value = item.id.ToString(), Text = item.valor });
-                  //}
-            }
+                this.ListaUsuarios = tmpUsuarios;
+                this.ListaPapeis = tmpPapeis;
+             }
         }
     }
 
@@ -43,5 +40,11 @@ namespace REQCYCLER.Models
     {
         public int Id { get; set; }
         public String Nome { get; set; }
+    }
+
+    public class PapelFluxo
+    {
+        public int Id { get; set; }
+        public String Valor { get; set; }
     }
 }

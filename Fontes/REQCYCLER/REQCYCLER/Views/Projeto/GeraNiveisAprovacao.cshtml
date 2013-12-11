@@ -1,4 +1,4 @@
-﻿@model  IList<REQCYCLER.Models.FluxoViewModel>
+﻿@model  REQCYCLER.Models.FluxoViewModel
 
 @using (Html.BeginForm("SalvarProjetoFinal", "Projeto"))
 {
@@ -12,31 +12,36 @@
             </th>
         </tr>
 
-        @{ var contador = 0;}
-        @foreach (var item in Model)
-        {
+        @for (int i = 0; i < ViewBag.NumeroNiveis; i++)
+		{
+			 
             <tr>
                 <td>
-                    <b>@(contador + 1)</b> °
+                    <b>@(i + 1)</b> °
                 </td>
                 <td>
                     <div class="form-group">
-                        <select id="@contador" name="UsuariosSelecionados">
-                            @foreach (var tmpUsr in Model[contador].ListaUsuarios)
+                        <select id="ListaUsuarios[@i].Id" name="ListaUsuarios[@i].Id", class="form-control projeto">
+                            <option value="-1">SELECIONE</option>
+                            @for (int tmpUser = 0; tmpUser < Model.ListaUsuarios.Count; tmpUser++)
                             {
-                                <option value="@tmpUsr.Id">@tmpUsr.Nome</option>
+                                <option value="@Model.ListaUsuarios[tmpUser].Id">@Model.ListaUsuarios[tmpUser].Nome</option>
                             }
                         </select>
-                        @*@Html.DropDownListFor(m => m.UsuarioSelecionado, Model.ListaUsuarios, "SELECIONE")*@
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
-                        @*@Html.DropDownListFor(m => m.PapelUsuarioSelecionado, Model.ListaPapeis, "SELECIONE")*@
+                        <select id="ListaPapeis[@i].Id" name="ListaPapeis[@i].Id" class="form-control projeto">
+                            <option value="-1">SELECIONE</option>
+                            @for (int tmpPapel = 0; tmpPapel < Model.ListaPapeis.Count; tmpPapel++)
+                            {
+                                <option value="@Model.ListaPapeis[tmpPapel].Id">@Model.ListaPapeis[tmpPapel].Valor</option>
+                            }
+                        </select>
                     </div>
                 </td>
             </tr>
-            @{contador++};
         }
     </table>    
     
