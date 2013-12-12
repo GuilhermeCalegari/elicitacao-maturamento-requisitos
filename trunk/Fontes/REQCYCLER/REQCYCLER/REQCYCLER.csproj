@@ -206,6 +206,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\FluxoViewModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\ProjetoViewModel.cs" />
     <Compile Include="Pacote.cs">
       <DependentUpon>ReqcyclerModel.tt</DependentUpon>
     </Compile>
@@ -337,14 +338,17 @@
       <DependentUpon>ReqcyclerModel.edmx</DependentUpon>
       <LastGenOutput>ReqcyclerModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -353,6 +357,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\JSONUploader.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.ar.js" />

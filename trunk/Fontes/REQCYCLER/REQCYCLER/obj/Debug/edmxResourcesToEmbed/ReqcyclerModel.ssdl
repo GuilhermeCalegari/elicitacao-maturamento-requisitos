@@ -102,7 +102,7 @@
     <Property Name="nome" Type="varchar" MaxLength="100" />
     <Property Name="dataInicio" Type="datetime" />
     <Property Name="dataFim" Type="datetime" />
-    <Property Name="logotipo" Type="image" />
+    <Property Name="logotipo" Type="varbinary(max)" />
     <Property Name="objetivo" Type="varchar" MaxLength="1048" />
     <Property Name="escopo" Type="varchar" MaxLength="1048" />
     <Property Name="descricao" Type="varchar" MaxLength="2096" />

@@ -12,7 +12,7 @@ namespace REQCYCLER.Models
         public List<UsuarioFluxo> ListaUsuarios { get; set; }
         public List<PapelFluxo> ListaPapeis { get; set; }
 
-         public FluxoViewModel()
+        public FluxoViewModel()
         {
             using (ReqcyclerEntities dbLocal = new ReqcyclerEntities())
             {

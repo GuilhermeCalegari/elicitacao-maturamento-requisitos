@@ -21,30 +21,40 @@ namespace REQCYCLER.Controllers
         {
             ViewBag.PaginaAtual = "HOME";
             var projeto = db.Projeto.Include(p => p.Area);
-            ViewData["ListaProjeto"] = projeto.ToList();
+
+            var listaProjetos = (from p in db.Projeto.ToList()
+                                 select new ProjetoViewModel
+                                 {
+                                     ProjetoId = p.id,
+                                     NomeProjeto = p.nome,
+                                 }).ToList();
+
+
+
+
+            ViewBag.ListaProjeto = listaProjetos;
 
             return View();
         }
 
         [HttpPost]
-        public Boolean CriarProjeto(Projeto projeto, HttpPostedFileBase imageData)
+        public Boolean CriarProjeto(Projeto projeto)
         {
-            if (imageData != null)
+            byte[] data;
+            using (Stream inputStream = Request.InputStream)
             {
-                byte[] data;
-                using (Stream inputStream = imageData.InputStream)
+                MemoryStream memoryStream = inputStream as MemoryStream;
+                if (memoryStream == null)
                 {
-                    MemoryStream memoryStream = inputStream as MemoryStream;
-                    if (memoryStream == null)
-                    {
-                        memoryStream = new MemoryStream();
-                        inputStream.CopyTo(memoryStream);
-                    }
-                    data = memoryStream.ToArray();
+                    memoryStream = new MemoryStream();
+                    inputStream.CopyTo(memoryStream);
                 }
 
-                projeto.logotipo = data;
+                data = memoryStream.ToArray();
             }
+
+            projeto.logotipo = data;
+
 
             Session["TempProjeto"] = projeto;
 
@@ -53,26 +63,68 @@ namespace REQCYCLER.Controllers
 
         public FileContentResult CarregarLogotipo(int projetoID)
         {
+            Byte[] image = db.Projeto.Find(projetoID).logotipo;
 
-            var stream = (from proj in db.Projeto
-                          where proj.id == projetoID
-                          select proj.logotipo)
-                          .FirstOrDefault();
-
-            return File(stream, "image/jpeg");
+            return new FileContentResult(image, "image/jpeg");
         }
 
         [HttpPost]
         public PartialViewResult DefinirNiveis(Projeto projeto)
         {
             ViewBag.NumeroNiveis = projeto.NumeroNiveis;
-            return PartialView("GeraNiveisAprovacao", new FluxoViewModel());
+            List<FluxoViewModel> ListaFluxo = new List<FluxoViewModel>();
+
+            for (int i = 0; i < projeto.NumeroNiveis; i++)
+            {
+                ListaFluxo.Add(new FluxoViewModel());
+            }
+
+            return PartialView("GeraNiveisAprovacao", ListaFluxo);
         }
 
         [HttpPost]
-        public String SalvarProjetoFinal(FluxoViewModel[] FluxoAprovacao)
+        public ActionResult SalvarProjetoFinal(List<Int32> ListaUsuarios, List<Int32> ListaPapeis)
         {
-            return null;
+            Int32 tmpIdProjeto;
+            Projeto referenciaProjeto;
+            ProjetoUsuario projetoUsuario;
+            Int32 tmpIdUsuarioProjeto;
+            FluxoAprovacaoProjeto fluxoAprovacaoProjeto;
+
+            //Salvar Projeto Base
+            referenciaProjeto = (Projeto)Session["TempProjeto"];
+            Session.Remove("TempProjeto");
+
+            db.Projeto.Add(referenciaProjeto);
+            db.SaveChanges();
+
+            tmpIdProjeto = referenciaProjeto.id;
+
+            //Associar Projeto e Usuários
+            for (int i = 0; i < ListaUsuarios.Count; i++)
+			{
+			     projetoUsuario = new ProjetoUsuario();
+
+                 projetoUsuario.usuarioId = ListaUsuarios[i];
+                 projetoUsuario.papelUsuarioId = ListaPapeis[i];
+                 projetoUsuario.projetoId = tmpIdProjeto;
+
+                 db.ProjetoUsuario.Add(projetoUsuario);
+                 db.SaveChanges();
+
+                 tmpIdUsuarioProjeto = projetoUsuario.id;
+
+                //Associar ProjetoUsuario ao Fluxo Projeto
+
+                 fluxoAprovacaoProjeto = new FluxoAprovacaoProjeto();
+
+                 fluxoAprovacaoProjeto.projetoUsuarioId = tmpIdUsuarioProjeto;
+                 fluxoAprovacaoProjeto.ordem = i + 1;
+
+                 db.FluxoAprovacaoProjeto.Add(fluxoAprovacaoProjeto);
+                 db.SaveChanges();
+			}
+            return RedirectToAction("Index");
         }
         
 

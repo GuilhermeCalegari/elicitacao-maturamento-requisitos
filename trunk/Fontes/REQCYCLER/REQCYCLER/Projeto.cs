@@ -11,48 +11,27 @@ namespace REQCYCLER
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
-    using System.Linq;
-
+    
     public partial class Projeto
     {
         public Projeto()
         {
             this.Pacote = new HashSet<Pacote>();
         }
-
+    
         public int id { get; set; }
         public Nullable<int> responsavelId { get; set; }
         public Nullable<int> areaResponsavelId { get; set; }
         public Nullable<int> focalProjetoId { get; set; }
-
-        [Required]
         public string nome { get; set; }
-
-        [Required]
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> dataInicio { get; set; }
-
-        [Required]
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> dataFim { get; set; }
-
         public byte[] logotipo { get; set; }
-
-        [DataType(DataType.MultilineText)]
         public string objetivo { get; set; }
-
-        [DataType(DataType.MultilineText)]
         public string escopo { get; set; }
-
-        [DataType(DataType.MultilineText)]
         public string descricao { get; set; }
-
+        public Int32 NumeroNiveis { get; set; }
         public virtual Area Area { get; set; }
         public virtual ICollection<Pacote> Pacote { get; set; }
-
-        [Required]
-        public Int32 NumeroNiveis { get; set; }
     }
 }
