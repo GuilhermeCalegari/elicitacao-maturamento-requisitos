@@ -1,4 +1,4 @@
-﻿@model  REQCYCLER.Models.FluxoViewModel
+﻿@model  IList<REQCYCLER.Models.FluxoViewModel>
 
 @using (Html.BeginForm("SalvarProjetoFinal", "Projeto"))
 {
@@ -21,22 +21,22 @@
                 </td>
                 <td>
                     <div class="form-group">
-                        <select id="ListaUsuarios[@i].Id" name="ListaUsuarios[@i].Id", class="form-control projeto">
+                        <select id="[@i].ListaUsuarios[@i].Id" name="ListaUsuarios", class="form-control projeto">
                             <option value="-1">SELECIONE</option>
-                            @for (int tmpUser = 0; tmpUser < Model.ListaUsuarios.Count; tmpUser++)
+                            @for (int tmpUser = 0; tmpUser < Model[i].ListaUsuarios.Count; tmpUser++)
                             {
-                                <option value="@Model.ListaUsuarios[tmpUser].Id">@Model.ListaUsuarios[tmpUser].Nome</option>
+                                <option value="@Model[i].ListaUsuarios[tmpUser].Id">@Model[i].ListaUsuarios[tmpUser].Nome</option>
                             }
                         </select>
                     </div>
                 </td>
                 <td>
                     <div class="form-group">
-                        <select id="ListaPapeis[@i].Id" name="ListaPapeis[@i].Id" class="form-control projeto">
+                        <select id="[@i].ListaPapeis[@i].Id" name="ListaPapeis" class="form-control projeto">
                             <option value="-1">SELECIONE</option>
-                            @for (int tmpPapel = 0; tmpPapel < Model.ListaPapeis.Count; tmpPapel++)
+                            @for (int tmpPapel = 0; tmpPapel < Model[i].ListaPapeis.Count; tmpPapel++)
                             {
-                                <option value="@Model.ListaPapeis[tmpPapel].Id">@Model.ListaPapeis[tmpPapel].Valor</option>
+                                <option value="@Model[i].ListaPapeis[tmpPapel].Id">@Model[i].ListaPapeis[tmpPapel].Valor</option>
                             }
                         </select>
                     </div>

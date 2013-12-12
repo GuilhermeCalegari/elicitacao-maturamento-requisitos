@@ -3,6 +3,8 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
+        ClientSideUploader();
+
         $('.input-append').datepicker({
 
             todayHighlight: true,
@@ -11,11 +13,6 @@
         $('.text-box').addClass('form-control').removeClass('text-box');
         $('#Modal02').addClass('hide').removeClass('modal-body');
         $('#NiveisAprovacao').addClass('hide');
-
-        //$( "#btnProximo" ).click(function() {
-        //    $('#Modal01').addClass('hide').removeClass('modal-body');
-        //    $('#Modal02').addClass('modal-body').removeClass('hide');
-        //});
     })
 
     function OnSuccess() {
@@ -38,7 +35,6 @@
 
 <br />
 
-
 <!-- MODAL -->
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -50,9 +46,9 @@
                 @{
                     String nomeProjeto = String.Empty;
 
-                    if (HttpContext.Current.Session["TempProjeto"] != null)
+                    if (Session["TempProjeto"] != null)
                     {
-                        nomeProjeto = " - " + ((REQCYCLER.Projeto)HttpContext.Current.Session["TempProjeto"]).nome;
+                        nomeProjeto = " - " + ((REQCYCLER.Projeto)Session["TempProjeto"]).nome;
                     }
                     else
                     {
@@ -65,11 +61,11 @@
             </div>
             <div class="modal-body" id="Modal01">
 
-                @using (Ajax.BeginForm("CriarProjeto", "Projeto", new AjaxOptions()
+                @using (Ajax.BeginForm("CriarProjeto", "Projeto", new { id = "uploader" }, new AjaxOptions()
                 {
-                    HttpMethod = "POST",
+                    HttpMethod = "Post",
                     OnSuccess = "OnSuccess",
-
+                    
                 }, new { enctype = "multipart/form-data" }))
                 {    
                     <table style="width: 100%;">
@@ -96,7 +92,7 @@
                             <td>
                                 <!-- DATA FIM PROJETO -->
                                 <div class="form-group">
-                                    <label>Data Início</label>
+                                    <label>Data Final</label>
                                     <div class="input-append date" id="datepickerFinal" data-date-format="dd/mm/yyyy">
                                         @Html.TextBoxFor(model => model.dataFim, new { @class = "form-control projeto", @value = String.Empty, @readonly = true, placeholder = "dd/mm/aaaa" })
                                         <span class="add-on"><i class="icon-calendar"></i></span>
@@ -106,42 +102,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <div class="form-group">
-                                    <label>Área</label>
-                                    @Html.DropDownListFor(model => model.Area.id, new SelectList(
-                                                          new List<SelectListItem>
-                                                          { 
-                                                              new SelectListItem { Value = "0", Text = "SELECIONE", Selected = true },
-                                                              new SelectListItem { Value = "1", Text = "Marketing", Selected = false},
-                                                              new SelectListItem { Value = "2", Text = "Financeiro", Selected = false},
-                                                              new SelectListItem { Value = "3", Text = "Diretoria", Selected = false},
-                                                              new SelectListItem { Value = "4", Text = "Administrativo", Selected = false}
-                                                             
-                                                           }, "value", "text", "selected"), new { @class = "form-control projeto" })
-                                </div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <label>Responsável</label>
-                                    @Html.DropDownListFor(model => model.responsavelId, new SelectList(
-                                                          new List<SelectListItem>
-                                                          { 
-                                                              new SelectListItem { Value = "0", Text = "SELECIONE", Selected =  true },
-                                                              new SelectListItem { Value = "1", Text = "Administrador", Selected = false},
-                                                              new SelectListItem { Value = "2", Text = "Gestor", Selected = false},
-                                                              new SelectListItem { Value = "3", Text = "Stakeholder", Selected = false},
-                                                              new SelectListItem { Value = "4", Text = "Usuário", Selected = false}
-                                                             
-                                                           }, "value", "text", "selected"), new { @class = "form-control projeto" })
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
                             <td colspan="2">
                                 <label>Logotipo</label>
                                 <div class="editor-field">
-                                    <input type="file" name="imageData" class="form-control projeto" />
+                                    <input type="file" id="fileInput" name="imageData" class="form-control projeto" />
                                 </div>
                             </td>
                         </tr>
@@ -173,7 +137,7 @@
                     
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" id="btnProximo" class="btn btn-primary">Próximo</button>
+                        <button type="submit" id="uploader" class="btn btn-primary">Próximo</button>
                     </div>  
                 }
 
@@ -230,17 +194,19 @@
 <br />
 
 <div class="row">
-    @if (ViewData["ListaProjetos"] != null)
+    @if (((List<REQCYCLER.Models.ProjetoViewModel>)ViewBag.ListaProjeto).Count != 0)
     {
-        foreach (var item in ViewData["ListaProjetos"] as List<REQCYCLER.Projeto>)
+        foreach (var item in (List<REQCYCLER.Models.ProjetoViewModel>)ViewBag.ListaProjeto)
         {
 
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <div class="caption">
-                    <h2 class="red">@Html.Label(item.nome)</h2>
+                    <h2 class="red">@Html.Label(item.NomeProjeto)</h2>
                 </div>
-                <img src = "@Url.Action("CarregarLogotipo", "Projeto", new { item.id })" />
+
+                <img src="@Url.Action("CarregarLogotipo", "Projeto", new { item.ProjetoId })" />
+
                 <div class="caption">
                     <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
                 </div>

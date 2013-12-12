@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ReqcyclerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ReqcyclerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="ReqcyclerModelStoreContainer">
           <EntitySet Name="Area" EntityType="ReqcyclerModel.Store.Area" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ClassificacaoRequisito" EntityType="ReqcyclerModel.Store.ClassificacaoRequisito" store:Type="Tables" Schema="dbo" />
@@ -107,7 +107,7 @@
           <Property Name="nome" Type="varchar" MaxLength="100" />
           <Property Name="dataInicio" Type="datetime" />
           <Property Name="dataFim" Type="datetime" />
-          <Property Name="logotipo" Type="image" />
+          <Property Name="logotipo" Type="varbinary(max)" />
           <Property Name="objetivo" Type="varchar" MaxLength="1048" />
           <Property Name="escopo" Type="varchar" MaxLength="1048" />
           <Property Name="descricao" Type="varchar" MaxLength="2096" />
@@ -259,8 +259,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ReqcyclerModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
