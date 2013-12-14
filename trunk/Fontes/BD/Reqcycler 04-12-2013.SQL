@@ -12,6 +12,7 @@ CREATE TABLE ClassificacaoRequisito (
 
 CREATE TABLE Comentario ( 
 	id int identity(,1)  NOT NULL,
+	idPacote int,
 	comentario varchar(512)
 )
 ;
@@ -180,3 +181,32 @@ ALTER TABLE Requisito ADD CONSTRAINT FK_classificacaoRequisitoId
 ALTER TABLE Usuario ADD CONSTRAINT FK_UsuarioTipoUsuarioID 
 	FOREIGN KEY (tipoUsuarioID) REFERENCES TipoUsuario (id)
 ;
+
+
+// NOVO
+
+ALTER TABLE COMENTARIO ADD idPacote INT
+
+ALTER TABLE Comentario ADD CONSTRAINT FK_ComentarioPacote
+	FOREIGN KEY (idPacote) REFERENCES Pacote (id)
+;
+
+CREATE TABLE PacoteRequisito ( 
+	id int identity(1,1)  NOT NULL,
+	pacoteId int,
+	requisitoId int
+)
+;
+
+ALTER TABLE PacoteRequisito ADD CONSTRAINT FK_PacoteRequisitoPacote
+	FOREIGN KEY (pacoteId) REFERENCES Pacote (id)
+;
+
+ALTER TABLE PacoteRequisito ADD CONSTRAINT FK_PacoteRequisitoRequisito
+	FOREIGN KEY (requisitoId) REFERENCES Requisito (id)
+;
+
+ALTER TABLE PacoteRequisito ADD CONSTRAINT PK_PacoteRequisito
+	PRIMARY KEY CLUSTERED (id)
+;
+?

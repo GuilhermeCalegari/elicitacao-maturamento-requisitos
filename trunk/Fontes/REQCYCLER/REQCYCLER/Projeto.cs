@@ -30,7 +30,8 @@ namespace REQCYCLER
         public string objetivo { get; set; }
         public string escopo { get; set; }
         public string descricao { get; set; }
-        public Int32 NumeroNiveis { get; set; }
+        public Nullable<int> NumeroNiveis { get; set; }
+    
         public virtual Area Area { get; set; }
         public virtual ICollection<Pacote> Pacote { get; set; }
     }

@@ -14,11 +14,19 @@ namespace REQCYCLER
     
     public partial class Pacote
     {
+        public Pacote()
+        {
+            this.Comentario = new HashSet<Comentario>();
+            this.PacoteRequisito = new HashSet<PacoteRequisito>();
+        }
+    
         public int id { get; set; }
         public Nullable<int> projetoId { get; set; }
-        public Nullable<int> numero { get; set; }
         public string status { get; set; }
+        public string NOME { get; set; }
     
         public virtual Projeto Projeto { get; set; }
+        public virtual ICollection<Comentario> Comentario { get; set; }
+        public virtual ICollection<PacoteRequisito> PacoteRequisito { get; set; }
     }
 }

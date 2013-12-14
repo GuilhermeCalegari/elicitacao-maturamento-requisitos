@@ -9,5 +9,7 @@ namespace REQCYCLER.Models
     {
         public String NomeProjeto { get; set; }
         public Int32 ProjetoId { get; set; }
+        public String Objetivo { get; set; }
+        public String Descricao { get; set; }
     }
 }

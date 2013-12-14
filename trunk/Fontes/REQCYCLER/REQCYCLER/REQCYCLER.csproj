@@ -196,6 +196,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProjetoController.cs" />
+    <Compile Include="Controllers\RequisitoController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="FluxoAprovacaoProjeto.cs">
       <DependentUpon>ReqcyclerModel.tt</DependentUpon>
@@ -207,7 +208,11 @@
     <Compile Include="Models\FluxoViewModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ProjetoViewModel.cs" />
+    <Compile Include="Models\RequisitoViewModel.cs" />
     <Compile Include="Pacote.cs">
+      <DependentUpon>ReqcyclerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PacoteRequisito.cs">
       <DependentUpon>ReqcyclerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PapelUsuario.cs">
@@ -259,6 +264,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\TempLogo.jpg" />
     <Content Include="Content\navbar.css" />
     <Content Include="Content\signin.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -448,12 +454,13 @@
     <Content Include="Views\Shared\_LayoutDefault.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Projeto\Index.cshtml" />
-    <Content Include="Views\Projeto\Details.cshtml" />
-    <Content Include="Views\Projeto\Create.cshtml" />
-    <Content Include="Views\Projeto\Edit.cshtml" />
-    <Content Include="Views\Projeto\Delete.cshtml" />
     <Content Include="Views\Shared\Date.cshtml" />
     <Content Include="Views\Projeto\GeraNiveisAprovacao.cshtml" />
+    <Content Include="Views\Projeto\UploadImagem.cshtml" />
+    <Content Include="Views\Projeto\AcessarProjeto.cshtml" />
+    <Content Include="Views\Requisito\Index.cshtml" />
+    <Content Include="Views\Requisito\FormCadastroRequisito.cshtml" />
+    <Content Include="Views\Requisito\TabelaPacoteRequisito.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

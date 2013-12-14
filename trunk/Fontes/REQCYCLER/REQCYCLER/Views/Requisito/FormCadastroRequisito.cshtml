@@ -1,0 +1,106 @@
+﻿@model REQCYCLER.Requisito
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                <h4 class="modal-title" id="myModalLabel">Criar Requisito</h4>
+            </div>
+            <div class="modal-body" id="Modal01">
+                @using (Html.BeginForm("CriarRequisito", "Requisito", FormMethod.Post))
+                {
+                    <table style="width: 100%;">
+                        <tr>
+                            <td class="form-group">
+                                @{
+                                    List<REQCYCLER.Pacote> pacotesSessao = (List<REQCYCLER.Pacote>)Session["ListaPacotes"];
+                                    
+                                    List<SelectListItem> listaPacotes = new List<SelectListItem>();
+
+                                    //Marreta
+                                    listaPacotes.Add(new SelectListItem { Value="-1", Text="Selecione", Selected = false });
+                                    
+                                    foreach (REQCYCLER.Pacote pacote in pacotesSessao)
+                                    {
+                                        listaPacotes.Add(new SelectListItem { Value = pacote.id.ToString(), Text = pacote.NOME, Selected = false });
+                                    }
+                                }
+
+                                <label>Pacote</label>
+                                @Html.DropDownListFor(m => m.pacoteId, new SelectList(listaPacotes, "value", "text", "selected"), new { @class = "form-control projeto" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="form-group">
+                                    <label>Nome</label>
+                                    @Html.EditorFor(model => model.nome, new { @class = "form-control projeto" })
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Tipo Requisito</label>
+                                @Html.DropDownListFor(model => model.tipoRequisito, new SelectList(
+                                                          new List<SelectListItem>
+                                                          { 
+                                                              new SelectListItem { Value = "0", Text = "SELECIONE", Selected = true },
+                                                              new SelectListItem { Value = "Funcional", Text = "Funcional", Selected = false},
+                                                              new SelectListItem { Value = "Não Funcional", Text = "Não Funcional", Selected = false},
+                                                             
+                                                           }, "value", "text", "selected"), new { @class = "form-control projeto" })
+                            </td>
+                            <td>
+                                <label>Categoria</label>
+                                @Html.DropDownListFor(model => model.classificacao, new SelectList(
+                                                          new List<SelectListItem>
+                                                          { 
+                                                              new SelectListItem { Value = "0", Text = "SELECIONE", Selected = true },
+                                                              new SelectListItem { Value = "Desempenho", Text = "Desempenho", Selected = false},
+                                                              new SelectListItem { Value = "Segurança", Text = "Segurança", Selected = false},
+                                                              new SelectListItem { Value = "Interface", Text = "Interface", Selected = false},
+                                                              new SelectListItem { Value = "Usabilidade", Text = "Usabilidade", Selected = false},
+                                                              new SelectListItem { Value = "Interface Gráfica", Text = "Interface Gráfica", Selected = false}
+                                                             
+                                                           }, "value", "text", "selected"), new { @class = "form-control projeto" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Complexidade</label>
+                                @Html.DropDownListFor(model => model.complexidade, new SelectList(
+                                                          new List<SelectListItem>
+                                                          { 
+                                                              new SelectListItem { Value = "0", Text = "SELECIONE", Selected = true },
+                                                              new SelectListItem { Value = "Baixa", Text = "Baixa", Selected = false},
+                                                              new SelectListItem { Value = "Média", Text = "Média", Selected = false},
+                                                              new SelectListItem { Value = "Alta", Text = "Alta", Selected = false},
+                                                             
+                                                           }, "value", "text", "selected"), new { @class = "form-control projeto" })
+                            </td>
+                            <td>
+                                <label>Versão do Sistema</label>
+                                @Html.EditorFor(m => m.versaoSistema, new { @class = "form-control projeto" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="form-group">
+                                    <label>Descrição</label>
+                                    @Html.EditorFor(model => model.descricao, new { @class = "form-control projeto", rows = "5" })
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" id="uploader" class="btn btn-primary">Salvar</button>
+                    </div>  
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,24 +14,25 @@ namespace REQCYCLER.Controllers
     {
         private ReqcyclerEntities db = new ReqcyclerEntities();
 
-        //
-        // GET: /Projeto/
-
         public ActionResult Index()
         {
             ViewBag.PaginaAtual = "HOME";
             var projeto = db.Projeto.Include(p => p.Area);
 
-            var listaProjetos = (from p in db.Projeto.ToList()
+            Int32 usuarioID = (Int32)Session["UsuarioLogadoID"];
+
+            var listaProjetos = (from pu in db.ProjetoUsuario
+                                 join p in db.Projeto on pu.projetoId equals p.id
+                                 where pu.usuarioId == usuarioID
                                  select new ProjetoViewModel
                                  {
                                      ProjetoId = p.id,
                                      NomeProjeto = p.nome,
+                                     Descricao = p.descricao,
+                                     Objetivo = p.objetivo
                                  }).ToList();
 
-
-
-
+            Session["NumProjetos"] = listaProjetos.Count;
             ViewBag.ListaProjeto = listaProjetos;
 
             return View();
@@ -102,75 +103,61 @@ namespace REQCYCLER.Controllers
 
             //Associar Projeto e Usuários
             for (int i = 0; i < ListaUsuarios.Count; i++)
-			{
-			     projetoUsuario = new ProjetoUsuario();
+            {
+                projetoUsuario = new ProjetoUsuario();
 
-                 projetoUsuario.usuarioId = ListaUsuarios[i];
-                 projetoUsuario.papelUsuarioId = ListaPapeis[i];
-                 projetoUsuario.projetoId = tmpIdProjeto;
+                projetoUsuario.usuarioId = ListaUsuarios[i];
+                projetoUsuario.papelUsuarioId = ListaPapeis[i];
+                projetoUsuario.projetoId = tmpIdProjeto;
 
-                 db.ProjetoUsuario.Add(projetoUsuario);
-                 db.SaveChanges();
+                db.ProjetoUsuario.Add(projetoUsuario);
+                db.SaveChanges();
 
-                 tmpIdUsuarioProjeto = projetoUsuario.id;
+                tmpIdUsuarioProjeto = projetoUsuario.id;
 
                 //Associar ProjetoUsuario ao Fluxo Projeto
 
-                 fluxoAprovacaoProjeto = new FluxoAprovacaoProjeto();
+                fluxoAprovacaoProjeto = new FluxoAprovacaoProjeto();
 
-                 fluxoAprovacaoProjeto.projetoUsuarioId = tmpIdUsuarioProjeto;
-                 fluxoAprovacaoProjeto.ordem = i + 1;
+                fluxoAprovacaoProjeto.projetoUsuarioId = tmpIdUsuarioProjeto;
+                fluxoAprovacaoProjeto.ordem = i + 1;
 
-                 db.FluxoAprovacaoProjeto.Add(fluxoAprovacaoProjeto);
-                 db.SaveChanges();
-			}
+                db.FluxoAprovacaoProjeto.Add(fluxoAprovacaoProjeto);
+                db.SaveChanges();
+            }
+
+            //Criar pacotes para o projeto recém criado automaticamente
+
+            for (int i = 0; i < 3; i++)
+            {
+                Pacote pacote = new Pacote();
+
+                pacote.projetoId = tmpIdProjeto;
+                pacote.NOME = "Pacote - 0" + i;
+                pacote.status = "Aberto";
+
+                db.Pacote.Add(pacote);
+                db.SaveChanges();
+            }
+
             return RedirectToAction("Index");
         }
-        
 
-
-        //
-        // GET: /Projeto/Details/5
-
-        public ActionResult Details(int id = 0)
+        public ActionResult AcessarProjeto(Int32 ProjetoId)
         {
-            Projeto projeto = db.Projeto.Find(id);
-            if (projeto == null)
-            {
-                return HttpNotFound();
-            }
-            return View(projeto);
+            var projetoSelecionado = (from p in db.Projeto
+                                      where p.id == ProjetoId
+                                      select new ProjetoViewModel
+                                      {
+                                          ProjetoId = p.id,
+                                          NomeProjeto = p.nome,
+                                          Objetivo = p.objetivo,
+                                          Descricao = p.descricao
+                                      }).FirstOrDefault();
+
+            Session["DadosProjeto"] = projetoSelecionado; 
+            return View(projetoSelecionado);
         }
-
-        //
-        // GET: /Projeto/Create
-
-        public ActionResult Create()
-        {
-            ViewBag.areaResponsavelId = new SelectList(db.Area, "id", "valor");
-            return View();
-        }
-
-        //
-        // POST: /Projeto/Create
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Projeto projeto)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Projeto.Add(projeto);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.areaResponsavelId = new SelectList(db.Area, "id", "valor", projeto.areaResponsavelId);
-            return View(projeto);
-        }
-
-        //
-        // GET: /Projeto/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
@@ -181,49 +168,6 @@ namespace REQCYCLER.Controllers
             }
             ViewBag.areaResponsavelId = new SelectList(db.Area, "id", "valor", projeto.areaResponsavelId);
             return View(projeto);
-        }
-
-        //
-        // POST: /Projeto/Edit/5
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(Projeto projeto)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(projeto).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.areaResponsavelId = new SelectList(db.Area, "id", "valor", projeto.areaResponsavelId);
-            return View(projeto);
-        }
-
-        //
-        // GET: /Projeto/Delete/5
-
-        public ActionResult Delete(int id = 0)
-        {
-            Projeto projeto = db.Projeto.Find(id);
-            if (projeto == null)
-            {
-                return HttpNotFound();
-            }
-            return View(projeto);
-        }
-
-        //
-        // POST: /Projeto/Delete/5
-
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Projeto projeto = db.Projeto.Find(id);
-            db.Projeto.Remove(projeto);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

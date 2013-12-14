@@ -1,0 +1,54 @@
+﻿@model REQCYCLER.Models.RequisitoViewModel
+
+@if (Model.DicionarioPacoteRequisito.Values.Count != 0)
+{
+    foreach (var tmpPacoteRequisitoTela in Model.DicionarioPacoteRequisito)
+    {
+            
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td colspan="4" style="background-color: lightgray !important;"><b>@tmpPacoteRequisitoTela.Key.NOME</b> - ( @tmpPacoteRequisitoTela.Key.NOME)</td>
+                    </tr>
+                    <tr>
+                        <td>Nome</td>
+                        <td>Tipo</td>
+                        <td>Complexidade</td>
+                        <td></td>
+                    </tr>
+                </thead>
+
+                <!-- LISTA REQUISITOS -->
+
+                @foreach (var tmpRequisito in tmpPacoteRequisitoTela.Value)
+                {
+                    <tr>
+                        <td>@tmpRequisito.Nome</td>
+                        <td>@tmpRequisito.TipoRequisito</td>
+                        <td>@tmpRequisito.Complexidade</td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    Opções <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Editar</a></li>
+                                    <li><a href="#">Excluir</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>  
+                }
+            </table>
+        </div>
+    </div>
+    }
+}
+else
+{
+    <div class="alert alert-danger">
+        <h2>O projeto não possui requisitos cadastrados!</h2>
+    </div>     
+}

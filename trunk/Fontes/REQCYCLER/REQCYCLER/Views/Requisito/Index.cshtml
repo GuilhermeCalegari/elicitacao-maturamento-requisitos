@@ -1,0 +1,90 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $('.text-box').addClass('form-control').removeClass('text-box');
+    })
+</script>
+
+<div class="panel panel-default">
+    <div class="panel-heading" style="background-color: lightblue !important;">
+        <h1 class="panel-title"><b>@((Session["DadosProjeto"] as REQCYCLER.Models.ProjetoViewModel).NomeProjeto)</b></h1>
+    </div>
+    <div class="panel-heading">
+        <table>
+            <tr>
+                <td>
+                    <img src="~/Content/Images/TempLogo.jpg" alt="Teste" class="img-thumbnail" width="200">
+                </td>
+                <td>
+                    <dl class="dl-horizontal">
+                        <dt>Objetivo</dt>
+                        <dd>@((Session["DadosProjeto"] as REQCYCLER.Models.ProjetoViewModel).Objetivo)</dd>
+
+                        <dt>Descrição</dt>
+                        <dd>@((Session["DadosProjeto"] as REQCYCLER.Models.ProjetoViewModel).NomeProjeto)</dd>
+                    </dl>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-body">
+        <h2>Requisitos</h2>
+
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            CRIAR NOVO REQUISITO
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+
+        <br />
+        <br />
+
+        @{Html.RenderAction("GerarTabelaPacoteRequisito");}
+
+    </div>
+    <div class="panel-body">
+
+        <table>
+            <tr>
+                <td>
+                    <div class="panel panel-default" style="background-color: lightblue !important;">
+                        <div class="panel-body">
+                            <span class="glyphicon glyphicon-user"></span>Usuários 
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a href="#">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <span class="glyphicon glyphicon-list-alt"></span>
+                                Requisitos
+                            </div>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <span class="glyphicon glyphicon-transfer"></span>
+                            Workflow
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a href="/Projeto/AcessarProjeto?ProjetoId= @(Session["ProjetoID"])">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <span class="glyphicon glyphicon-home"></span>
+                                Voltar (Projeto Home)
+                            </div>
+                        </div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- MODAL CADASTRAR REQUISITO -->
+
+ @{Html.RenderAction("GerarModalCadastroRequisito");}
