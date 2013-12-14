@@ -65,7 +65,7 @@
                 {
                     HttpMethod = "Post",
                     OnSuccess = "OnSuccess",
-                    
+
                 }, new { enctype = "multipart/form-data" }))
                 {    
                     <table style="width: 100%;">
@@ -161,7 +161,7 @@
                             <td>
                                 <div class="form-group">
                                     <label for="nomeProjeto">Número de Níveis</label>
-                                    @Html.EditorFor(m => m.NumeroNiveis, new  {@class = "form-control projeto" })
+                                    @Html.EditorFor(m => m.NumeroNiveis, new { @class = "form-control projeto" })
                                 </div>
                             </td>
                             <td>
@@ -194,31 +194,38 @@
 <br />
 
 <div class="row">
-    @if (((List<REQCYCLER.Models.ProjetoViewModel>)ViewBag.ListaProjeto).Count != 0)
-    {
-        foreach (var item in (List<REQCYCLER.Models.ProjetoViewModel>)ViewBag.ListaProjeto)
-        {
+@if (((List<REQCYCLER.Models.ProjetoViewModel>)ViewBag.ListaProjeto).Count != 0)
+{
 
+    foreach (var item in (List<REQCYCLER.Models.ProjetoViewModel>)ViewBag.ListaProjeto)
+    {
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
                 <div class="caption">
                     <h2 class="red">@Html.Label(item.NomeProjeto)</h2>
                 </div>
 
-                <img src="@Url.Action("CarregarLogotipo", "Projeto", new { item.ProjetoId })" />
+                <img src="~/Content/Images/TempLogo.jpg"@*@Url.Action("CarregarLogotipo", "Projeto", new { item.ProjetoId })"*@ />
 
                 <div class="caption">
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                    <p>
+                        @Html.ActionLink("ACESSAR", "AcessarProjeto", "Projeto", new {ProjetoId = item.ProjetoId}, null)
+                    </p>
                 </div>
             </div>
         </div>
-        }
     }
-    else
-    {
-        <div class="alert alert-danger">
-            <h2>Você não possui nenhum projeto</h2>
-        </div>     
-    }
+}
 
+else
+{
+    <div class="alert alert-danger">
+        <h2>Você não possui nenhum projeto</h2>
+    </div>     
+}
 </div>
+
+
+
+
+

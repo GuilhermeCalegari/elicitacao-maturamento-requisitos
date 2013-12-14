@@ -28,10 +28,12 @@ namespace REQCYCLER.Controllers
 
                 if (tmpUser != null)
                 {
-                    var numProjetos = (from projetoUsuario in db.ProjetoUsuario
-                                       where projetoUsuario.id.Equals(tmpUser.id)
-                                       select projetoUsuario).Count();
+                    var numProjetos = (from pu in db.ProjetoUsuario
+                                       join p in db.Projeto on pu.projetoId equals p.id
+                                       where pu.usuarioId == tmpUser.id
+                                       select pu).ToList().Count();
 
+                    Session["UsuarioLogadoID"] = tmpUser.id;
                     Session["UsuarioLogado"] = ((Usuario)tmpUser).nome;
                     Session["NumProjetos"] = (Int32)numProjetos;
                     return RedirectToAction("Index", "Home");
@@ -41,6 +43,15 @@ namespace REQCYCLER.Controllers
                     return RedirectToAction("Index", "Login");
                 }
             }
+        }
+
+        [HttpPost]
+        public ActionResult Logoff()
+        {
+            ViewData.Clear();
+            Session.Clear();
+
+            return Redirect("~/");
         }
     }
 }

@@ -26,16 +26,17 @@ namespace REQCYCLER
         }
     
         public DbSet<Area> Area { get; set; }
-        public DbSet<ClassificacaoRequisito> ClassificacaoRequisito { get; set; }
         public DbSet<Comentario> Comentario { get; set; }
         public DbSet<FluxoAprovacaoProjeto> FluxoAprovacaoProjeto { get; set; }
         public DbSet<Pacote> Pacote { get; set; }
         public DbSet<PapelUsuario> PapelUsuario { get; set; }
         public DbSet<Projeto> Projeto { get; set; }
-        public DbSet<ProjetoRequisito> ProjetoRequisito { get; set; }
         public DbSet<ProjetoUsuario> ProjetoUsuario { get; set; }
         public DbSet<Requisito> Requisito { get; set; }
         public DbSet<TipoUsuario> TipoUsuario { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<PacoteRequisito> PacoteRequisito { get; set; }
+        public DbSet<ProjetoRequisito> ProjetoRequisito { get; set; }
+        public DbSet<ClassificacaoRequisito> ClassificacaoRequisito { get; set; }
     }
 }

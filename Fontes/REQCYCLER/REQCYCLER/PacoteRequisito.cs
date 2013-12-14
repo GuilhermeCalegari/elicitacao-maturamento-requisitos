@@ -12,13 +12,13 @@ namespace REQCYCLER
     using System;
     using System.Collections.Generic;
     
-    public partial class Comentario
+    public partial class PacoteRequisito
     {
         public int id { get; set; }
-        public string comentario { get; set; }
-        public Nullable<int> idPacote { get; set; }
-        public string NOMEUSUARIO { get; set; }
+        public Nullable<int> pacoteId { get; set; }
+        public Nullable<int> requisitoId { get; set; }
     
         public virtual Pacote Pacote { get; set; }
+        public virtual Requisito Requisito { get; set; }
     }
 }

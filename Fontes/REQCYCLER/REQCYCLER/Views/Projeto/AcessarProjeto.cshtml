@@ -1,0 +1,58 @@
+﻿@model REQCYCLER.Models.ProjetoViewModel
+
+<div class="panel panel-default">
+    <div class="panel-heading" style="background-color: lightblue !important;">
+        <h1 class="panel-title"><b>@Model.NomeProjeto</b></h1>
+    </div>
+    <div class="panel-heading">
+        <table>
+            <tr>
+                <td>
+                    <img src="~/Content/Images/TempLogo.jpg" alt="Teste" class="img-thumbnail" width="200">
+                </td>
+                <td>
+                    <dl class="dl-horizontal">
+                        <dt>Objetivo</dt>
+                        <dd>@Model.Objetivo</dd>
+
+                        <dt>Descrição</dt>
+                        <dd>@Model.Descricao</dd>
+                    </dl>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="panel-body">
+
+        <table>
+            <tr>
+                <td>
+
+                    <div class="panel panel-default" style="background-color: lightblue !important;">
+                        <div class="panel-body">
+                            <span class="glyphicon glyphicon-user"></span>Usuários 
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <a href="/Requisito/Index?ProjetoId=@Model.ProjetoId">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <span class="glyphicon glyphicon-list-alt"></span>
+                                Requisitos
+                            </div>
+                        </div>
+                    </a>
+                </td>
+                <td>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <span class="glyphicon glyphicon-transfer"></span>
+                            Workflow
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

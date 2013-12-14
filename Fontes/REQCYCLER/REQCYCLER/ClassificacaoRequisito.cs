@@ -14,14 +14,7 @@ namespace REQCYCLER
     
     public partial class ClassificacaoRequisito
     {
-        public ClassificacaoRequisito()
-        {
-            this.Requisito = new HashSet<Requisito>();
-        }
-    
         public int id { get; set; }
         public string valor { get; set; }
-    
-        public virtual ICollection<Requisito> Requisito { get; set; }
     }
 }

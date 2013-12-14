@@ -9,19 +9,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ClassificacaoRequisito">
-      <EntityTypeMapping TypeName="ReqcyclerModel.ClassificacaoRequisito">
-        <MappingFragment StoreEntitySet="ClassificacaoRequisito">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="valor" ColumnName="valor" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Comentario">
       <EntityTypeMapping TypeName="ReqcyclerModel.Comentario">
         <MappingFragment StoreEntitySet="Comentario">
+          <ScalarProperty Name="NOMEUSUARIO" ColumnName="NOMEUSUARIO" />
+          <ScalarProperty Name="idPacote" ColumnName="idPacote" />
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="comentario1" ColumnName="comentario" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -37,9 +31,9 @@
     <EntitySetMapping Name="Pacote">
       <EntityTypeMapping TypeName="ReqcyclerModel.Pacote">
         <MappingFragment StoreEntitySet="Pacote">
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="projetoId" ColumnName="projetoId" />
-          <ScalarProperty Name="numero" ColumnName="numero" />
           <ScalarProperty Name="status" ColumnName="status" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -55,6 +49,7 @@
     <EntitySetMapping Name="Projeto">
       <EntityTypeMapping TypeName="ReqcyclerModel.Projeto">
         <MappingFragment StoreEntitySet="Projeto">
+          <ScalarProperty Name="NumeroNiveis" ColumnName="NumeroNiveis" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="responsavelId" ColumnName="responsavelId" />
           <ScalarProperty Name="areaResponsavelId" ColumnName="areaResponsavelId" />
@@ -66,16 +61,6 @@
           <ScalarProperty Name="objetivo" ColumnName="objetivo" />
           <ScalarProperty Name="escopo" ColumnName="escopo" />
           <ScalarProperty Name="descricao" ColumnName="descricao" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProjetoRequisito">
-      <EntityTypeMapping TypeName="ReqcyclerModel.ProjetoRequisito">
-        <MappingFragment StoreEntitySet="ProjetoRequisito">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
-          <ScalarProperty Name="requisitoId" ColumnName="requisitoId" />
-          <ScalarProperty Name="pacoteId" ColumnName="pacoteId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -92,9 +77,9 @@
     <EntitySetMapping Name="Requisito">
       <EntityTypeMapping TypeName="ReqcyclerModel.Requisito">
         <MappingFragment StoreEntitySet="Requisito">
+          <ScalarProperty Name="classificacao" ColumnName="classificacao" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="projetoId" ColumnName="projetoId" />
-          <ScalarProperty Name="classificacaoRequisitoId" ColumnName="classificacaoRequisitoId" />
           <ScalarProperty Name="nome" ColumnName="nome" />
           <ScalarProperty Name="tipoRequisito" ColumnName="tipoRequisito" />
           <ScalarProperty Name="versaoSistema" ColumnName="versaoSistema" />
@@ -122,6 +107,33 @@
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="senha" ColumnName="senha" />
           <ScalarProperty Name="empresa" ColumnName="empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PacoteRequisito">
+      <EntityTypeMapping TypeName="ReqcyclerModel.PacoteRequisito">
+        <MappingFragment StoreEntitySet="PacoteRequisito">
+          <ScalarProperty Name="requisitoId" ColumnName="requisitoId" />
+          <ScalarProperty Name="pacoteId" ColumnName="pacoteId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjetoRequisito">
+      <EntityTypeMapping TypeName="ReqcyclerModel.ProjetoRequisito">
+        <MappingFragment StoreEntitySet="ProjetoRequisito">
+          <ScalarProperty Name="pacoteId" ColumnName="pacoteId" />
+          <ScalarProperty Name="requisitoId" ColumnName="requisitoId" />
+          <ScalarProperty Name="projetoId" ColumnName="projetoId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClassificacaoRequisito">
+      <EntityTypeMapping TypeName="ReqcyclerModel.ClassificacaoRequisito">
+        <MappingFragment StoreEntitySet="ClassificacaoRequisito">
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

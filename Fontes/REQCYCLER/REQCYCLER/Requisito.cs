@@ -16,20 +16,23 @@ namespace REQCYCLER
     {
         public Requisito()
         {
+            this.PacoteRequisito = new HashSet<PacoteRequisito>();
             this.ProjetoRequisito = new HashSet<ProjetoRequisito>();
         }
     
         public int id { get; set; }
         public Nullable<int> projetoId { get; set; }
-        public Nullable<int> classificacaoRequisitoId { get; set; }
         public string nome { get; set; }
         public string tipoRequisito { get; set; }
         public Nullable<decimal> versaoSistema { get; set; }
         public string solicitante { get; set; }
         public string complexidade { get; set; }
         public string descricao { get; set; }
+        public string classificacao { get; set; }
     
-        public virtual ClassificacaoRequisito ClassificacaoRequisito { get; set; }
+        public virtual ICollection<PacoteRequisito> PacoteRequisito { get; set; }
         public virtual ICollection<ProjetoRequisito> ProjetoRequisito { get; set; }
+
+        public int? pacoteId { get; set; }
     }
 }
